@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "Tui",
-  "patterns": [{ "include": "#comment" }],
+  "patterns": [{ "include": "#comment" }, { "include": "#statement" }],
   "repository": {
     "comment": {
       "patterns": [
@@ -14,6 +14,54 @@
           "name": "comment.line.number-sign.tui",
           "begin": "#",
           "end": "$"
+        }
+      ]
+    },
+    "statement": {
+      "patterns": [{ "include": "#expression" }]
+    },
+    "expression": {
+      "patterns": [{ "include": "#literal" }]
+    },
+    "literal": {
+      "patterns": [
+        { "include": "#nil-literal" },
+        { "include": "#numeric-literal" },
+        { "include": "#string-literal" }
+      ]
+    },
+    "nil-literal": {
+      "match": "\\b(nil)\\b",
+      "captures": {
+        "1": {
+          "name": "constant.language.nil.tui"
+        }
+      }
+    },
+    "numeric-literal": {
+      "match": "\\b([0-9]+(\\.[0-9]+)?)\\b",
+      "captures": {
+        "1": {
+          "name": "constant.numeric.decimal.tui"
+        }
+      }
+    },
+    "string-literal": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.tui",
+          "begin": "\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.tui"
+            }
+          },
+          "end": "\"",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.tui"
+            }
+          }
         }
       ]
     }
