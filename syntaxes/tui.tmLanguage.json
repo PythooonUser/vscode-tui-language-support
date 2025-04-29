@@ -1,31 +1,19 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "Tui",
-  "patterns": [
-    {
-      "include": "#keywords"
-    },
-    {
-      "include": "#strings"
-    }
-  ],
+  "patterns": [{ "include": "#comment" }],
   "repository": {
-    "keywords": {
+    "comment": {
       "patterns": [
         {
-          "name": "keyword.control.tui",
-          "match": "\\b(if|while|for|return)\\b"
-        }
-      ]
-    },
-    "strings": {
-      "name": "string.quoted.double.tui",
-      "begin": "\"",
-      "end": "\"",
-      "patterns": [
+          "name": "comment.line.double-slash.tui",
+          "begin": "//",
+          "end": "$"
+        },
         {
-          "name": "constant.character.escape.tui",
-          "match": "\\\\."
+          "name": "comment.line.number-sign.tui",
+          "begin": "#",
+          "end": "$"
         }
       ]
     }

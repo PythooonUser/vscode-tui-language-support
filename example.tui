@@ -1,0 +1,262 @@
+numA = random(8)
+print("numA:", numA)
+print("random(8):", random(8))
+print("random(8):", random(8))
+print("random(8):", random(8))
+print("random(8):", random(8))
+
+random(8)
+random(8)
+random(8)
+
+
+random(8.5)
+random(8.5)
+random(8.5)
+
+random()
+random()
+random()
+
+
+print("Hello World!")
+
+{
+    max = function(a,b)
+    {
+        if(a > b)
+        {
+            return a
+        }
+        return b
+    }
+    
+    min = function(a,b)
+    {
+        if(a < b)
+        {
+            return a
+        }
+        return b
+    }
+
+    four_hundred = 11
+
+    if(four_hundred > 11) {
+        four_hundred = four_hundred* 2.0
+    }
+    else if four_hundred < 9 {
+        four_hundred = four_hundred * 4.0
+    }
+    else
+    {
+        four_hundred = 400
+    }
+
+    return {
+        max_20 = max(20,10)
+        max_400 = max(20,four_hundred)
+        max_neg10 = max(-10,-20)
+        
+        min_neg20 = min(-10,-20)
+        minmax20 = min(20,max(15,four_hundred))
+    }
+}
+
+
+testAdd = function(a,b)
+{
+    return a + b
+}
+
+testSub = function(a,b)
+{
+    return a - b
+}
+
+testMult = function(a,b)
+{
+    return a * b
+}
+
+testDivide = function(a,b)
+{
+    return a / b
+}
+
+testGreaterThan = function(a,b)
+{
+    return a > b
+}
+
+testEqualTo = function(a,b)
+{
+    return a == b
+}
+
+return {
+    n_10 = testAdd(2,8)
+    n_10b = testSub(20,10)
+    n_25 = testMult(5,5)
+    n_10Divide = testDivide(100,10)
+    n_testGreaterThan_true = testGreaterThan(100,10)
+    n_testEqualTo_false = testEqualTo(100,10)
+    n_testEqualTo_true = testEqualTo(10,10)
+
+    v2_10 = testAdd(vec2(2,2),vec2(8,8))
+    v2_10b = testSub(vec2(20,20),vec2(10,10))
+    v2_25 = testMult(vec2(5, 5), 5)
+    v2_10Divide = testDivide(vec2(100, 100), vec2(10, 10))
+
+    v2b_25 = testMult(vec2(5, 5), 5)
+    v2b_10Divide = testDivide(vec2(100, 100), 10)
+
+    v3_10 = testAdd(vec3(2,2,2),vec3(8,8,2))
+    v3_10b = testSub(vec3(20,20,20),vec3(10,10,10))
+    v3_25 = testMult(vec3(5, 5,5), 5)
+    v3_10Divide = testDivide(vec3(100, 100,100), vec3(10, 10,10))
+
+    v3b_25 = testMult(vec3(5, 5,5), 5)
+    v3b_10Divide = testDivide(vec3(100, 100, 100), 10)
+}
+
+{
+    outerFuncAdd = function(a,b)
+    {
+        return a + b
+    }
+
+    mathTestA = function(a,b)
+    {
+        #innerFuncAdd = function(a,c)
+        #{
+        #    return a + b + c
+        #}
+        
+        #return innerFuncAdd(b, a)
+    }
+
+    c = 7
+
+    basicTest = function(a)
+    {
+        c = 4
+        return a + c
+    }
+    
+    print("DAVE c is:", c)
+
+    mathTestAResult8 = basicTest(4)
+        
+    print("DAVE c after is:", c)
+    
+    #mathTestAResult12c = mathTestA(c, 2)
+
+    #mathTestBResult1_2 = mathTestA(vec2(0.5,1), vec2(0.5,1))
+
+    test1 = 1
+    test13 = (4 * (3 + test1) + 4) - 1 - 2 * (2 + 1)
+    
+    test9 = 7 * 2 - 5
+    test2 = 1 + 1
+    test3 = test2 + 1
+    testInnerTable = {
+        test4 = test3 + 1
+    }
+
+    test5 = testInnerTable.test4 + 1
+    test6 = 3 * 2
+    test7 = 14 / 2
+    test8 = test7 + test3 - 2
+    test9 = test7 * test2 - test5
+    test10 = testInnerTable.test4 + test2 * test3
+    test11 = 1 + 2 * 3 * 4 - 5 * 4 + 12 / 2
+    test12 = (1 + 2) * 4
+
+    testDave27 = 3 * ((1 + 2) * 3)
+    test14 = 7.5 + (6.5 * 2 - 6.5)
+    test15 = 1/2 + 1.0 / 2.0 + 13.5 + test1/test2
+
+    testVec2_1_2 = vec2(2,4) / 2.0
+    testVec2_1_4 = vec2(0.5,2) * 2
+    testVec2_1_4b = 2 * vec2(0.5,2)
+    testVec2_4_6 = vec2(1,2) + vec2(3,4)
+    testVec2_2_6 = vec2(1,2) * vec2(2,3)
+
+    testVec3_1_2_3 = vec3(2,4,6) / 2.0
+    testVec3_1_4_8 = vec3(0.5,2,4.0) * 2
+    testVec3_1_4_0p246 = 2 * vec3(0.5,2,0.123)
+    testVec3_4_6_8 = vec3(1,2,3) + vec3(3,4,5)
+    testVec3_2_6_9 = vec3(1,2,3) * vec3(2,3,3)
+
+    testVec4_1_2_3_4 = vec4(2,4,6,8) / 2.0
+    testVec4_1_4_8_16 = vec4(0.5,2,4.0,8) * 2
+    testVec4_1_4_0p246_8 = 2 * vec4(0.5,2,0.123,4)
+    testVec4_4_6_8_10 = vec4(1,2,3,4) + vec4(3,4,5,6)
+    testVec4_2_6_9_12 = vec4(1,2,3,4) * vec4(2,3,3,3)
+}
+
+value = 10
+table = {
+    subValue = 20
+    subTable = {
+        subValue = 30 // creates a new local table.subTable.subValue with the value 30
+        
+        ..subValue = value // this assigns 10 to the parent subValue (previously 20)
+        
+        enclosingTable = .. // we can store the parent table '..' in a local variable
+        enclosingTable.subValue = value // achieves the same as '..subValue = value'.
+        enclosingTable = nil // otherwise we create a circular loop and will hang if we try to log or iterate this table!
+        
+        ...value = 20 // we can go up multiple levels by adding dots, this modifies the variable created at the top level on the first line
+        
+        testValue = 1
+        
+        testFunction = function(valueToSet) { // the same rules apply for functions
+            ..testValue = value + 1 // 21 the first time, 101 the second, remember we can always *read* the higher level variables directly
+            ....value = valueToSet // 4 dots this time to modify
+        }
+
+        testFunction(100)
+    }
+    
+    outsideFunc = subTable.testFunction // we can grab a reference to that subTable's function and call it directly here
+    outsideFunc(200) // ..value is now 200. '....value' still works, because we find variables relative to where the function was defined, not where it is called
+    thisFuncDoesntExist() // error examples/scope.tui:27:attempt to call missing function: thisFuncDoesntExist()
+}
+
+#result:
+#error examples/scope.tui:27:attempt to call missing function: thisFuncDoesntExist()
+#{
+#    "table" = {
+#        function,
+#        "outsideFunc" = function,
+#        "subTable" = {
+#            function,
+#            "subValue" = 30,
+#            "testFunction" = function,
+#            "testValue" = 101,
+#        },
+#        "subValue" = 10,
+#    },
+#    "value" = 200,
+#}
+
+{
+    addNumbers = function(a,b)
+    {
+        return a + b
+    }
+    
+    sayHelloWorldInAConvolutedWay = function()
+    {
+        return "Hello World!"
+    }
+    
+    ten = 10
+
+    return {
+        helloWorld = sayHelloWorldInAConvolutedWay()
+        addResult = addNumbers(ten, 10)
+    }
+}
