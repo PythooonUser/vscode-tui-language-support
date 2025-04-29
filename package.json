@@ -1,0 +1,34 @@
+{
+  "name": "@pythooonuser/vscode-tui-language-support",
+  "displayName": "vscode-tui-language-support",
+  "description": "Language Support for tui in VSCode.",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "tui",
+        "aliases": [
+          "Tui",
+          "tui"
+        ],
+        "extensions": [
+          ".tui"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "tui",
+        "scopeName": "source.tui",
+        "path": "./syntaxes/tui.tmLanguage.json"
+      }
+    ]
+  }
+}
