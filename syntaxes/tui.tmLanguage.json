@@ -18,14 +18,146 @@
       ]
     },
     "statement": {
-      "patterns": [{ "include": "#expression" }]
+      "patterns": [
+        { "include": "#expression" },
+        { "include": "#if-statement" },
+        { "include": "#else-part" },
+        { "include": "#return-statement" },
+        { "include": "#variable-declaration" }
+      ]
     },
     "expression": {
-      "patterns": [{ "include": "#literal" }]
+      "patterns": [
+        { "include": "#comment" },
+        { "include": "#expression-operator" },
+        { "include": "#invocation-expression" },
+        { "include": "#literal" },
+        { "include": "#identifier" }
+      ]
+    },
+    "if-statement": {
+      "begin": "\\b(if)\\b\\s*(?=\\()",
+      "beginCaptures": {
+        "1": { "name": "keyword.control.conditional.if.tui" }
+      },
+      "end": "(?<=\\})",
+      "patterns": [
+        {
+          "begin": "\\(",
+          "beginCaptures": {
+            "0": { "name": "punctuation.parenthesis.open.tui" }
+          },
+          "end": "\\)",
+          "endCaptures": {
+            "0": { "name": "punctuation.parenthesis.close.tui" }
+          },
+          "patterns": [{ "include": "#expression" }]
+        },
+        { "include": "#statement" }
+      ]
+    },
+    "else-part": {
+      "begin": "\\b(else)\\b",
+      "beginCaptures": {
+        "1": { "name": "keyword.control.conditional.else.tui" }
+      },
+      "end": "(?<=\\})",
+      "patterns": [{ "include": "#statement" }]
+    },
+    "return-statement": {
+      "begin": "\\b(return)\\b",
+      "beginCaptures": {
+        "1": { "name": "keyword.control.flow.return.tui" }
+      },
+      "end": "(?=[,$])",
+      "patterns": [{ "include": "#expression" }]
+    },
+    "block": {
+      "begin": "\\{",
+      "beginCaptures": {
+        "0": { "name": "punctuation.curlybrace.open.tui" }
+      },
+      "end": "\\}",
+      "endCaptures": {
+        "0": { "name": "punctuation.curlybrace.close.tui" }
+      },
+      "patterns": [{ "include": "#statement" }]
+    },
+    "variable-declaration": {
+      "begin": "\\b([_[:alpha:]][_[:alnum:]]*)(?!=\\()",
+      "beginCaptures": { "1": { "name": "entity.name.variable.local.tui" } },
+      "end": "(?=[,$])",
+      "patterns": [
+        {
+          "match": "[_[:alpha:]][_[:alnum:]]*",
+          "captures": {
+            "0": { "name": "entity.name.variable.local.tui" }
+          }
+        },
+        { "include": "#punctuation-comma" },
+        { "include": "#variable-initializer" }
+      ]
+    },
+    "variable-initializer": {
+      "begin": "(?<!=)(=)(?!=)",
+      "beginCaptures": { "1": { "name": "keyword.operator.assignment.tui" } },
+      "end": "(?=[,$])",
+      "patterns": [{ "include": "#expression" }]
+    },
+    "expression-operator": {
+      "patterns": [
+        {
+          "match": "==|!=",
+          "name": "keyword.operator.comparison.tui"
+        },
+        {
+          "match": "\\=",
+          "name": "keyword.operator.assignment.tui"
+        },
+        {
+          "match": "\\*|/|\\+|-",
+          "name": "keyword.operator.arithmetic.tui"
+        }
+      ]
+    },
+    "invocation-expression": {
+      "begin": "(?:(\\.)\\s*)?([_[:alpha:]][_[:alnum:]]*)\\s*(?=\\()",
+      "beginCaptures": {
+        "1": { "name": "punctuation.accessor.tui" },
+        "2": { "name": "entity.name.function.tui" }
+      },
+      "end": "(?<=\\))",
+      "patterns": [{ "include": "#argument-list" }]
+    },
+    "argument-list": {
+      "begin": "\\(",
+      "beginCaptures": {
+        "0": { "name": "punctuation.parenthesis.open.tui" }
+      },
+      "end": "\\)",
+      "endCaptures": {
+        "0": { "name": "punctuation.parenthesis.close.tui" }
+      },
+      "patterns": [
+        { "include": "#argument" },
+        { "include": "#punctuation-comma" }
+      ]
+    },
+    "argument": {
+      "patterns": [{ "include": "#expression" }]
+    },
+    "punctuation-comma": {
+      "match": ",",
+      "captures": {
+        "0": { "name": "punctuation.separator.comma.tui" }
+      }
     },
     "literal": {
       "patterns": [
         { "include": "#nil-literal" },
+        { "include": "#null-literal" },
+        { "include": "#true-literal" },
+        { "include": "#false-literal" },
         { "include": "#numeric-literal" },
         { "include": "#string-literal" }
       ]
@@ -35,6 +167,30 @@
       "captures": {
         "1": {
           "name": "constant.language.nil.tui"
+        }
+      }
+    },
+    "null-literal": {
+      "match": "\\b(null)\\b",
+      "captures": {
+        "1": {
+          "name": "constant.language.null.tui"
+        }
+      }
+    },
+    "true-literal": {
+      "match": "\\b(true)\\b",
+      "captures": {
+        "1": {
+          "name": "constant.language.true.tui"
+        }
+      }
+    },
+    "false-literal": {
+      "match": "\\b(false)\\b",
+      "captures": {
+        "1": {
+          "name": "constant.language.false.tui"
         }
       }
     },
@@ -64,6 +220,12 @@
           }
         }
       ]
+    },
+    "identifier": {
+      "match": "[_[:alpha:]][_[:alnum:]]*",
+      "captures": {
+        "0": { "name": "variable.other.tui" }
+      }
     }
   },
   "scopeName": "source.tui"
