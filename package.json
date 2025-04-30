@@ -1,5 +1,5 @@
 {
-  "name": "@pythooonuser/vscode-tui-language-support",
+  "name": "vscode-tui-language-support",
   "displayName": "vscode-tui-language-support",
   "description": "tui Language Support for VSCode.",
   "version": "0.1.0",
