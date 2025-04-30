@@ -1,8 +1,17 @@
 {
   "name": "@pythooonuser/vscode-tui-language-support",
   "displayName": "vscode-tui-language-support",
-  "description": "Language Support for tui in VSCode.",
+  "description": "tui Language Support for VSCode.",
   "version": "0.1.0",
+  "license": "MIT",
+  "publisher": "pythooonuser",
+  "author": {
+    "name": "Felix Siebeneicker"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pythooonuser/vscode-tui-language-support"
+  },
   "engines": {
     "vscode": "^1.99.0"
   },
