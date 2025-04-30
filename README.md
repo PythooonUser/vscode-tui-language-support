@@ -19,12 +19,6 @@ For the future some more features are planned.
 
 _Please note that development goes slowly since this is a free-time project only._
 
-### Syntax Highlighting
-
-Advanced syntax highlighting is applied to `.tui` source code files.
-
-![Syntax Highlighting Example](https://raw.githubusercontent.com/PythooonUser/vscode-tui-language-support/main/.media/syntax_highlighting.png)
-
 ## Known Issues
 
 No known issues.
