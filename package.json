@@ -52,14 +52,18 @@
       }
     }
   },
-  "main": "client/dist/extension",
+  "main": "dist/client/extension",
   "scripts": {
     "compile": "tsc -b"
   },
   "devDependencies": {
-    "@types/vscode": "^1.99.1"
+    "@types/node": "^22.15.3",
+    "@types/vscode": "^1.99.1",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
-    "vscode-languageclient": "^9.0.1"
+    "vscode-languageclient": "^9.0.1",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.12"
   }
 }
