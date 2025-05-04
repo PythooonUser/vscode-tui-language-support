@@ -54,11 +54,13 @@
   },
   "main": "dist/client/extension",
   "scripts": {
-    "compile": "tsc -b"
+    "compile": "tsc -b",
+    "test": "mocha *.test.ts"
   },
   "devDependencies": {
     "@types/node": "^22.15.3",
     "@types/vscode": "^1.99.1",
+    "mocha": "^11.2.2",
     "typescript": "^5.8.3"
   },
   "dependencies": {
