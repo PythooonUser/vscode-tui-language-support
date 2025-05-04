@@ -38,6 +38,32 @@
         "scopeName": "source.tui",
         "path": "./syntaxes/tui.tmLanguage.json"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "vscode-tui-language-support",
+      "properties": {
+        "tuiLanguageServer.maxNumberOfProblems": {
+          "scope": "resource",
+          "type": "number",
+          "default": 100,
+          "description": "Controls the maximum number of problems shown."
+        }
+      }
+    }
+  },
+  "main": "dist/client/extension",
+  "scripts": {
+    "compile": "tsc -b"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "@types/vscode": "^1.99.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.12"
   }
 }
