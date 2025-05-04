@@ -55,12 +55,15 @@
   "main": "dist/client/extension",
   "scripts": {
     "compile": "tsc -b",
-    "test": "mocha *.test.ts"
+    "test": "mocha --require ts-node/register **/*.test.ts",
+    "utils:lexer": "node --require ts-node/register ./tools/lexer-utils.ts"
   },
   "devDependencies": {
+    "@types/mocha": "^10.0.10",
     "@types/node": "^22.15.3",
     "@types/vscode": "^1.99.1",
     "mocha": "^11.2.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
   "dependencies": {
