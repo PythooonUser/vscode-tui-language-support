@@ -1,6 +1,11 @@
 import { Token } from "./token";
 import { TokenError } from "./token-error";
-import { TokenKind } from "./token-kind";
+import {
+  DelimiterTokenMap,
+  KeywordTokenMap,
+  OperatorTokenMap,
+  TokenKind,
+} from "./token-kind";
 
 export class Lexer {
   public document: string;
@@ -65,12 +70,28 @@ export class Lexer {
       return this.load();
     }
 
+    if (
+      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_".includes(
+        character
+      )
+    ) {
+      return this.parseName();
+    }
+
     if ("0123456789".includes(character)) {
       return this.parseNumberLiteral();
     }
 
     if ("\"'".includes(character)) {
       return this.parseStringLiteral(character);
+    }
+
+    if ("<>+-&|!=/*:?.".includes(character)) {
+      return this.parseOperator();
+    }
+
+    if ("()[]{},".includes(character)) {
+      return this.parseDelimiter();
     }
 
     return this.makeToken(this.index, 1, "UnknownToken", "UnknownToken");
@@ -148,6 +169,31 @@ export class Lexer {
     this.makeTriviaToken(start, length, "Comment");
   }
 
+  private parseName() {
+    const start = this.index;
+
+    while (true) {
+      const token = this.peek();
+
+      if (
+        !token ||
+        !"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_".includes(
+          token
+        )
+      ) {
+        break;
+      }
+
+      this.next();
+    }
+
+    const length = this.index + 1 - start;
+    const content = this.document.slice(start, start + length);
+    const kind = KeywordTokenMap[content];
+
+    return this.makeToken(start, length, kind ? kind : "Name");
+  }
+
   private parseNumberLiteral() {
     const start = this.index;
 
@@ -202,5 +248,46 @@ export class Lexer {
 
     const length = this.index + 1 - start;
     return this.makeToken(start, length, "StringLiteral", error);
+  }
+
+  private parseOperator() {
+    const start = this.index;
+
+    const firstCharacter = this.document[this.index];
+    let kind = OperatorTokenMap[firstCharacter];
+
+    if (firstCharacter === ".") {
+      while (true) {
+        const token = this.peek();
+
+        if (token !== ".") {
+          break;
+        }
+
+        this.next();
+      }
+    } else {
+      const secondCharacter = this.peek();
+      if (secondCharacter && "<>+-&|=".includes(secondCharacter)) {
+        const extendedKind = OperatorTokenMap[firstCharacter + secondCharacter];
+        if (extendedKind) {
+          this.next(); // Consume second part of operator.
+          kind = extendedKind;
+        }
+      }
+    }
+
+    const length = this.index + 1 - start;
+    return this.makeToken(start, length, kind);
+  }
+
+  private parseDelimiter() {
+    const start = this.index;
+
+    const character = this.document[this.index];
+    const kind = DelimiterTokenMap[character];
+
+    const length = this.index + 1 - start;
+    return this.makeToken(start, length, kind);
   }
 }
