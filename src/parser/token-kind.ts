@@ -3,4 +3,5 @@ export type TokenKind =
   | "UnknownToken"
   | "EndOfFile"
   | "Comment"
-  | "NumberLiteral";
+  | "NumberLiteral"
+  | "StringLiteral";

@@ -69,6 +69,10 @@ export class Lexer {
       return this.parseNumberLiteral();
     }
 
+    if ("\"'".includes(character)) {
+      return this.parseStringLiteral(character);
+    }
+
     return this.makeToken(this.index, 1, "UnknownToken", "UnknownToken");
   }
 
@@ -136,7 +140,7 @@ export class Lexer {
   private parseCommentTrivia() {
     const start = this.index;
 
-    while (this.peek() && !this.peek()?.includes("\r\n")) {
+    while (this.peek() && !"\r\n".includes(this.peek() || "")) {
       this.next();
     }
 
@@ -173,5 +177,30 @@ export class Lexer {
 
     const length = this.index + 1 - start;
     return this.makeToken(start, length, "NumberLiteral");
+  }
+
+  private parseStringLiteral(type: string) {
+    const start = this.index;
+    let error: TokenError | null = null;
+
+    while (true) {
+      if (!this.peek()) {
+        error = "UnexpectedEndOfFile";
+        break;
+      }
+
+      if (this.peek() === type) {
+        break;
+      }
+
+      this.next();
+    }
+
+    if (this.peek()) {
+      this.next(); // Consume either ' or " (see `type`).
+    }
+
+    const length = this.index + 1 - start;
+    return this.makeToken(start, length, "StringLiteral", error);
   }
 }
