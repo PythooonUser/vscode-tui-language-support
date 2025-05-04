@@ -65,6 +65,10 @@ export class Lexer {
       return this.load();
     }
 
+    if ("0123456789".includes(character)) {
+      return this.parseNumberLiteral();
+    }
+
     return this.makeToken(this.index, 1, "UnknownToken", "UnknownToken");
   }
 
@@ -138,5 +142,36 @@ export class Lexer {
 
     const length = this.index + 1 - start;
     this.makeTriviaToken(start, length, "Comment");
+  }
+
+  private parseNumberLiteral() {
+    const start = this.index;
+
+    while (true) {
+      const token = this.peek();
+
+      if (!token || !"0123456789".includes(token)) {
+        break;
+      }
+
+      this.next();
+    }
+
+    if (this.peek() && this.peek() === ".") {
+      this.next();
+
+      while (true) {
+        const token = this.peek();
+
+        if (!token || !"0123456789".includes(token)) {
+          break;
+        }
+
+        this.next();
+      }
+    }
+
+    const length = this.index + 1 - start;
+    return this.makeToken(start, length, "NumberLiteral");
   }
 }
