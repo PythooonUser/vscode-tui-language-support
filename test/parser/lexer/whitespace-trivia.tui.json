@@ -1,0 +1,17 @@
+[
+  {
+    "start": 5,
+    "length": 0,
+    "kind": "EndOfFile",
+    "trivia": [
+      {
+        "start": 0,
+        "length": 5,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  }
+]

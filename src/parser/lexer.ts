@@ -35,11 +35,34 @@ export class Lexer {
     return this.load();
   }
 
-  private load() {
+  /**
+   * Returns the next character in the source document without advancing the internal state.
+   */
+  private peek(step = 1) {
+    const index = this.index + step;
+
+    if (index >= this.length) {
+      return null;
+    }
+
+    return this.document[index];
+  }
+
+  private load(): Token | null {
     const character = this.next();
 
     if (character === null) {
       return this.handleEndOfFile();
+    }
+
+    if (" \t\r\n".includes(character)) {
+      this.parseWhitespaceTrivia();
+      return this.load();
+    }
+
+    if (character === "#") {
+      this.parseCommentTrivia();
+      return this.load();
     }
 
     return this.makeToken(this.index, 1, "UnknownToken", "UnknownToken");
@@ -71,11 +94,49 @@ export class Lexer {
     return token;
   }
 
+  private makeTriviaToken(
+    start: number,
+    length: number,
+    kind: TokenKind,
+    error: TokenError | null = null
+  ) {
+    const token = new Token(start, length, kind, [], error);
+    this.trivia.push(token);
+  }
+
   private handleEndOfFile() {
     if (this.index === this.length) {
       return this.makeToken(this.index, 0, "EndOfFile");
     }
 
     return null;
+  }
+
+  private parseWhitespaceTrivia() {
+    const start = this.index;
+
+    while (true) {
+      const token = this.peek();
+
+      if (!token || !" \t\r\n".includes(token)) {
+        break;
+      }
+
+      this.next();
+    }
+
+    const length = this.index + 1 - start;
+    this.makeTriviaToken(start, length, "Whitespace");
+  }
+
+  private parseCommentTrivia() {
+    const start = this.index;
+
+    while (this.peek() && !this.peek()?.includes("\r\n")) {
+      this.next();
+    }
+
+    const length = this.index + 1 - start;
+    this.makeTriviaToken(start, length, "Comment");
   }
 }

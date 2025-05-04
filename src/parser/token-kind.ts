@@ -1,1 +1,1 @@
-export type TokenKind = "Whitespace" | "UnknownToken" | "EndOfFile";
+export type TokenKind = "Whitespace" | "UnknownToken" | "EndOfFile" | "Comment";
