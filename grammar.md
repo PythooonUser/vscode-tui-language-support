@@ -16,7 +16,7 @@
 
 ```
 program
-  object_literal? EOF
+  table_literal? EOF
 ```
 
 ### Statements
@@ -75,7 +75,7 @@ expression
 
 ```
 literal_expression
-  IDENTIFIER | object_literal | STRING | NUMBER | BOOL | NULL
+  IDENTIFIER | table_literal | STRING | NUMBER | BOOL | NULL
 ```
 
 ```
@@ -176,6 +176,6 @@ NULL
 ```
 
 ```
-object_literal
+table_literal
   ( "[" | "{" )? statement* ( "]" | "}" )?
 ```

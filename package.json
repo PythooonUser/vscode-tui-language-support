@@ -56,7 +56,8 @@
   "scripts": {
     "compile": "tsc -b",
     "test": "mocha --require ts-node/register **/*.test.ts",
-    "utils:lexer": "node --require ts-node/register ./tools/lexer-utils.ts"
+    "utils:lexer": "node --require ts-node/register ./tools/lexer-utils.ts",
+    "utils:parser": "node --require ts-node/register ./tools/parser-utils.ts"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
