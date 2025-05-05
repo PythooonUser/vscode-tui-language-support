@@ -1,0 +1,17 @@
+# table-literal-1
+42
+
+# # table-literal-2
+# 42,
+
+# # table-literal-3
+# "Hello World"
+
+# # table-literal-4
+# "Hello World",
+
+# # table-literal-5
+# 1, 2
+
+# # table-literal-6
+# true, false, null, nil
