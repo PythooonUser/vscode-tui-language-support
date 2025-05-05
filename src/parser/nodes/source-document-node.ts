@@ -1,6 +1,6 @@
 import { Token } from "../token";
 import { NodeOrTokenArray } from "../types";
-import { Node } from "./node";
+import { Node } from ".";
 
 export class SourceDocumentNode extends Node {
   public statements: NodeOrTokenArray = [];
@@ -13,7 +13,7 @@ export class SourceDocumentNode extends Node {
     this.kind = "SourceDocumentNode";
   }
 
-  override toJSON() {
+  public override toJSON() {
     return {
       kind: this.kind,
       error: this.error,

@@ -24,11 +24,11 @@ import {
   TokenKind,
   UnaryOperatorKinds,
 } from "./token-kind";
-import { NodeOrTokenArray } from "./types";
+import { NodeOrTokenArray, OptionalToken } from "./types";
 
 export class Parser {
   private lexer: Lexer;
-  private token: Token | null;
+  private token: OptionalToken;
   private parseContexts: ParseContext[];
 
   constructor() {
@@ -87,6 +87,19 @@ export class Parser {
     missingToken.parent = parent;
 
     return missingToken;
+  }
+
+  private consumeOptional(parent: Node, kind: TokenKind): OptionalToken {
+    const token = this.token;
+
+    if (token?.kind === kind) {
+      this.token = this.lexer.advance();
+      token.parent = parent;
+
+      return token;
+    }
+
+    return null;
   }
 
   private consumeChoice(parent: Node, kinds: TokenKind[]): Token {
@@ -219,6 +232,9 @@ export class Parser {
     switch (token.kind) {
       case "FunctionKeyword":
       case "IfKeyword":
+      case "ElseKeyword":
+      case "ElseIfKeyword":
+      case "ForKeyword":
       case "ReturnKeyword":
         return true;
       default:
@@ -276,6 +292,7 @@ export class Parser {
     if (this.token && this.isExpressionInitiator(this.token)) {
       node.expression = this.parseExpression(node);
     }
+    // TODO: Add NEW_LINE
     node.delimiter = this.consume(node, "CommaDelimiter");
 
     return node;
@@ -315,8 +332,31 @@ export class Parser {
     const token = this.token;
 
     switch (token?.kind) {
+      // case "Name":
+      //   return this.parseVariable(parent);
+
+      // case "TrueKeyword":
+      // case "FalseKeyword":
+      //   return this.parseBoolLiteral(parent);
+
+      // case "NullKeyword":
+      //   return this.parseNullLiteral(parent);
+
+      // case "NilKeyword":
+      //   return this.parseNilLiteral(parent);
+
+      // case "NumberLiteral":
+      //   return this.parseNumberLiteral(parent);
+
       case "StringLiteral":
         return this.parseStringLiteral(parent);
+
+      // case "LeftBracketDelimiter":
+      // case "LeftBraceDelimiter":
+      //   return this.parseTableLiteral(parent);
+
+      // case "LeftParenDelimiter":
+      //   return this.parseParenthesizedExpression(parent);
 
       default:
         const node = new MissingDeclarationNode();

@@ -1,11 +1,11 @@
 import { existsSync, readdirSync, readFileSync } from "fs";
-import { Lexer, Token } from "../../src/parser";
+import { Lexer, Token, OptionalToken } from "../../src/parser";
 import assert = require("assert");
 
 describe("Lexer", () => {
   const lexer: Lexer = new Lexer();
 
-  const assertTokensEqual = (actual: Token | null, expected: Token) => {
+  const assertTokensEqual = (actual: OptionalToken, expected: Token) => {
     assert(actual instanceof Token);
 
     // We made sure we fail the above test if `actual` comes in `null`.

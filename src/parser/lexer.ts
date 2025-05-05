@@ -6,6 +6,7 @@ import {
   OperatorTokenMap,
   TokenKind,
 } from "./token-kind";
+import { OptionalToken } from "./types";
 
 export class Lexer {
   public document: string;
@@ -53,7 +54,7 @@ export class Lexer {
     return this.document[index];
   }
 
-  private load(): Token | null {
+  private load(): OptionalToken {
     const character = this.next();
 
     if (character === null) {

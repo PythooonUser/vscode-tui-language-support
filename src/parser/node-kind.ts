@@ -1,10 +1,11 @@
 export type NodeKind =
-  | "SourceDocumentNode"
-  | "ReturnStatementNode"
+  | "BinaryExpressionNode"
   | "ExpressionStatementNode"
   | "MissingDeclarationNode"
-  | "BinaryExpressionNode"
-  | "UnaryExpressionNode"
-  | "PrefixUpdateExpressionNode"
   | "PostfixUpdateExpressionNode"
-  | "StringLiteralNode";
+  | "PrefixUpdateExpressionNode"
+  | "ReturnStatementNode"
+  | "SourceDocumentNode"
+  | "StringLiteralNode"
+  | "TableLiteralNode"
+  | "UnaryExpressionNode";

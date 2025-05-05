@@ -1,7 +1,7 @@
 import { NodeError } from "../node-error";
 import { NodeKind } from "../node-kind";
 import { Token } from "../token";
-import { SourceDocumentNode } from "./source-document-node";
+import { SourceDocumentNode } from ".";
 
 export type NodeWalker = (element: Node | Token) => void;
 
