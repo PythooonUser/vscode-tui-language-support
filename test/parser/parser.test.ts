@@ -31,13 +31,13 @@ describe("Parser", () => {
   const getTests = (document: string) => {
     const tests: { name: string; document: string }[] = [];
     const matches = document
-      .split(/(^\/\/\s[a-zA-Z0-9-]+$)/m)
+      .split(/(^#\s[a-zA-Z0-9-]+$)/m)
       .map((match) => match.trim())
       .filter((match) => !!match);
 
     for (let i = 0; i < matches.length; i += 2) {
       tests.push({
-        name: matches[i].replace(/\/\//, "").trim(),
+        name: matches[i].replace(/#/, "").trim(),
         document: matches[i + 1].trim(),
       });
     }
