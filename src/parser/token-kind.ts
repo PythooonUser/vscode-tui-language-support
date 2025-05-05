@@ -47,7 +47,8 @@ export type TokenKind =
   | "NullKeyword"
   | "NilKeyword"
   | "ReturnKeyword"
-  | "TrueKeyword";
+  | "TrueKeyword"
+  | "Expression";
 
 export const DelimiterTokenMap: TokenKindMap = {
   ",": "CommaDelimiter",
@@ -97,3 +98,19 @@ export const KeywordTokenMap: TokenKindMap = {
   return: "ReturnKeyword",
   true: "TrueKeyword",
 };
+
+export const UnaryOperatorKinds: TokenKind[] = [
+  "PlusOperator",
+  "MinusOperator",
+  "ExclamationOperator",
+];
+
+export const PrefixUpdateOperatorKinds: TokenKind[] = [
+  "PlusPlusOperator",
+  "MinusMinusOperator",
+];
+
+export const PostfixUpdateOperatorKinds: TokenKind[] = [
+  "PlusPlusOperator",
+  "MinusMinusOperator",
+];
