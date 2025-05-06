@@ -10,6 +10,7 @@ import {
   PrefixUpdateExpressionNode,
   PostfixUpdateExpressionNode,
   StringLiteralNode,
+  NumberLiteralNode,
 } from "./nodes";
 import {
   InvalidOperatorPrecedenceAndAssociativity,
@@ -345,8 +346,8 @@ export class Parser {
       // case "NilKeyword":
       //   return this.parseNilLiteral(parent);
 
-      // case "NumberLiteral":
-      //   return this.parseNumberLiteral(parent);
+      case "NumberLiteral":
+        return this.parseNumberLiteral(parent);
 
       case "StringLiteral":
         return this.parseStringLiteral(parent);
@@ -498,6 +499,15 @@ export class Parser {
     node.parent = parent;
 
     node.literal = this.consume(node, "StringLiteral");
+
+    return node;
+  }
+
+  private parseNumberLiteral(parent: Node): NumberLiteralNode {
+    const node = new NumberLiteralNode();
+    node.parent = parent;
+
+    node.literal = this.consume(node, "NumberLiteral");
 
     return node;
   }

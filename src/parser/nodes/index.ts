@@ -2,6 +2,7 @@ export * from "./binary-expression-node";
 export * from "./expression-statement-node";
 export * from "./missing-declaration-node";
 export * from "./node";
+export * from "./number-literal-node";
 export * from "./postfix-update-expression-node";
 export * from "./prefix-update-expression-node";
 export * from "./return-statement-node";

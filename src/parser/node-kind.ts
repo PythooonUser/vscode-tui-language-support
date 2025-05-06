@@ -2,6 +2,7 @@ export type NodeKind =
   | "BinaryExpressionNode"
   | "ExpressionStatementNode"
   | "MissingDeclarationNode"
+  | "NumberLiteralNode"
   | "PostfixUpdateExpressionNode"
   | "PrefixUpdateExpressionNode"
   | "ReturnStatementNode"
