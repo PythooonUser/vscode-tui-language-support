@@ -6,8 +6,15 @@
     "trivia": [
       {
         "start": 0,
-        "length": 14,
+        "length": 13,
         "kind": "Comment",
+        "trivia": [],
+        "error": null
+      },
+      {
+        "start": 13,
+        "length": 1,
+        "kind": "Whitespace",
         "trivia": [],
         "error": null
       }

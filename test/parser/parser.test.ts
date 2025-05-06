@@ -12,7 +12,7 @@ describe("Parser", () => {
     actual: SourceDocumentNode,
     expected: SourceDocumentNode
   ) => {
-    assert.strictEqual(
+    assert.deepEqual(
       JSON.parse(
         JSON.stringify(actual, (key, value) => {
           if (["parent", "trivia", "document"].includes(key)) {
