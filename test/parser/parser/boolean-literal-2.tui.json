@@ -1,0 +1,32 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "BoolLiteralNode",
+        "error": null,
+        "literal": {
+          "start": 0,
+          "length": 5,
+          "kind": "FalseKeyword",
+          "error": null
+        }
+      },
+      "delimiter": {
+        "start": 5,
+        "length": 1,
+        "kind": "CommaDelimiter",
+        "error": null
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 6,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

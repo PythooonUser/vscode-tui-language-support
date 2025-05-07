@@ -1,0 +1,54 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ReturnStatementNode",
+      "error": null,
+      "returnKeyword": {
+        "start": 0,
+        "length": 6,
+        "kind": "ReturnKeyword",
+        "error": null
+      },
+      "expression": {
+        "kind": "ParenthesizedExpressionNode",
+        "error": null,
+        "leftParen": {
+          "start": 7,
+          "length": 1,
+          "kind": "LeftParenDelimiter",
+          "error": null
+        },
+        "expression": {
+          "kind": "VariableNode",
+          "error": null,
+          "name": {
+            "start": 8,
+            "length": 1,
+            "kind": "Name",
+            "error": null
+          }
+        },
+        "rightParen": {
+          "start": 9,
+          "length": 1,
+          "kind": "RightParenDelimiter",
+          "error": null
+        }
+      },
+      "delimiter": {
+        "start": 10,
+        "length": 1,
+        "kind": "CommaDelimiter",
+        "error": null
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 11,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

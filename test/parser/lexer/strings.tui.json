@@ -1,0 +1,46 @@
+[
+  {
+    "start": 0,
+    "length": 25,
+    "kind": "StringLiteral",
+    "trivia": [],
+    "error": null
+  },
+  {
+    "start": 27,
+    "length": 30,
+    "kind": "StringLiteral",
+    "trivia": [
+      {
+        "start": 25,
+        "length": 2,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 59,
+    "length": 29,
+    "kind": "StringLiteral",
+    "trivia": [
+      {
+        "start": 57,
+        "length": 2,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": "UnexpectedEndOfFile"
+  },
+  {
+    "start": 88,
+    "length": 0,
+    "kind": "EndOfFile",
+    "trivia": [],
+    "error": null
+  }
+]

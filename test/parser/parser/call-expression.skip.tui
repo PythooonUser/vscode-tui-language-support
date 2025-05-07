@@ -1,0 +1,11 @@
+# call-expression-1
+foo(),
+
+# call-expression-2
+foo(a, b),
+
+# call-expression-3
+foo(bar()),
+
+# call-expression-4
+foo.bar(),

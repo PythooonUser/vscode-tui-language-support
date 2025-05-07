@@ -1,0 +1,15 @@
+# string-literal-1
+""
+
+# string-literal-2
+"",
+
+# string-literal-3
+"Hello World"
+
+# string-literal-4
+"Hello
+World"
+
+# string-literal-5
+"Hello World

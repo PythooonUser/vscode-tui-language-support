@@ -1,0 +1,80 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "TableLiteralNode",
+        "error": null,
+        "leftDelimiter": {
+          "start": 0,
+          "length": 1,
+          "kind": "LeftBraceDelimiter",
+          "error": null
+        },
+        "elements": [
+          {
+            "kind": "ExpressionStatementNode",
+            "error": null,
+            "expression": {
+              "kind": "BinaryExpressionNode",
+              "error": null,
+              "leftOperand": {
+                "kind": "VariableNode",
+                "error": null,
+                "name": {
+                  "start": 2,
+                  "length": 3,
+                  "kind": "Name",
+                  "error": null
+                }
+              },
+              "operator": {
+                "start": 6,
+                "length": 1,
+                "kind": "EqualsOperator",
+                "error": null
+              },
+              "rightOperand": {
+                "kind": "NumberLiteralNode",
+                "error": null,
+                "literal": {
+                  "start": 8,
+                  "length": 2,
+                  "kind": "NumberLiteral",
+                  "error": null
+                }
+              }
+            },
+            "delimiter": {
+              "start": 11,
+              "length": 0,
+              "kind": "CommaDelimiter",
+              "error": "MissingToken"
+            }
+          }
+        ],
+        "rightDelimiter": {
+          "start": 11,
+          "length": 1,
+          "kind": "RightBraceDelimiter",
+          "error": null
+        }
+      },
+      "delimiter": {
+        "start": 12,
+        "length": 0,
+        "kind": "CommaDelimiter",
+        "error": "MissingToken"
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 12,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

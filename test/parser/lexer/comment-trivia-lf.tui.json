@@ -1,0 +1,24 @@
+[
+  {
+    "start": 14,
+    "length": 0,
+    "kind": "EndOfFile",
+    "trivia": [
+      {
+        "start": 0,
+        "length": 13,
+        "kind": "Comment",
+        "trivia": [],
+        "error": null
+      },
+      {
+        "start": 13,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  }
+]

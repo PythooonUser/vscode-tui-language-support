@@ -1,0 +1,159 @@
+[
+  {
+    "start": 0,
+    "length": 2,
+    "kind": "IfKeyword",
+    "trivia": [],
+    "error": null
+  },
+  {
+    "start": 3,
+    "length": 4,
+    "kind": "ElseKeyword",
+    "trivia": [
+      {
+        "start": 2,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 8,
+    "length": 6,
+    "kind": "ElseIfKeyword",
+    "trivia": [
+      {
+        "start": 7,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 15,
+    "length": 3,
+    "kind": "ForKeyword",
+    "trivia": [
+      {
+        "start": 14,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 19,
+    "length": 6,
+    "kind": "ReturnKeyword",
+    "trivia": [
+      {
+        "start": 18,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 26,
+    "length": 8,
+    "kind": "FunctionKeyword",
+    "trivia": [
+      {
+        "start": 25,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 35,
+    "length": 5,
+    "kind": "FalseKeyword",
+    "trivia": [
+      {
+        "start": 34,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 41,
+    "length": 4,
+    "kind": "TrueKeyword",
+    "trivia": [
+      {
+        "start": 40,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 46,
+    "length": 4,
+    "kind": "NullKeyword",
+    "trivia": [
+      {
+        "start": 45,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 51,
+    "length": 3,
+    "kind": "NilKeyword",
+    "trivia": [
+      {
+        "start": 50,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 55,
+    "length": 0,
+    "kind": "EndOfFile",
+    "trivia": [
+      {
+        "start": 54,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  }
+]
