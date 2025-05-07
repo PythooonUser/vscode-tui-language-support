@@ -1,0 +1,20 @@
+# member-access-expression-1
+foo.bar,
+
+# member-access-expression-2
+foo = ..,
+
+# member-access-expression-3
+foo: ..,
+
+# member-access-expression-4
+foo = ..bar,
+
+# member-access-expression-5
+foo = ...bar,
+
+# member-access-expression-6
+foo = ....bar,
+
+# member-access-expression-7
+..foo = 4,

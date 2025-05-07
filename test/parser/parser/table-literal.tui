@@ -24,3 +24,6 @@
 
 # table-literal-9
 { foo, [ 1, 2 ], "x" = { "Hello World", nil } }
+
+# table-literal-10
+{ foo: 42},
