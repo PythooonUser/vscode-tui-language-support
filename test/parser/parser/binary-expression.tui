@@ -18,3 +18,21 @@ a - b / c,
 
 # binary-expression-7
 (a + b) * c,
+
+# binary-expression-8
+a > b,
+
+# binary-expression-9
+a >= b,
+
+# binary-expression-10
+a < b,
+
+# binary-expression-11
+a <= b,
+
+# binary-expression-12
+a == b,
+
+# binary-expression-13
+a != b,
