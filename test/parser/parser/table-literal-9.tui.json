@@ -1,0 +1,216 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "TableLiteralNode",
+        "error": null,
+        "leftDelimiter": {
+          "start": 0,
+          "length": 1,
+          "kind": "LeftBraceDelimiter",
+          "error": null
+        },
+        "elements": [
+          {
+            "kind": "ExpressionStatementNode",
+            "error": null,
+            "expression": {
+              "kind": "VariableNode",
+              "error": null,
+              "name": {
+                "start": 2,
+                "length": 3,
+                "kind": "Name",
+                "error": null
+              }
+            },
+            "delimiter": {
+              "start": 5,
+              "length": 1,
+              "kind": "CommaDelimiter",
+              "error": null
+            }
+          },
+          {
+            "kind": "ExpressionStatementNode",
+            "error": null,
+            "expression": {
+              "kind": "TableLiteralNode",
+              "error": null,
+              "leftDelimiter": {
+                "start": 7,
+                "length": 1,
+                "kind": "LeftBracketDelimiter",
+                "error": null
+              },
+              "elements": [
+                {
+                  "kind": "ExpressionStatementNode",
+                  "error": null,
+                  "expression": {
+                    "kind": "NumberLiteralNode",
+                    "error": null,
+                    "literal": {
+                      "start": 9,
+                      "length": 1,
+                      "kind": "NumberLiteral",
+                      "error": null
+                    }
+                  },
+                  "delimiter": {
+                    "start": 10,
+                    "length": 1,
+                    "kind": "CommaDelimiter",
+                    "error": null
+                  }
+                },
+                {
+                  "kind": "ExpressionStatementNode",
+                  "error": null,
+                  "expression": {
+                    "kind": "NumberLiteralNode",
+                    "error": null,
+                    "literal": {
+                      "start": 12,
+                      "length": 1,
+                      "kind": "NumberLiteral",
+                      "error": null
+                    }
+                  },
+                  "delimiter": {
+                    "start": 14,
+                    "length": 0,
+                    "kind": "CommaDelimiter",
+                    "error": "MissingToken"
+                  }
+                }
+              ],
+              "rightDelimiter": {
+                "start": 14,
+                "length": 1,
+                "kind": "RightBracketDelimiter",
+                "error": null
+              }
+            },
+            "delimiter": {
+              "start": 15,
+              "length": 1,
+              "kind": "CommaDelimiter",
+              "error": null
+            }
+          },
+          {
+            "kind": "ExpressionStatementNode",
+            "error": null,
+            "expression": {
+              "kind": "BinaryExpressionNode",
+              "error": null,
+              "leftOperand": {
+                "kind": "StringLiteralNode",
+                "error": null,
+                "literal": {
+                  "start": 17,
+                  "length": 3,
+                  "kind": "StringLiteral",
+                  "error": null
+                }
+              },
+              "operator": {
+                "start": 21,
+                "length": 1,
+                "kind": "EqualsOperator",
+                "error": null
+              },
+              "rightOperand": {
+                "kind": "TableLiteralNode",
+                "error": null,
+                "leftDelimiter": {
+                  "start": 23,
+                  "length": 1,
+                  "kind": "LeftBraceDelimiter",
+                  "error": null
+                },
+                "elements": [
+                  {
+                    "kind": "ExpressionStatementNode",
+                    "error": null,
+                    "expression": {
+                      "kind": "StringLiteralNode",
+                      "error": null,
+                      "literal": {
+                        "start": 25,
+                        "length": 13,
+                        "kind": "StringLiteral",
+                        "error": null
+                      }
+                    },
+                    "delimiter": {
+                      "start": 38,
+                      "length": 1,
+                      "kind": "CommaDelimiter",
+                      "error": null
+                    }
+                  },
+                  {
+                    "kind": "ExpressionStatementNode",
+                    "error": null,
+                    "expression": {
+                      "kind": "NullLiteralNode",
+                      "error": null,
+                      "literal": {
+                        "start": 40,
+                        "length": 3,
+                        "kind": "NilKeyword",
+                        "error": null
+                      }
+                    },
+                    "delimiter": {
+                      "start": 44,
+                      "length": 0,
+                      "kind": "CommaDelimiter",
+                      "error": "MissingToken"
+                    }
+                  }
+                ],
+                "rightDelimiter": {
+                  "start": 44,
+                  "length": 1,
+                  "kind": "RightBraceDelimiter",
+                  "error": null
+                }
+              }
+            },
+            "delimiter": {
+              "start": 46,
+              "length": 0,
+              "kind": "CommaDelimiter",
+              "error": "MissingToken"
+            }
+          }
+        ],
+        "rightDelimiter": {
+          "start": 46,
+          "length": 1,
+          "kind": "RightBraceDelimiter",
+          "error": null
+        }
+      },
+      "delimiter": {
+        "start": 47,
+        "length": 0,
+        "kind": "CommaDelimiter",
+        "error": "MissingToken"
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 47,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}
