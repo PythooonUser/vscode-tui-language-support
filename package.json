@@ -52,7 +52,7 @@
       }
     }
   },
-  "main": "dist/client/extension",
+  "main": "dist/src/client/client",
   "scripts": {
     "compile": "tsc -b",
     "test": "mocha --require ts-node/register **/*.test.ts",
