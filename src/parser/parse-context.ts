@@ -1,1 +1,5 @@
-export type ParseContext = "SourceElements";
+export type ParseContext =
+  | "SourceElements"
+  | "TableLiteralElements"
+  | "ArgumentExpressionListElement"
+  | "BlockStatements";

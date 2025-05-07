@@ -1,0 +1,11 @@
+# function-declaration-1
+foo = function() {}
+
+# function-declaration-2
+foo = function(a, b) {}
+
+# function-declaration-3
+foo = function(a, b,) {}
+
+# function-declaration-4
+foo = function(a, b) { x = 2 }

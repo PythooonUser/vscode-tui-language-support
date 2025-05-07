@@ -1,0 +1,32 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "NumberLiteralNode",
+        "error": null,
+        "literal": {
+          "start": 0,
+          "length": 4,
+          "kind": "NumberLiteral",
+          "error": null
+        }
+      },
+      "delimiter": {
+        "start": 4,
+        "length": 0,
+        "kind": "CommaDelimiter",
+        "error": "MissingToken"
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 4,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

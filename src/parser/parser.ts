@@ -11,6 +11,17 @@ import {
   PostfixUpdateExpressionNode,
   StringLiteralNode,
   NumberLiteralNode,
+  VariableNode,
+  BoolLiteralNode,
+  NullLiteralNode,
+  ParenthesizedExpressionNode,
+  TableLiteralNode,
+  CallExpressionNode,
+  ArgumentExpressionListNode,
+  ArgumentExpressionNode,
+  IfStatementNode,
+  ElseClauseNode,
+  CompoundStatementNode,
 } from "./nodes";
 import {
   InvalidOperatorPrecedenceAndAssociativity,
@@ -20,6 +31,8 @@ import { ParseContext } from "./parse-context";
 import { ParseContextError } from "./parse-context-error";
 import { Token } from "./token";
 import {
+  BoolLiteralKinds,
+  NullLiteralKinds,
   PostfixUpdateOperatorKinds,
   PrefixUpdateOperatorKinds,
   TokenKind,
@@ -215,6 +228,14 @@ export class Parser {
     switch (context) {
       case "SourceElements":
         return false;
+      case "TableLiteralElements":
+        return (
+          kind === "RightBracketDelimiter" || kind === "RightBraceDelimiter"
+        );
+      case "ArgumentExpressionListElement":
+        return kind === "RightParenDelimiter";
+      case "BlockStatements":
+        return kind === "RightBraceDelimiter";
       default:
         throw new ParseContextError(`Unknown parse context '${context}'`);
     }
@@ -223,7 +244,11 @@ export class Parser {
   private isElementListInitiator(context: ParseContext, token: Token): boolean {
     switch (context) {
       case "SourceElements":
+      case "TableLiteralElements":
+      case "BlockStatements":
         return this.isStatementInitiator(token);
+      case "ArgumentExpressionListElement":
+        return this.isExpressionInitiator(token);
       default:
         throw new ParseContextError(`Unknown parse context '${context}'`);
     }
@@ -268,7 +293,11 @@ export class Parser {
   private getElementListParser(context: ParseContext) {
     switch (context) {
       case "SourceElements":
+      case "TableLiteralElements":
+      case "BlockStatements":
         return this.parseStatement.bind(this);
+      case "ArgumentExpressionListElement":
+        return this.parseArgumentExpressionList.bind(this);
       default:
         throw new ParseContextError(`Unknown parse context '${context}'`);
     }
@@ -280,6 +309,8 @@ export class Parser {
     switch (kind) {
       case "ReturnKeyword":
         return this.parseReturnStatement(parent);
+      case "IfKeyword":
+        return this.parseIfStatement(parent);
       default:
         return this.parseExpressionStatement(parent);
     }
@@ -295,6 +326,43 @@ export class Parser {
     }
     // TODO: Add NEW_LINE
     node.delimiter = this.consume(node, "CommaDelimiter");
+
+    return node;
+  }
+
+  private parseIfStatement(parent: Node): IfStatementNode {
+    const node = new IfStatementNode();
+    node.parent = parent;
+
+    node.ifKeyword = this.consume(node, "IfKeyword");
+    node.condition = this.parseExpression(node);
+    node.statements = this.parseCompoundStatement(node);
+
+    const token = this.token;
+    if (token?.kind === "ElseKeyword") {
+      node.elseClause = this.parseElseClause(node);
+    }
+
+    return node;
+  }
+
+  private parseElseClause(parent: Node): ElseClauseNode {
+    const node = new ElseClauseNode();
+    node.parent = parent;
+
+    node.elseKeyword = this.consume(node, "ElseKeyword");
+    node.statements = this.parseCompoundStatement(node);
+
+    return node;
+  }
+
+  private parseCompoundStatement(parent: Node): CompoundStatementNode {
+    const node = new CompoundStatementNode();
+    node.parent = parent;
+
+    node.leftBrace = this.consume(node, "LeftBraceDelimiter");
+    node.statements = this.parseElementList(node, "BlockStatements");
+    node.rightBrace = this.consume(node, "RightBraceDelimiter");
 
     return node;
   }
@@ -333,18 +401,16 @@ export class Parser {
     const token = this.token;
 
     switch (token?.kind) {
-      // case "Name":
-      //   return this.parseVariable(parent);
+      case "Name":
+        return this.parseVariable(parent);
 
-      // case "TrueKeyword":
-      // case "FalseKeyword":
-      //   return this.parseBoolLiteral(parent);
+      case "TrueKeyword":
+      case "FalseKeyword":
+        return this.parseBoolLiteral(parent);
 
-      // case "NullKeyword":
-      //   return this.parseNullLiteral(parent);
-
-      // case "NilKeyword":
-      //   return this.parseNilLiteral(parent);
+      case "NullKeyword":
+      case "NilKeyword":
+        return this.parseNullLiteral(parent);
 
       case "NumberLiteral":
         return this.parseNumberLiteral(parent);
@@ -352,12 +418,12 @@ export class Parser {
       case "StringLiteral":
         return this.parseStringLiteral(parent);
 
-      // case "LeftBracketDelimiter":
-      // case "LeftBraceDelimiter":
-      //   return this.parseTableLiteral(parent);
+      case "LeftBracketDelimiter":
+      case "LeftBraceDelimiter":
+        return this.parseTableLiteral(parent);
 
-      // case "LeftParenDelimiter":
-      //   return this.parseParenthesizedExpression(parent);
+      case "LeftParenDelimiter":
+        return this.parseParenthesizedExpression(parent);
 
       default:
         const node = new MissingDeclarationNode();
@@ -476,6 +542,9 @@ export class Parser {
       case "PlusPlusOperator":
       case "MinusMinusOperator":
         return this.parsePostfixUpdateExpression(expression);
+      case "LeftParenDelimiter":
+        const callExpression = this.parseCallExpression(expression);
+        return this.parsePostfixExpression(callExpression);
       default:
         return expression;
     }
@@ -508,6 +577,109 @@ export class Parser {
     node.parent = parent;
 
     node.literal = this.consume(node, "NumberLiteral");
+
+    return node;
+  }
+
+  private parseVariable(parent: Node): VariableNode {
+    const node = new VariableNode();
+    node.parent = parent;
+
+    node.name = this.consume(node, "Name");
+
+    return node;
+  }
+
+  private parseBoolLiteral(parent: Node): BoolLiteralNode {
+    const node = new BoolLiteralNode();
+    node.parent = parent;
+
+    node.literal = this.consumeChoice(node, BoolLiteralKinds);
+
+    return node;
+  }
+
+  private parseNullLiteral(parent: Node): NullLiteralNode {
+    const node = new NullLiteralNode();
+    node.parent = parent;
+
+    node.literal = this.consumeChoice(node, NullLiteralKinds);
+
+    return node;
+  }
+
+  private parseParenthesizedExpression(
+    parent: Node
+  ): ParenthesizedExpressionNode {
+    const node = new ParenthesizedExpressionNode();
+    node.parent = parent;
+
+    node.leftParen = this.consume(node, "LeftParenDelimiter");
+    node.expression = this.parseExpression(node);
+    node.rightParen = this.consume(node, "RightParenDelimiter");
+
+    return node;
+  }
+
+  private parseTableLiteral(parent: Node): TableLiteralNode {
+    const node = new TableLiteralNode();
+    node.parent = parent;
+
+    node.leftDelimiter = this.consumeChoice(node, [
+      "LeftBracketDelimiter",
+      "LeftBraceDelimiter",
+    ]);
+    node.elements = this.parseElementList(node, "TableLiteralElements");
+    node.rightDelimiter = this.consumeChoice(node, [
+      "RightBracketDelimiter",
+      "RightBraceDelimiter",
+    ]);
+
+    return node;
+  }
+
+  private parseCallExpression(expression: Node): CallExpressionNode {
+    const node = new CallExpressionNode();
+    node.parent = expression.parent;
+    expression.parent = node;
+
+    node.expression = expression;
+    node.arguments = this.parseArgumentExpressionList(node);
+
+    return node;
+  }
+
+  private parseArgumentExpressionList(
+    parent: Node
+  ): ArgumentExpressionListNode {
+    const node = new ArgumentExpressionListNode();
+    node.parent = parent;
+
+    node.leftParen = this.consume(node, "LeftParenDelimiter");
+    node.elements = this.parseElementList(
+      node,
+      "ArgumentExpressionListElement"
+    );
+    node.rightParen = this.consume(node, "RightParenDelimiter");
+
+    return node;
+  }
+
+  private parseArgumentExpressionListElement(
+    parent: Node
+  ): Token | ArgumentExpressionNode {
+    if (this.token?.kind === "CommaDelimiter") {
+      return this.consume(parent, "CommaDelimiter");
+    }
+
+    return this.parseArgumentExpression(parent);
+  }
+
+  private parseArgumentExpression(parent: Node): ArgumentExpressionNode {
+    const node = new ArgumentExpressionNode();
+    node.parent = parent;
+
+    node.argument = this.parseExpression(node);
 
     return node;
   }

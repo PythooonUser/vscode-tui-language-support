@@ -114,3 +114,7 @@ export const PostfixUpdateOperatorKinds: TokenKind[] = [
   "PlusPlusOperator",
   "MinusMinusOperator",
 ];
+
+export const BoolLiteralKinds: TokenKind[] = ["TrueKeyword", "FalseKeyword"];
+
+export const NullLiteralKinds: TokenKind[] = ["NullKeyword", "NilKeyword"];
