@@ -2,3 +2,5 @@
 .vscode/
 .github/
 .gitignore
+.dist/
+node_modules/
