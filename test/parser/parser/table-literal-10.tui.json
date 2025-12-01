@@ -19,39 +19,33 @@
             "kind": "ExpressionStatementNode",
             "error": null,
             "expression": {
-              "kind": "VariableNode",
+              "kind": "BinaryExpressionNode",
               "error": null,
-              "name": {
-                "start": 2,
-                "length": 3,
-                "kind": "Name",
+              "leftOperand": {
+                "kind": "VariableNode",
+                "error": null,
+                "name": {
+                  "start": 2,
+                  "length": 3,
+                  "kind": "Name",
+                  "error": null
+                }
+              },
+              "operator": {
+                "start": 5,
+                "length": 1,
+                "kind": "ColonOperator",
                 "error": null
-              }
-            },
-            "delimiter": {
-              "start": 5,
-              "length": 0,
-              "kind": "CommaDelimiter",
-              "error": "MissingToken"
-            }
-          },
-          {
-            "start": 5,
-            "length": 1,
-            "kind": "ColonOperator",
-            "error": "SkippedToken"
-          },
-          {
-            "kind": "ExpressionStatementNode",
-            "error": null,
-            "expression": {
-              "kind": "NumberLiteralNode",
-              "error": null,
-              "literal": {
-                "start": 7,
-                "length": 2,
-                "kind": "NumberLiteral",
-                "error": null
+              },
+              "rightOperand": {
+                "kind": "NumberLiteralNode",
+                "error": null,
+                "literal": {
+                  "start": 7,
+                  "length": 2,
+                  "kind": "NumberLiteral",
+                  "error": null
+                }
               }
             },
             "delimiter": {

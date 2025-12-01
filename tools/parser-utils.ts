@@ -4,7 +4,7 @@ import { Parser } from "../src/parser";
 const getTests = (document: string) => {
   const tests: { name: string; document: string }[] = [];
   const matches = document
-    .split(/(^#\s[a-zA-Z0-9-]+$)/m)
+    .split(/(^#\s[a-zA-Z0-9-.]+$)/m)
     .map((match) => match.trim())
     .filter((match) => !!match);
 
@@ -66,6 +66,8 @@ if (document !== undefined) {
   const tests = getTests(document);
 
   tests.forEach((test) => {
-    writeResult(test.document, `${outFileName ?? ""}${test.name}.tui.json`);
+    if (!test.name.endsWith(".skip")) {
+      writeResult(test.document, `${outFileName ?? ""}${test.name}.tui.json`);
+    }
   });
 }

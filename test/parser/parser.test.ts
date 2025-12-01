@@ -31,7 +31,7 @@ describe("Parser", () => {
   const getTests = (document: string) => {
     const tests: { name: string; document: string }[] = [];
     const matches = document
-      .split(/(^#\s[a-zA-Z0-9-]+$)/m)
+      .split(/(^#\s[a-zA-Z0-9-.]+$)/m)
       .map((match) => match.trim())
       .filter((match) => !!match);
 
@@ -93,6 +93,7 @@ describe("Parser", () => {
           tests.forEach((test) => {
             if (test.name.endsWith(".skip")) {
               it.skip(test.name.replace(".skip", ""));
+              return;
             }
 
             it(test.name, () => {

@@ -1,0 +1,14 @@
+# assignment-expression-1
+value = 10,
+
+# assignment-expression-2
+value: 10,
+
+# assignment-expression-3
+value: "foo",
+
+# assignment-expression-4.skip
+value: {},
+
+# assignment-expression-5.skip
+value: function() {},

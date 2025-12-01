@@ -22,6 +22,10 @@ export const OperatorPrecedenceAndAssociativityMap: PrecedenceAndAssociativityMa
       precedence: 1,
       associativity: "Right",
     },
+    ["ColonOperator"]: {
+      precedence: 1,
+      associativity: "Right",
+    },
     ["PlusEqualsOperator"]: {
       precedence: 1,
       associativity: "Right",
