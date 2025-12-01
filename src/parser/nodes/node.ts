@@ -3,7 +3,7 @@ import { NodeKind } from "../node-kind";
 import { Token } from "../token";
 import { SourceDocumentNode } from ".";
 
-export type NodeWalker = (element: Node | Token) => void;
+export type NodeWalker = (element: Node | Token) => void | true;
 
 /** Represents a single `Node` in the abstract syntax tree. */
 export abstract class Node {
@@ -39,16 +39,16 @@ export abstract class Node {
       const child = this[key];
 
       if (child instanceof Token) {
-        callback(child);
+        if (callback(child)) return;
       } else if (child instanceof Node) {
-        callback(child);
+        if (callback(child)) return;
         child.walk(callback);
       } else if (Array.isArray(child)) {
         for (const element of child) {
           if (element instanceof Token) {
-            callback(element);
+            if (callback(element)) return;
           } else if (element instanceof Node) {
-            callback(element);
+            if (callback(element)) return;
             element.walk(callback);
           }
         }
