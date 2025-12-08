@@ -25,6 +25,7 @@ import {
   FunctionDeclarationNode,
   ParameterDeclarationListNode,
   ParameterDeclarationNode,
+  MemberAccessExpressionNode,
 } from "./nodes";
 import {
   InvalidOperatorPrecedenceAndAssociativity,
@@ -552,6 +553,10 @@ export class Parser {
       case "LeftParenDelimiter":
         const callExpression = this.parseCallExpression(expression);
         return this.parsePostfixExpression(callExpression);
+      case "DotOperator":
+        const memberAccessExpression =
+          this.parseMemberAccessExpression(expression);
+        return this.parsePostfixExpression(memberAccessExpression);
       default:
         return expression;
     }
@@ -753,5 +758,40 @@ export class Parser {
     node.name = this.consume(node, "Name");
 
     return node;
+  }
+
+  private parseMemberAccessExpression(
+    expression: Node
+  ): MemberAccessExpressionNode {
+    const node = new MemberAccessExpressionNode();
+    node.parent = expression.parent;
+    expression.parent = node;
+
+    node.expression = expression;
+    node.dot = this.consume(node, "DotOperator");
+    node.member = this.parseMemberName(node);
+
+    return node;
+  }
+
+  private parseMemberName(parent: Node): Token {
+    const token = this.token;
+
+    if (token?.kind === "Name") {
+      this.advance();
+      token.parent = parent;
+      return token;
+    } else {
+      const missingToken = new Token(
+        token?.start ?? 0,
+        0,
+        "MemberName",
+        [],
+        "MissingToken"
+      );
+      missingToken.parent = parent;
+
+      return missingToken;
+    }
   }
 }

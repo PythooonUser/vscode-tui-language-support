@@ -26,6 +26,7 @@ export type TokenKind =
   | "LeftParenDelimiter"
   | "LessThanEqualsOperator"
   | "LessThanOperator"
+  | "MemberName"
   | "MinusEqualsOperator"
   | "MinusMinusOperator"
   | "MinusOperator"
