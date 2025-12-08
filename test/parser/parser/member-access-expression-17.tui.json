@@ -1,0 +1,110 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "IndexedAccessExpressionNode",
+        "error": null,
+        "expression": {
+          "kind": "VariableNode",
+          "error": null,
+          "name": {
+            "start": 0,
+            "length": 3,
+            "kind": "Name",
+            "error": null
+          }
+        },
+        "leftBracket": {
+          "start": 3,
+          "length": 1,
+          "kind": "LeftBracketDelimiter",
+          "error": null
+        },
+        "index": {
+          "kind": "IndexedAccessExpressionNode",
+          "error": null,
+          "expression": {
+            "kind": "IndexedAccessExpressionNode",
+            "error": null,
+            "expression": {
+              "kind": "VariableNode",
+              "error": null,
+              "name": {
+                "start": 4,
+                "length": 3,
+                "kind": "Name",
+                "error": null
+              }
+            },
+            "leftBracket": {
+              "start": 7,
+              "length": 1,
+              "kind": "LeftBracketDelimiter",
+              "error": null
+            },
+            "index": {
+              "kind": "NumberLiteralNode",
+              "error": null,
+              "literal": {
+                "start": 8,
+                "length": 1,
+                "kind": "NumberLiteral",
+                "error": null
+              }
+            },
+            "rightBracket": {
+              "start": 9,
+              "length": 1,
+              "kind": "RightBracketDelimiter",
+              "error": null
+            }
+          },
+          "leftBracket": {
+            "start": 10,
+            "length": 1,
+            "kind": "LeftBracketDelimiter",
+            "error": null
+          },
+          "index": {
+            "kind": "NumberLiteralNode",
+            "error": null,
+            "literal": {
+              "start": 11,
+              "length": 1,
+              "kind": "NumberLiteral",
+              "error": null
+            }
+          },
+          "rightBracket": {
+            "start": 12,
+            "length": 1,
+            "kind": "RightBracketDelimiter",
+            "error": null
+          }
+        },
+        "rightBracket": {
+          "start": 13,
+          "length": 1,
+          "kind": "RightBracketDelimiter",
+          "error": null
+        }
+      },
+      "delimiter": {
+        "start": 14,
+        "length": 1,
+        "kind": "CommaDelimiter",
+        "error": null
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 15,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

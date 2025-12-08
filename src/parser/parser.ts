@@ -26,6 +26,7 @@ import {
   ParameterDeclarationListNode,
   ParameterDeclarationNode,
   MemberAccessExpressionNode,
+  IndexedAccessExpressionNode,
 } from "./nodes";
 import {
   InvalidOperatorPrecedenceAndAssociativity,
@@ -557,6 +558,10 @@ export class Parser {
         const memberAccessExpression =
           this.parseMemberAccessExpression(expression);
         return this.parsePostfixExpression(memberAccessExpression);
+      case "LeftBracketDelimiter":
+        const indexedAccessExpression =
+          this.parseIndexedAccessExpression(expression);
+        return this.parsePostfixExpression(indexedAccessExpression);
       default:
         return expression;
     }
@@ -793,5 +798,30 @@ export class Parser {
 
       return missingToken;
     }
+  }
+
+  private parseIndexedAccessExpression(
+    expression: Node
+  ): IndexedAccessExpressionNode {
+    const node = new IndexedAccessExpressionNode();
+    node.parent = expression.parent;
+    expression.parent = node;
+
+    node.expression = expression;
+    node.leftBracket = this.consume(node, "LeftBracketDelimiter");
+
+    const index = this.parseExpression(node);
+    // TODO: Could be simplified using a MissingToken instead.
+    if (
+      index instanceof MissingDeclarationNode &&
+      index.declaration?.error === "MissingToken"
+    ) {
+      index.declaration.kind = "Index";
+    }
+    node.index = index;
+
+    node.rightBracket = this.consume(node, "RightBracketDelimiter");
+
+    return node;
   }
 }

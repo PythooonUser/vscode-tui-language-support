@@ -8,6 +8,7 @@ export * from "./else-clause-node";
 export * from "./expression-statement-node";
 export * from "./function-declaration-node";
 export * from "./if-statement-node";
+export * from "./indexed-access-expression-node";
 export * from "./member-access-expression-node";
 export * from "./missing-declaration-node";
 export * from "./node";

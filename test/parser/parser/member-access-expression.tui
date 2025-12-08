@@ -7,7 +7,7 @@ foo.bar,
 # member-access-expression-3
 foo.bar.spam,
 
-# member-access-expression-4.skip
+# member-access-expression-4
 foo[0].bar,
 
 # member-access-expression-5.skip
@@ -34,17 +34,17 @@ foo = ....bar,
 # member-access-expression-12.skip
 ..foo = 4,
 
-# member-access-expression-13.skip
+# member-access-expression-13
 foo[0],
 
-# member-access-expression-14.skip
+# member-access-expression-14
 foo[bar().baz + 1],
 
-# member-access-expression-15.skip
+# member-access-expression-15
 foo[],
 
-# member-access-expression-16.skip
+# member-access-expression-16
 foo[,
 
-# member-access-expression-17.skip
+# member-access-expression-17
 foo[foo[0][0]],

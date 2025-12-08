@@ -9,6 +9,7 @@ export type NodeKind =
   | "ExpressionStatementNode"
   | "FunctionDeclarationNode"
   | "IfStatementNode"
+  | "IndexedAccessExpressionNode"
   | "MemberAccessExpressionNode"
   | "MissingDeclarationNode"
   | "NullLiteralNode"

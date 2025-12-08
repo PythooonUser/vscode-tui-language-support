@@ -22,6 +22,7 @@ export type TokenKind =
   | "GreaterThanEqualsOperator"
   | "GreaterThanOperator"
   | "IfKeyword"
+  | "Index"
   | "LeftBraceDelimiter"
   | "LeftBracketDelimiter"
   | "LeftParenDelimiter"
