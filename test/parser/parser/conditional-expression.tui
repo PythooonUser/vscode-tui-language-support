@@ -1,13 +1,13 @@
 # conditional-expression-1
 a && b,
 
-# conditional-expression-2.skip
+# conditional-expression-2
 a and b,
 
 # conditional-expression-3
 a || b,
 
-# conditional-expression-4.skip
+# conditional-expression-4
 a or b,
 
 # conditional-expression-5

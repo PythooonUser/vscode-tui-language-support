@@ -2,6 +2,7 @@ type TokenKindMap = { [key: string]: TokenKind };
 
 export type TokenKind =
   | "AmpersandAmpersandOperator"
+  | "AndKeyword"
   | "BarBarOperator"
   | "ColonOperator"
   | "CommaDelimiter"
@@ -34,6 +35,7 @@ export type TokenKind =
   | "NilKeyword"
   | "NullKeyword"
   | "NumberLiteral"
+  | "OrKeyword"
   | "PlusEqualsOperator"
   | "PlusOperator"
   | "PlusPlusOperator"
@@ -98,6 +100,8 @@ export const KeywordTokenMap: TokenKindMap = {
   null: "NullKeyword",
   return: "ReturnKeyword",
   true: "TrueKeyword",
+  and: "AndKeyword",
+  or: "OrKeyword",
 };
 
 export const UnaryOperatorKinds: TokenKind[] = [

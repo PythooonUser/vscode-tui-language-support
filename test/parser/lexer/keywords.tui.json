@@ -143,11 +143,41 @@
   },
   {
     "start": 55,
+    "length": 3,
+    "kind": "AndKeyword",
+    "trivia": [
+      {
+        "start": 54,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 59,
+    "length": 2,
+    "kind": "OrKeyword",
+    "trivia": [
+      {
+        "start": 58,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 62,
     "length": 0,
     "kind": "EndOfFile",
     "trivia": [
       {
-        "start": 54,
+        "start": 61,
         "length": 1,
         "kind": "Whitespace",
         "trivia": [],

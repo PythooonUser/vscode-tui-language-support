@@ -54,7 +54,15 @@ export const OperatorPrecedenceAndAssociativityMap: PrecedenceAndAssociativityMa
       precedence: 3,
       associativity: "Left",
     },
+    ["OrKeyword"]: {
+      precedence: 3,
+      associativity: "Left",
+    },
     ["AmpersandAmpersandOperator"]: {
+      precedence: 4,
+      associativity: "Left",
+    },
+    ["AndKeyword"]: {
       precedence: 4,
       associativity: "Left",
     },
