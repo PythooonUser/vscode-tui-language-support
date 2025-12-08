@@ -1,0 +1,14 @@
+# conditional-expression-1
+a && b,
+
+# conditional-expression-2.skip
+a and b,
+
+# conditional-expression-3
+a || b,
+
+# conditional-expression-4.skip
+a or b,
+
+# conditional-expression-5
+a && b || c,
