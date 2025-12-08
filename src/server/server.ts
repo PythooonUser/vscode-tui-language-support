@@ -45,16 +45,14 @@ documents.onDidChangeContent((event) => {
   const diagnostics: Diagnostic[] = [];
 
   ast.walk((element) => {
-    if (element instanceof VariableNode) {
+    if (element.error) {
       const diagnostic: Diagnostic = {
         severity: DiagnosticSeverity.Warning,
         range: {
-          start: event.document.positionAt(element.name.start),
-          end: event.document.positionAt(
-            element.name.start + element.name.length
-          ),
+          start: event.document.positionAt(element.start),
+          end: event.document.positionAt(element.start + element.length),
         },
-        message: `Invalid variable name`,
+        message: `ERROR: ${element.error}`,
         code: "100",
         source: "tui",
       };
