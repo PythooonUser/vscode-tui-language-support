@@ -1,0 +1,66 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "IfStatementNode",
+      "error": null,
+      "ifKeyword": {
+        "start": 0,
+        "length": 2,
+        "kind": "IfKeyword",
+        "error": null
+      },
+      "condition": {
+        "kind": "ParenthesizedExpressionNode",
+        "error": null,
+        "leftParen": {
+          "start": 3,
+          "length": 1,
+          "kind": "LeftParenDelimiter",
+          "error": null
+        },
+        "expression": {
+          "kind": "MissingDeclarationNode",
+          "error": null,
+          "declaration": {
+            "start": 4,
+            "length": 0,
+            "kind": "Expression",
+            "error": "MissingToken"
+          }
+        },
+        "rightParen": {
+          "start": 4,
+          "length": 1,
+          "kind": "RightParenDelimiter",
+          "error": null
+        }
+      },
+      "statements": {
+        "kind": "CompoundStatementNode",
+        "error": null,
+        "leftBrace": {
+          "start": 6,
+          "length": 1,
+          "kind": "LeftBraceDelimiter",
+          "error": null
+        },
+        "statements": [],
+        "rightBrace": {
+          "start": 7,
+          "length": 1,
+          "kind": "RightBraceDelimiter",
+          "error": null
+        }
+      },
+      "elseClause": null
+    }
+  ],
+  "endOfFile": {
+    "start": 8,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

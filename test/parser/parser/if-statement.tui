@@ -1,0 +1,27 @@
+# if-statement-1
+if () {}
+
+# if-statement-2
+if (a != b) {}
+
+# if-statement-3
+if (a) {
+    if (b) {}
+}
+
+# if-statement-4
+if (a) {}
+if (b) {}
+
+# if-statement-5
+if () {}
+else {}
+
+# if-statement-6.skip
+if () {}
+else if {}
+
+# if-statement-7.skip
+if () {}
+elseif() {}
+else {}
