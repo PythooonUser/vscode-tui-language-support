@@ -1,0 +1,26 @@
+# call-expression-1
+foo(),
+
+# call-expression-2
+foo(bar),
+
+# call-expression-3
+foo(bar, 0, baz, "Hello World"),
+
+# call-expression-4
+foo(bar()),
+
+# call-expression-5.skip
+foo(bar().baz),
+
+# call-expression-6.skip
+foo.bar(),
+
+# call-expression-7.skip
+foo.bar(baz),
+
+# call-expression-8.skip
+foo[0](baz),
+
+# call-expression-9.skip
+....foo(),

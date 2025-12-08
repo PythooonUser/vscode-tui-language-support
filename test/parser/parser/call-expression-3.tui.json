@@ -1,0 +1,128 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "CallExpressionNode",
+        "error": null,
+        "expression": {
+          "kind": "VariableNode",
+          "error": null,
+          "name": {
+            "start": 0,
+            "length": 3,
+            "kind": "Name",
+            "error": null
+          }
+        },
+        "arguments": {
+          "kind": "ArgumentExpressionListNode",
+          "error": null,
+          "leftParen": {
+            "start": 3,
+            "length": 1,
+            "kind": "LeftParenDelimiter",
+            "error": null
+          },
+          "elements": [
+            {
+              "kind": "ArgumentExpressionNode",
+              "error": null,
+              "argument": {
+                "kind": "VariableNode",
+                "error": null,
+                "name": {
+                  "start": 4,
+                  "length": 3,
+                  "kind": "Name",
+                  "error": null
+                }
+              }
+            },
+            {
+              "start": 7,
+              "length": 1,
+              "kind": "CommaDelimiter",
+              "error": "SkippedToken"
+            },
+            {
+              "kind": "ArgumentExpressionNode",
+              "error": null,
+              "argument": {
+                "kind": "NumberLiteralNode",
+                "error": null,
+                "literal": {
+                  "start": 9,
+                  "length": 1,
+                  "kind": "NumberLiteral",
+                  "error": null
+                }
+              }
+            },
+            {
+              "start": 10,
+              "length": 1,
+              "kind": "CommaDelimiter",
+              "error": "SkippedToken"
+            },
+            {
+              "kind": "ArgumentExpressionNode",
+              "error": null,
+              "argument": {
+                "kind": "VariableNode",
+                "error": null,
+                "name": {
+                  "start": 12,
+                  "length": 3,
+                  "kind": "Name",
+                  "error": null
+                }
+              }
+            },
+            {
+              "start": 15,
+              "length": 1,
+              "kind": "CommaDelimiter",
+              "error": "SkippedToken"
+            },
+            {
+              "kind": "ArgumentExpressionNode",
+              "error": null,
+              "argument": {
+                "kind": "StringLiteralNode",
+                "error": null,
+                "literal": {
+                  "start": 17,
+                  "length": 13,
+                  "kind": "StringLiteral",
+                  "error": null
+                }
+              }
+            }
+          ],
+          "rightParen": {
+            "start": 30,
+            "length": 1,
+            "kind": "RightParenDelimiter",
+            "error": null
+          }
+        }
+      },
+      "delimiter": {
+        "start": 31,
+        "length": 1,
+        "kind": "CommaDelimiter",
+        "error": null
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 32,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

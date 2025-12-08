@@ -300,7 +300,7 @@ export class Parser {
       case "BlockStatements":
         return this.parseStatement.bind(this);
       case "ArgumentExpressionListElement":
-        return this.parseArgumentExpressionList.bind(this);
+        return this.parseArgumentExpressionListElement.bind(this);
       default:
         throw new ParseContextError(`Unknown parse context '${context}'`);
     }

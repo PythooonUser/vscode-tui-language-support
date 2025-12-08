@@ -1,0 +1,68 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "CallExpressionNode",
+        "error": null,
+        "expression": {
+          "kind": "VariableNode",
+          "error": null,
+          "name": {
+            "start": 0,
+            "length": 3,
+            "kind": "Name",
+            "error": null
+          }
+        },
+        "arguments": {
+          "kind": "ArgumentExpressionListNode",
+          "error": null,
+          "leftParen": {
+            "start": 3,
+            "length": 1,
+            "kind": "LeftParenDelimiter",
+            "error": null
+          },
+          "elements": [
+            {
+              "kind": "ArgumentExpressionNode",
+              "error": null,
+              "argument": {
+                "kind": "VariableNode",
+                "error": null,
+                "name": {
+                  "start": 4,
+                  "length": 3,
+                  "kind": "Name",
+                  "error": null
+                }
+              }
+            }
+          ],
+          "rightParen": {
+            "start": 7,
+            "length": 1,
+            "kind": "RightParenDelimiter",
+            "error": null
+          }
+        }
+      },
+      "delimiter": {
+        "start": 8,
+        "length": 1,
+        "kind": "CommaDelimiter",
+        "error": null
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 9,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}
