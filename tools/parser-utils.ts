@@ -47,27 +47,50 @@ let document: string | undefined = undefined;
 let outFileName: string | undefined = undefined;
 
 if (args.length < 3) {
-  console.log("USAGE: npm run utils:parser <tui-code>");
-  console.log("USAGE: npm run utils:parser <file>\n");
+  console.log("USAGE: npm run utils:parser <file>");
+  console.log(
+    "  --no-tests: Only convert source to parser AST representation (JSON)\n"
+  );
+  console.log(
+    "(Remember to call it like npm run utils:parser -- --no-tests <file>)\n"
+  );
 } else {
-  if (args[2].endsWith(".tui")) {
-    if (existsSync(args[2])) {
-      document = readFileSync(args[2], "utf-8");
-      outFileName = args[2].replace(/[a-zA-Z0-9-]+\.tui/, "");
+  if (args[2] === "--no-tests") {
+    if (args[3].endsWith(".tui")) {
+      if (existsSync(args[3])) {
+        document = readFileSync(args[3], "utf-8");
+        outFileName = args[3];
+      } else {
+        console.log(`File '${args[3]}' does not exist!`);
+      }
     } else {
-      console.log(`File '${args[2]}' does not exist!`);
+      document = args[3];
     }
+
+    writeResult(document || "", `${outFileName ?? ""}.json`);
   } else {
-    document = args[2];
-  }
-}
-
-if (document !== undefined) {
-  const tests = getTests(document);
-
-  tests.forEach((test) => {
-    if (!test.name.endsWith(".skip")) {
-      writeResult(test.document, `${outFileName ?? ""}${test.name}.tui.json`);
+    if (args[2].endsWith(".tui")) {
+      if (existsSync(args[2])) {
+        document = readFileSync(args[2], "utf-8");
+        outFileName = args[2].replace(/[a-zA-Z0-9-]+\.tui/, "");
+      } else {
+        console.log(`File '${args[2]}' does not exist!`);
+      }
+    } else {
+      document = args[2];
     }
-  });
+
+    if (document !== undefined) {
+      const tests = getTests(document);
+
+      tests.forEach((test) => {
+        if (!test.name.endsWith(".skip")) {
+          writeResult(
+            test.document,
+            `${outFileName ?? ""}${test.name}.tui.json`
+          );
+        }
+      });
+    }
+  }
 }

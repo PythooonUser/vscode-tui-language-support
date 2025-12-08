@@ -66,8 +66,8 @@ export class Lexer {
       return this.load();
     }
 
-    if (character === "#") {
-      this.parseCommentTrivia();
+    if (character === "#" || (character === "/" && this.peek() === "/")) {
+      this.parseCommentTrivia(character);
       return this.load();
     }
 
@@ -159,8 +159,12 @@ export class Lexer {
     this.makeTriviaToken(start, length, "Whitespace");
   }
 
-  private parseCommentTrivia() {
+  private parseCommentTrivia(type: string) {
     const start = this.index;
+
+    if (type === "/") {
+      this.next();
+    }
 
     while (this.peek() && !"\r\n".includes(this.peek() || "")) {
       this.next();

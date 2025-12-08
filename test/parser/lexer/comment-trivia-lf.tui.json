@@ -1,6 +1,6 @@
 [
   {
-    "start": 14,
+    "start": 30,
     "length": 0,
     "kind": "EndOfFile",
     "trivia": [
@@ -13,6 +13,20 @@
       },
       {
         "start": 13,
+        "length": 2,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      },
+      {
+        "start": 15,
+        "length": 14,
+        "kind": "Comment",
+        "trivia": [],
+        "error": null
+      },
+      {
+        "start": 29,
         "length": 1,
         "kind": "Whitespace",
         "trivia": [],
