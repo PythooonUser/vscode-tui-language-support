@@ -22,6 +22,9 @@ import {
   IfStatementNode,
   ElseClauseNode,
   CompoundStatementNode,
+  FunctionDeclarationNode,
+  ParameterDeclarationListNode,
+  ParameterDeclarationNode,
 } from "./nodes";
 import {
   InvalidOperatorPrecedenceAndAssociativity,
@@ -311,6 +314,8 @@ export class Parser {
         return this.parseReturnStatement(parent);
       case "IfKeyword":
         return this.parseIfStatement(parent);
+      case "FunctionKeyword":
+        return this.parseFunctionDeclaration(parent);
       default:
         return this.parseExpressionStatement(parent);
     }
@@ -324,7 +329,6 @@ export class Parser {
     if (this.token && this.isExpressionInitiator(this.token)) {
       node.expression = this.parseExpression(node);
     }
-    // TODO: Add NEW_LINE
     node.delimiter = this.consume(node, "CommaDelimiter");
 
     return node;
@@ -424,6 +428,9 @@ export class Parser {
 
       case "LeftParenDelimiter":
         return this.parseParenthesizedExpression(parent);
+
+      case "FunctionKeyword":
+        return this.parseFunctionDeclarationExpression(parent);
 
       default:
         const node = new MissingDeclarationNode();
@@ -680,6 +687,70 @@ export class Parser {
     node.parent = parent;
 
     node.argument = this.parseExpression(node);
+
+    return node;
+  }
+
+  private parseFunctionDeclaration(parent: Node): FunctionDeclarationNode {
+    const node = new FunctionDeclarationNode();
+    node.parent = parent;
+
+    node.functionKeyword = this.consume(node, "FunctionKeyword");
+    node.arguments = this.parseParameterDeclarationList(node);
+    node.statements = this.parseCompoundStatement(node);
+
+    node.delimiter = this.consumeOptional(node, "CommaDelimiter");
+
+    return node;
+  }
+
+  private parseFunctionDeclarationExpression(
+    parent: Node
+  ): FunctionDeclarationNode {
+    const node = new FunctionDeclarationNode();
+    node.parent = parent;
+
+    node.functionKeyword = this.consume(node, "FunctionKeyword");
+    node.arguments = this.parseParameterDeclarationList(node);
+    node.statements = this.parseCompoundStatement(node);
+
+    return node;
+  }
+
+  private parseParameterDeclarationList(
+    parent: Node
+  ): ParameterDeclarationListNode {
+    const node = new ParameterDeclarationListNode();
+    node.parent = parent;
+
+    node.leftParen = this.consume(node, "LeftParenDelimiter");
+
+    while (true) {
+      if (this.token?.kind !== "Name") {
+        break;
+      }
+
+      const element = this.parseParameterDeclaration(node);
+      node.addElement(element);
+
+      const delimiter = this.consumeOptional(node, "CommaDelimiter");
+      if (!delimiter) {
+        break;
+      }
+
+      node.addElement(delimiter);
+    }
+
+    node.rightParen = this.consume(node, "RightParenDelimiter");
+
+    return node;
+  }
+
+  private parseParameterDeclaration(parent: Node): ParameterDeclarationNode {
+    const node = new ParameterDeclarationNode();
+    node.parent = parent;
+
+    node.name = this.consume(node, "Name");
 
     return node;
   }
