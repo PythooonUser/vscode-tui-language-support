@@ -28,12 +28,7 @@
                 "error": null
               }
             },
-            "delimiter": {
-              "start": 5,
-              "length": 0,
-              "kind": "CommaDelimiter",
-              "error": "MissingToken"
-            }
+            "delimiter": null
           }
         ],
         "rightDelimiter": {
@@ -43,12 +38,7 @@
           "error": null
         }
       },
-      "delimiter": {
-        "start": 6,
-        "length": 0,
-        "kind": "CommaDelimiter",
-        "error": "MissingToken"
-      }
+      "delimiter": null
     }
   ],
   "endOfFile": {

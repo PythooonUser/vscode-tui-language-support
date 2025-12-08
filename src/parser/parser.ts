@@ -331,7 +331,7 @@ export class Parser {
     if (this.token && this.isExpressionInitiator(this.token)) {
       node.expression = this.parseExpression(node);
     }
-    node.delimiter = this.consume(node, "CommaDelimiter");
+    node.delimiter = this.consumeOptional(node, "CommaDelimiter");
 
     return node;
   }
@@ -378,7 +378,7 @@ export class Parser {
     node.parent = parent;
 
     node.expression = this.parseExpression(node);
-    node.delimiter = this.consume(node, "CommaDelimiter");
+    node.delimiter = this.consumeOptional(node, "CommaDelimiter");
 
     return node;
   }

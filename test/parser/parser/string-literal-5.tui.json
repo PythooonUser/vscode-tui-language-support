@@ -15,12 +15,7 @@
           "error": "UnexpectedEndOfFile"
         }
       },
-      "delimiter": {
-        "start": 12,
-        "length": 0,
-        "kind": "CommaDelimiter",
-        "error": "MissingToken"
-      }
+      "delimiter": null
     }
   ],
   "endOfFile": {

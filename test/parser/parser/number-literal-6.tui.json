@@ -21,12 +21,7 @@
           "error": null
         }
       },
-      "delimiter": {
-        "start": 3,
-        "length": 0,
-        "kind": "CommaDelimiter",
-        "error": "MissingToken"
-      }
+      "delimiter": null
     }
   ],
   "endOfFile": {

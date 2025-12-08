@@ -4,7 +4,7 @@ import { Node } from "./node";
 export class ReturnStatementNode extends Node {
   public returnKeyword!: Token;
   public expression: Node | Token | null = null;
-  public delimiter!: Token;
+  public delimiter: Token | null = null;
 
   constructor() {
     super();

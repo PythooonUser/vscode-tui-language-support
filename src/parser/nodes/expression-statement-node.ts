@@ -3,7 +3,7 @@ import { Node } from "./node";
 
 export class ExpressionStatementNode extends Node {
   public expression!: Node | Token;
-  public delimiter!: Token;
+  public delimiter: Token | null = null;
 
   constructor() {
     super();

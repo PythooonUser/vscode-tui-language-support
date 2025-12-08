@@ -81,12 +81,7 @@
                       "error": null
                     }
                   },
-                  "delimiter": {
-                    "start": 14,
-                    "length": 0,
-                    "kind": "CommaDelimiter",
-                    "error": "MissingToken"
-                  }
+                  "delimiter": null
                 }
               ],
               "rightDelimiter": {
@@ -168,12 +163,7 @@
                         "error": null
                       }
                     },
-                    "delimiter": {
-                      "start": 44,
-                      "length": 0,
-                      "kind": "CommaDelimiter",
-                      "error": "MissingToken"
-                    }
+                    "delimiter": null
                   }
                 ],
                 "rightDelimiter": {
@@ -184,12 +174,7 @@
                 }
               }
             },
-            "delimiter": {
-              "start": 46,
-              "length": 0,
-              "kind": "CommaDelimiter",
-              "error": "MissingToken"
-            }
+            "delimiter": null
           }
         ],
         "rightDelimiter": {
@@ -199,12 +184,7 @@
           "error": null
         }
       },
-      "delimiter": {
-        "start": 47,
-        "length": 0,
-        "kind": "CommaDelimiter",
-        "error": "MissingToken"
-      }
+      "delimiter": null
     }
   ],
   "endOfFile": {
