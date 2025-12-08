@@ -23,6 +23,7 @@ export type TokenKind =
   | "GreaterThanOperator"
   | "IfKeyword"
   | "Index"
+  | "InKeyword"
   | "LeftBraceDelimiter"
   | "LeftBracketDelimiter"
   | "LeftParenDelimiter"
@@ -103,6 +104,7 @@ export const KeywordTokenMap: TokenKindMap = {
   true: "TrueKeyword",
   and: "AndKeyword",
   or: "OrKeyword",
+  in: "InKeyword",
 };
 
 export const UnaryOperatorKinds: TokenKind[] = [

@@ -6,6 +6,7 @@ export * from "./call-expression-node";
 export * from "./compound-statement-node";
 export * from "./else-clause-node";
 export * from "./expression-statement-node";
+export * from "./for-statement-node";
 export * from "./function-declaration-node";
 export * from "./if-statement-node";
 export * from "./indexed-access-expression-node";

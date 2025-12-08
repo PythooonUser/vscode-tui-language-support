@@ -27,7 +27,7 @@
     "keyword": {
       "patterns": [
         {
-          "match": "\\b(if|elseif|else|for|return|and|or)\\b",
+          "match": "\\b(if|elseif|else|for|return|and|or|in)\\b",
           "name": "keyword.control.tui"
         },
         {

@@ -173,11 +173,26 @@
   },
   {
     "start": 62,
+    "length": 2,
+    "kind": "InKeyword",
+    "trivia": [
+      {
+        "start": 61,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 65,
     "length": 0,
     "kind": "EndOfFile",
     "trivia": [
       {
-        "start": 61,
+        "start": 64,
         "length": 1,
         "kind": "Whitespace",
         "trivia": [],

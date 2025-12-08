@@ -27,6 +27,7 @@ import {
   ParameterDeclarationNode,
   MemberAccessExpressionNode,
   IndexedAccessExpressionNode,
+  ForStatementNode,
 } from "./nodes";
 import {
   InvalidOperatorPrecedenceAndAssociativity,
@@ -321,6 +322,8 @@ export class Parser {
         return this.parseIfStatement(parent);
       case "FunctionKeyword":
         return this.parseFunctionDeclaration(parent);
+      case "ForKeyword":
+        return this.parseForStatement(parent);
       default:
         return this.parseExpressionStatement(parent);
     }
@@ -360,6 +363,17 @@ export class Parser {
     node.parent = parent;
 
     node.elseKeyword = this.consume(node, "ElseKeyword");
+    node.statements = this.parseCompoundStatement(node);
+
+    return node;
+  }
+
+  private parseForStatement(parent: Node): ForStatementNode {
+    const node = new ForStatementNode();
+    node.parent = parent;
+
+    node.forKeyword = this.consume(node, "ForKeyword");
+    // TODO: Parse for condition
     node.statements = this.parseCompoundStatement(node);
 
     return node;
