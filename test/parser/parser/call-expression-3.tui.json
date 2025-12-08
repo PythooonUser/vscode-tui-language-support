@@ -46,7 +46,7 @@
               "start": 7,
               "length": 1,
               "kind": "CommaDelimiter",
-              "error": "SkippedToken"
+              "error": null
             },
             {
               "kind": "ArgumentExpressionNode",
@@ -66,7 +66,7 @@
               "start": 10,
               "length": 1,
               "kind": "CommaDelimiter",
-              "error": "SkippedToken"
+              "error": null
             },
             {
               "kind": "ArgumentExpressionNode",
@@ -86,7 +86,7 @@
               "start": 15,
               "length": 1,
               "kind": "CommaDelimiter",
-              "error": "SkippedToken"
+              "error": null
             },
             {
               "kind": "ArgumentExpressionNode",

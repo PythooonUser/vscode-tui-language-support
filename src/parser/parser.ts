@@ -253,7 +253,10 @@ export class Parser {
       case "BlockStatements":
         return this.isStatementInitiator(token);
       case "ArgumentExpressionListElement":
-        return this.isExpressionInitiator(token);
+        return (
+          this.isExpressionInitiator(token) ||
+          this.token?.kind === "CommaDelimiter"
+        );
       default:
         throw new ParseContextError(`Unknown parse context '${context}'`);
     }
