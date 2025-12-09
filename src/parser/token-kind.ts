@@ -111,6 +111,7 @@ export const UnaryOperatorKinds: TokenKind[] = [
   "PlusOperator",
   "MinusOperator",
   "ExclamationOperator",
+  "DotOperator",
 ];
 
 export const PrefixUpdateOperatorKinds: TokenKind[] = [

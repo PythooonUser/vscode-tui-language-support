@@ -293,6 +293,7 @@ export class Parser {
       case "FalseKeyword":
       case "NullKeyword":
       case "NilKeyword":
+      case "DotOperator":
         return true;
       default:
         return false;
@@ -557,6 +558,7 @@ export class Parser {
       case "PlusOperator":
       case "MinusOperator":
       case "ExclamationOperator":
+      case "DotOperator":
         return this.parseUnaryExpression(parent);
       case "PlusPlusOperator":
       case "MinusMinusOperator":

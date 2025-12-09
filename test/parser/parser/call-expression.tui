@@ -22,5 +22,5 @@ foo.bar(baz),
 # call-expression-8
 foo[0](baz),
 
-# call-expression-9.skip
-....foo(),
+# call-expression-9
+.foo(),

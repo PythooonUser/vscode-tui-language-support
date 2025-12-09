@@ -296,24 +296,12 @@ export class Lexer {
     const firstCharacter = this.document[this.index];
     let kind = OperatorTokenMap[firstCharacter];
 
-    if (firstCharacter === ".") {
-      while (true) {
-        const token = this.peek();
-
-        if (token !== ".") {
-          break;
-        }
-
-        this.next();
-      }
-    } else {
-      const secondCharacter = this.peek();
-      if (secondCharacter && "<>+-&|=".includes(secondCharacter)) {
-        const extendedKind = OperatorTokenMap[firstCharacter + secondCharacter];
-        if (extendedKind) {
-          this.next(); // Consume second part of operator.
-          kind = extendedKind;
-        }
+    const secondCharacter = this.peek();
+    if (secondCharacter && "<>+-&|=".includes(secondCharacter)) {
+      const extendedKind = OperatorTokenMap[firstCharacter + secondCharacter];
+      if (extendedKind) {
+        this.next(); // Consume second part of operator.
+        kind = extendedKind;
       }
     }
 

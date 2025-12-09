@@ -1,0 +1,62 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "BinaryExpressionNode",
+        "error": null,
+        "leftOperand": {
+          "kind": "VariableNode",
+          "error": null,
+          "name": {
+            "start": 0,
+            "length": 3,
+            "kind": "Name",
+            "error": null
+          }
+        },
+        "operator": {
+          "start": 4,
+          "length": 1,
+          "kind": "EqualsOperator",
+          "error": null
+        },
+        "rightOperand": {
+          "kind": "UnaryExpressionNode",
+          "error": null,
+          "operator": {
+            "start": 6,
+            "length": 1,
+            "kind": "DotOperator",
+            "error": null
+          },
+          "operand": {
+            "kind": "VariableNode",
+            "error": null,
+            "name": {
+              "start": 7,
+              "length": 3,
+              "kind": "Name",
+              "error": null
+            }
+          }
+        }
+      },
+      "delimiter": {
+        "start": 10,
+        "length": 1,
+        "kind": "CommaDelimiter",
+        "error": null
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 11,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}
