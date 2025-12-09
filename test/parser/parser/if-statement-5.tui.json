@@ -53,32 +53,32 @@
           "kind": "RightBraceDelimiter",
           "error": null
         }
+      }
+    },
+    {
+      "kind": "ElseClauseNode",
+      "error": null,
+      "elseKeyword": {
+        "start": 9,
+        "length": 4,
+        "kind": "ElseKeyword",
+        "error": null
       },
-      "elseClause": {
-        "kind": "ElseClauseNode",
+      "statements": {
+        "kind": "CompoundStatementNode",
         "error": null,
-        "elseKeyword": {
-          "start": 9,
-          "length": 4,
-          "kind": "ElseKeyword",
+        "leftBrace": {
+          "start": 14,
+          "length": 1,
+          "kind": "LeftBraceDelimiter",
           "error": null
         },
-        "statements": {
-          "kind": "CompoundStatementNode",
-          "error": null,
-          "leftBrace": {
-            "start": 14,
-            "length": 1,
-            "kind": "LeftBraceDelimiter",
-            "error": null
-          },
-          "statements": [],
-          "rightBrace": {
-            "start": 15,
-            "length": 1,
-            "kind": "RightBraceDelimiter",
-            "error": null
-          }
+        "statements": [],
+        "rightBrace": {
+          "start": 15,
+          "length": 1,
+          "kind": "RightBraceDelimiter",
+          "error": null
         }
       }
     }

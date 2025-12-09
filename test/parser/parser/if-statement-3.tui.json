@@ -98,8 +98,7 @@
                 "kind": "RightBraceDelimiter",
                 "error": null
               }
-            },
-            "elseClause": null
+            }
           }
         ],
         "rightBrace": {
@@ -108,8 +107,7 @@
           "kind": "RightBraceDelimiter",
           "error": null
         }
-      },
-      "elseClause": null
+      }
     }
   ],
   "endOfFile": {

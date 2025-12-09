@@ -53,8 +53,7 @@
           "kind": "RightBraceDelimiter",
           "error": null
         }
-      },
-      "elseClause": null
+      }
     }
   ],
   "endOfFile": {

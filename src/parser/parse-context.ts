@@ -1,5 +1,5 @@
 export type ParseContext =
-  | "SourceElements"
-  | "TableLiteralElements"
   | "ArgumentExpressionListElement"
-  | "BlockStatements";
+  | "BlockStatements"
+  | "SourceElements"
+  | "TableLiteralElements";

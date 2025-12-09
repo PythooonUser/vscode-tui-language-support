@@ -1,0 +1,39 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ElseClauseNode",
+      "error": null,
+      "elseKeyword": {
+        "start": 0,
+        "length": 4,
+        "kind": "ElseKeyword",
+        "error": null
+      },
+      "statements": {
+        "kind": "CompoundStatementNode",
+        "error": null,
+        "leftBrace": {
+          "start": 5,
+          "length": 1,
+          "kind": "LeftBraceDelimiter",
+          "error": null
+        },
+        "statements": [],
+        "rightBrace": {
+          "start": 6,
+          "length": 1,
+          "kind": "RightBraceDelimiter",
+          "error": null
+        }
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 7,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

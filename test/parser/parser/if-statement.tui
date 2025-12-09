@@ -17,11 +17,18 @@ if (b) {}
 if () {}
 else {}
 
-# if-statement-6.skip
+# if-statement-6
 if () {}
-else if {}
+else if () {}
+else if () {}
 
-# if-statement-7.skip
+# if-statement-7
 if () {}
-elseif() {}
+elseif () {}
 else {}
+
+# if-statement-8
+else {}
+
+# if-statement-9
+else if () {}

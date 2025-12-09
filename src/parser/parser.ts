@@ -28,6 +28,7 @@ import {
   MemberAccessExpressionNode,
   IndexedAccessExpressionNode,
   ForStatementNode,
+  ElseIfClauseNode,
 } from "./nodes";
 import {
   InvalidOperatorPrecedenceAndAssociativity,
@@ -321,6 +322,10 @@ export class Parser {
         return this.parseReturnStatement(parent);
       case "IfKeyword":
         return this.parseIfStatement(parent);
+      case "ElseIfKeyword":
+        return this.parseElseIfClause(parent);
+      case "ElseKeyword":
+        return this.parseElseClause(parent);
       case "FunctionKeyword":
         return this.parseFunctionDeclaration(parent);
       case "ForKeyword":
@@ -351,19 +356,41 @@ export class Parser {
     node.condition = this.parseExpression(node);
     node.statements = this.parseCompoundStatement(node);
 
-    const token = this.token;
-    if (token?.kind === "ElseKeyword") {
-      node.elseClause = this.parseElseClause(node);
+    return node;
+  }
+
+  private parseElseClause(parent: Node): ElseClauseNode | ElseIfClauseNode {
+    const node = new ElseClauseNode();
+    node.parent = parent;
+
+    const elseKeyword = this.consume(node, "ElseKeyword");
+
+    if (this.token?.kind === "IfKeyword") {
+      const node = new ElseIfClauseNode();
+      node.parent = parent;
+
+      node.elseKeyword = elseKeyword;
+      elseKeyword.parent = node;
+
+      node.ifKeyword = this.consume(node, "IfKeyword");
+      node.condition = this.parseExpression(node);
+      node.statements = this.parseCompoundStatement(node);
+
+      return node;
     }
+
+    node.elseKeyword = elseKeyword;
+    node.statements = this.parseCompoundStatement(node);
 
     return node;
   }
 
-  private parseElseClause(parent: Node): ElseClauseNode {
-    const node = new ElseClauseNode();
+  private parseElseIfClause(parent: Node): ElseIfClauseNode {
+    const node = new ElseIfClauseNode();
     node.parent = parent;
 
-    node.elseKeyword = this.consume(node, "ElseKeyword");
+    node.elseIfKeyword = this.consume(node, "ElseIfKeyword");
+    node.condition = this.parseExpression(node);
     node.statements = this.parseCompoundStatement(node);
 
     return node;

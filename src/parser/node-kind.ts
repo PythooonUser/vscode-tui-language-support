@@ -6,6 +6,7 @@ export type NodeKind =
   | "CallExpressionNode"
   | "CompoundStatementNode"
   | "ElseClauseNode"
+  | "ElseIfClauseNode"
   | "ExpressionStatementNode"
   | "ForStatementNode"
   | "FunctionDeclarationNode"

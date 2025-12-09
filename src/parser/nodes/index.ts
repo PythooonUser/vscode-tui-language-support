@@ -5,6 +5,7 @@ export * from "./bool-literal-node";
 export * from "./call-expression-node";
 export * from "./compound-statement-node";
 export * from "./else-clause-node";
+export * from "./else-if-clause-node";
 export * from "./expression-statement-node";
 export * from "./for-statement-node";
 export * from "./function-declaration-node";
