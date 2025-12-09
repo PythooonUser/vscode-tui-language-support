@@ -67,7 +67,12 @@ export class Lexer {
     }
 
     if (character === "#" || (character === "/" && this.peek() === "/")) {
-      this.parseCommentTrivia(character);
+      this.parseSingleLineCommentTrivia(character);
+      return this.load();
+    }
+
+    if (character === "/" && this.peek() === "*") {
+      this.parseMultiLineCommentTrivia();
       return this.load();
     }
 
@@ -159,7 +164,7 @@ export class Lexer {
     this.makeTriviaToken(start, length, "Whitespace");
   }
 
-  private parseCommentTrivia(type: string) {
+  private parseSingleLineCommentTrivia(type: string) {
     const start = this.index;
 
     if (type === "/") {
@@ -172,6 +177,36 @@ export class Lexer {
 
     const length = this.index + 1 - start;
     this.makeTriviaToken(start, length, "Comment");
+  }
+
+  private parseMultiLineCommentTrivia() {
+    const start = this.index;
+    let error: TokenError | null = null;
+
+    this.next(); // Consume *.
+
+    while (true) {
+      if (!this.peek()) {
+        error = "UnexpectedEndOfFile";
+        break;
+      }
+
+      if (this.peek() === "*" && this.peek(2) === "/") {
+        break;
+      }
+
+      this.next();
+    }
+
+    if (this.peek()) {
+      this.next(); // Consume *.
+    }
+    if (this.peek()) {
+      this.next(); // Consume /.
+    }
+
+    const length = this.index + 1 - start;
+    return this.makeTriviaToken(start, length, "Comment", error);
   }
 
   private parseName() {
