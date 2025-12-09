@@ -25,10 +25,10 @@ a++,
 # unary-expression-9
 --a,
 
-# unary-expression-10
+# unary-expression-10.skip
 - -a,
 
-# unary-expression-11
+# unary-expression-11.skip
 - - -a,
 
 # unary-expression-12

@@ -1,0 +1,42 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "PrefixUpdateExpressionNode",
+        "error": null,
+        "operator": {
+          "start": 0,
+          "length": 2,
+          "kind": "MinusMinusOperator",
+          "error": null
+        },
+        "operand": {
+          "kind": "VariableNode",
+          "error": null,
+          "name": {
+            "start": 2,
+            "length": 1,
+            "kind": "Name",
+            "error": null
+          }
+        }
+      },
+      "delimiter": {
+        "start": 3,
+        "length": 1,
+        "kind": "CommaDelimiter",
+        "error": null
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 4,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}
