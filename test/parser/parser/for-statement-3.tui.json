@@ -1,0 +1,93 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ForStatementNode",
+      "error": null,
+      "forKeyword": {
+        "start": 0,
+        "length": 3,
+        "kind": "ForKeyword",
+        "error": null
+      },
+      "leftParen": {
+        "start": 3,
+        "length": 1,
+        "kind": "LeftParenDelimiter",
+        "error": null
+      },
+      "index": {
+        "kind": "VariableNode",
+        "error": null,
+        "name": {
+          "start": 4,
+          "length": 5,
+          "kind": "Name",
+          "error": null
+        }
+      },
+      "comma": {
+        "start": 9,
+        "length": 1,
+        "kind": "CommaDelimiter",
+        "error": null
+      },
+      "value": {
+        "kind": "VariableNode",
+        "error": null,
+        "name": {
+          "start": 11,
+          "length": 3,
+          "kind": "Name",
+          "error": null
+        }
+      },
+      "inKeyword": {
+        "start": 15,
+        "length": 2,
+        "kind": "InKeyword",
+        "error": null
+      },
+      "object": {
+        "kind": "VariableNode",
+        "error": null,
+        "name": {
+          "start": 18,
+          "length": 3,
+          "kind": "Name",
+          "error": null
+        }
+      },
+      "rightParen": {
+        "start": 21,
+        "length": 1,
+        "kind": "RightParenDelimiter",
+        "error": null
+      },
+      "statements": {
+        "kind": "CompoundStatementNode",
+        "error": null,
+        "leftBrace": {
+          "start": 23,
+          "length": 1,
+          "kind": "LeftBraceDelimiter",
+          "error": null
+        },
+        "statements": [],
+        "rightBrace": {
+          "start": 24,
+          "length": 1,
+          "kind": "RightBraceDelimiter",
+          "error": null
+        }
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 25,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

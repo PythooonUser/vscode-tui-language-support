@@ -1,0 +1,79 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ForStatementNode",
+      "error": null,
+      "forKeyword": {
+        "start": 0,
+        "length": 3,
+        "kind": "ForKeyword",
+        "error": null
+      },
+      "leftParen": {
+        "start": 3,
+        "length": 1,
+        "kind": "LeftParenDelimiter",
+        "error": null
+      },
+      "index": null,
+      "comma": null,
+      "value": {
+        "kind": "VariableNode",
+        "error": null,
+        "name": {
+          "start": 4,
+          "length": 0,
+          "kind": "Name",
+          "error": "MissingToken"
+        }
+      },
+      "inKeyword": {
+        "start": 4,
+        "length": 0,
+        "kind": "InKeyword",
+        "error": "MissingToken"
+      },
+      "object": {
+        "kind": "MissingDeclarationNode",
+        "error": null,
+        "declaration": {
+          "start": 4,
+          "length": 0,
+          "kind": "Expression",
+          "error": "MissingToken"
+        }
+      },
+      "rightParen": {
+        "start": 4,
+        "length": 1,
+        "kind": "RightParenDelimiter",
+        "error": null
+      },
+      "statements": {
+        "kind": "CompoundStatementNode",
+        "error": null,
+        "leftBrace": {
+          "start": 6,
+          "length": 1,
+          "kind": "LeftBraceDelimiter",
+          "error": null
+        },
+        "statements": [],
+        "rightBrace": {
+          "start": 7,
+          "length": 1,
+          "kind": "RightBraceDelimiter",
+          "error": null
+        }
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 8,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}
