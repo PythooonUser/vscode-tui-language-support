@@ -3,4 +3,6 @@
 "This is a multi-
 line string"
 
+"This is a string with escape characters: \""
+
 "This is a string with error

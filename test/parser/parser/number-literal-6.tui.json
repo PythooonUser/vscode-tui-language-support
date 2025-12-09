@@ -3,22 +3,26 @@
   "error": null,
   "statements": [
     {
-      "start": 0,
-      "length": 1,
-      "kind": "DotOperator",
-      "error": "SkippedToken"
-    },
-    {
       "kind": "ExpressionStatementNode",
       "error": null,
       "expression": {
-        "kind": "NumberLiteralNode",
+        "kind": "UnaryExpressionNode",
         "error": null,
-        "literal": {
-          "start": 1,
-          "length": 2,
-          "kind": "NumberLiteral",
+        "operator": {
+          "start": 0,
+          "length": 1,
+          "kind": "DotOperator",
           "error": null
+        },
+        "operand": {
+          "kind": "NumberLiteralNode",
+          "error": null,
+          "literal": {
+            "start": 1,
+            "length": 2,
+            "kind": "NumberLiteral",
+            "error": null
+          }
         }
       },
       "delimiter": null

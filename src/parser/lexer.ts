@@ -275,7 +275,7 @@ export class Lexer {
         break;
       }
 
-      if (this.peek() === type) {
+      if (this.peek() === type && this.peek(0) !== "\\") {
         break;
       }
 
