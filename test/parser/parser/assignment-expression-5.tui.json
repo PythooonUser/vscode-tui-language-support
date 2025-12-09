@@ -1,0 +1,87 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "BinaryExpressionNode",
+        "error": null,
+        "leftOperand": {
+          "kind": "VariableNode",
+          "error": null,
+          "name": {
+            "start": 0,
+            "length": 5,
+            "kind": "Name",
+            "error": null
+          }
+        },
+        "operator": {
+          "start": 5,
+          "length": 1,
+          "kind": "ColonOperator",
+          "error": null
+        },
+        "rightOperand": {
+          "kind": "FunctionDeclarationNode",
+          "error": null,
+          "functionKeyword": {
+            "start": 7,
+            "length": 8,
+            "kind": "FunctionKeyword",
+            "error": null
+          },
+          "arguments": {
+            "kind": "ParameterDeclarationListNode",
+            "error": null,
+            "leftParen": {
+              "start": 15,
+              "length": 1,
+              "kind": "LeftParenDelimiter",
+              "error": null
+            },
+            "elements": [],
+            "rightParen": {
+              "start": 16,
+              "length": 1,
+              "kind": "RightParenDelimiter",
+              "error": null
+            }
+          },
+          "statements": {
+            "kind": "CompoundStatementNode",
+            "error": null,
+            "leftBrace": {
+              "start": 18,
+              "length": 1,
+              "kind": "LeftBraceDelimiter",
+              "error": null
+            },
+            "statements": [],
+            "rightBrace": {
+              "start": 19,
+              "length": 1,
+              "kind": "RightBraceDelimiter",
+              "error": null
+            }
+          },
+          "delimiter": null
+        }
+      },
+      "delimiter": {
+        "start": 20,
+        "length": 1,
+        "kind": "CommaDelimiter",
+        "error": null
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 21,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

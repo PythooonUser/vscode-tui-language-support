@@ -10,7 +10,7 @@ foo.bar.spam,
 # access-expression-4
 foo[0].bar,
 
-# access-expression-5.skip
+# access-expression-5
 [0, 1].bar,
 
 # access-expression-6

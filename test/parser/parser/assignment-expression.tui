@@ -7,8 +7,8 @@ value: 10,
 # assignment-expression-3
 value: "foo",
 
-# assignment-expression-4.skip
+# assignment-expression-4
 value: {},
 
-# assignment-expression-5.skip
+# assignment-expression-5
 value: function() {},
