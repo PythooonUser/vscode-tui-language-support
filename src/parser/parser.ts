@@ -407,21 +407,11 @@ export class Parser {
     node.forKeyword = this.consume(node, "ForKeyword");
 
     node.leftParen = this.consume(node, "LeftParenDelimiter");
-
-    const indexOrValue = this.parseVariable(node);
-    node.comma = this.consumeOptional(node, "CommaDelimiter");
-
-    if (node.comma) {
-      node.index = indexOrValue;
-      node.value = this.parseVariable(node);
-    } else {
-      node.index = null;
-      node.value = indexOrValue;
-    }
-
-    node.inKeyword = this.consume(node, "InKeyword");
-    node.object = this.parseExpression(node);
-
+    node.conditions = this.parseElementList(
+      node,
+      // FIXME: Is an argument expression list the correct way to go?
+      "ArgumentExpressionListElement"
+    );
     node.rightParen = this.consume(node, "RightParenDelimiter");
 
     node.statements = this.parseCompoundStatement(node);

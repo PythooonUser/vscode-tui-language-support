@@ -17,34 +17,42 @@
         "kind": "LeftParenDelimiter",
         "error": null
       },
-      "index": null,
-      "comma": null,
-      "value": {
-        "kind": "VariableNode",
-        "error": null,
-        "name": {
-          "start": 4,
-          "length": 3,
-          "kind": "Name",
-          "error": null
+      "conditions": [
+        {
+          "kind": "ArgumentExpressionNode",
+          "error": null,
+          "argument": {
+            "kind": "BinaryExpressionNode",
+            "error": null,
+            "leftOperand": {
+              "kind": "VariableNode",
+              "error": null,
+              "name": {
+                "start": 4,
+                "length": 3,
+                "kind": "Name",
+                "error": null
+              }
+            },
+            "operator": {
+              "start": 8,
+              "length": 2,
+              "kind": "InKeyword",
+              "error": null
+            },
+            "rightOperand": {
+              "kind": "VariableNode",
+              "error": null,
+              "name": {
+                "start": 11,
+                "length": 3,
+                "kind": "Name",
+                "error": null
+              }
+            }
+          }
         }
-      },
-      "inKeyword": {
-        "start": 8,
-        "length": 2,
-        "kind": "InKeyword",
-        "error": null
-      },
-      "object": {
-        "kind": "VariableNode",
-        "error": null,
-        "name": {
-          "start": 11,
-          "length": 3,
-          "kind": "Name",
-          "error": null
-        }
-      },
+      ],
       "rightParen": {
         "start": 14,
         "length": 1,

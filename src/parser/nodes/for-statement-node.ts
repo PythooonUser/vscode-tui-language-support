@@ -1,14 +1,11 @@
 import { Token } from "../token";
+import { NodeOrTokenArray } from "../types";
 import { Node } from "./node";
 
 export class ForStatementNode extends Node {
   public forKeyword!: Token;
   public leftParen!: Token;
-  public index: Node | null = null;
-  public comma: Token | null = null;
-  public value!: Node;
-  public inKeyword!: Token;
-  public object!: Node;
+  public conditions: NodeOrTokenArray = [];
   public rightParen!: Token;
   public statements!: Node;
 
@@ -24,11 +21,7 @@ export class ForStatementNode extends Node {
       error: this.error,
       forKeyword: this.forKeyword,
       leftParen: this.leftParen,
-      index: this.index,
-      comma: this.comma,
-      value: this.value,
-      inKeyword: this.inKeyword,
-      object: this.object,
+      conditions: this.conditions,
       rightParen: this.rightParen,
       statements: this.statements,
     };

@@ -48,6 +48,10 @@ export const OperatorPrecedenceAndAssociativityMap: PrecedenceAndAssociativityMa
       precedence: 2,
       associativity: "Left",
     },
+    ["InKeyword"]: {
+      precedence: 2,
+      associativity: "Left",
+    },
 
     // Logical Expression
     ["BarBarOperator"]: {

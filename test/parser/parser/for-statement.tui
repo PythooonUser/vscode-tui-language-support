@@ -7,5 +7,5 @@ for(foo in bar) {}
 # for-statement-3
 for(index, foo in bar) {}
 
-# for-statement-4.skip
+# for-statement-4
 for (i = 0, i < 10, i++) {}
