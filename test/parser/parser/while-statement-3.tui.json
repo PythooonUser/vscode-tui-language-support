@@ -1,0 +1,72 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "WhileStatementNode",
+      "error": null,
+      "whileKeyword": {
+        "start": 0,
+        "length": 5,
+        "kind": "WhileKeyword",
+        "error": null
+      },
+      "condition": {
+        "kind": "ParenthesizedExpressionNode",
+        "error": null,
+        "leftParen": {
+          "start": 5,
+          "length": 1,
+          "kind": "LeftParenDelimiter",
+          "error": null
+        },
+        "expression": {
+          "kind": "TableLiteralNode",
+          "error": null,
+          "leftDelimiter": {
+            "start": 7,
+            "length": 1,
+            "kind": "LeftBraceDelimiter",
+            "error": null
+          },
+          "elements": [],
+          "rightDelimiter": {
+            "start": 8,
+            "length": 0,
+            "kind": "RightBracketDelimiter",
+            "error": "MissingToken"
+          }
+        },
+        "rightParen": {
+          "start": 8,
+          "length": 0,
+          "kind": "RightParenDelimiter",
+          "error": "MissingToken"
+        }
+      },
+      "statements": {
+        "kind": "CompoundStatementNode",
+        "error": null,
+        "leftBrace": {
+          "start": 8,
+          "length": 0,
+          "kind": "LeftBraceDelimiter",
+          "error": "MissingToken"
+        },
+        "statements": [],
+        "rightBrace": {
+          "start": 8,
+          "length": 0,
+          "kind": "RightBraceDelimiter",
+          "error": "MissingToken"
+        }
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 8,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

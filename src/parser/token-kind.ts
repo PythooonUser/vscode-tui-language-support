@@ -53,6 +53,7 @@ export type TokenKind =
   | "StringLiteral"
   | "TrueKeyword"
   | "UnknownToken"
+  | "WhileKeyword"
   | "Whitespace";
 
 export const DelimiterTokenMap: TokenKindMap = {
@@ -92,19 +93,20 @@ export const OperatorTokenMap: TokenKindMap = {
 };
 
 export const KeywordTokenMap: TokenKindMap = {
+  and: "AndKeyword",
   else: "ElseKeyword",
   elseif: "ElseIfKeyword",
   false: "FalseKeyword",
   for: "ForKeyword",
   function: "FunctionKeyword",
   if: "IfKeyword",
+  in: "InKeyword",
   nil: "NilKeyword",
   null: "NullKeyword",
+  or: "OrKeyword",
   return: "ReturnKeyword",
   true: "TrueKeyword",
-  and: "AndKeyword",
-  or: "OrKeyword",
-  in: "InKeyword",
+  while: "WhileKeyword",
 };
 
 export const UnaryOperatorKinds: TokenKind[] = [

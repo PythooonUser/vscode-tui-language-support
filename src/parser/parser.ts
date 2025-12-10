@@ -29,6 +29,7 @@ import {
   IndexedAccessExpressionNode,
   ForStatementNode,
   ElseIfClauseNode,
+  WhileStatementNode,
 } from "./nodes";
 import {
   InvalidOperatorPrecedenceAndAssociativity,
@@ -272,6 +273,7 @@ export class Parser {
       case "ElseIfKeyword":
       case "ForKeyword":
       case "ReturnKeyword":
+      case "WhileKeyword":
         return true;
       default:
         return this.isExpressionInitiator(token);
@@ -330,6 +332,8 @@ export class Parser {
         return this.parseFunctionDeclaration(parent);
       case "ForKeyword":
         return this.parseForStatement(parent);
+      case "WhileKeyword":
+        return this.parseWhileStatement(parent);
       default:
         return this.parseExpressionStatement(parent);
     }
@@ -885,6 +889,17 @@ export class Parser {
     node.index = index;
 
     node.rightBracket = this.consume(node, "RightBracketDelimiter");
+
+    return node;
+  }
+
+  private parseWhileStatement(parent: Node): WhileStatementNode {
+    const node = new WhileStatementNode();
+    node.parent = parent;
+
+    node.whileKeyword = this.consume(node, "WhileKeyword");
+    node.condition = this.parseExpression(node);
+    node.statements = this.parseCompoundStatement(node);
 
     return node;
   }

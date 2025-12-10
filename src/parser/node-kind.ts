@@ -26,4 +26,5 @@ export type NodeKind =
   | "StringLiteralNode"
   | "TableLiteralNode"
   | "UnaryExpressionNode"
-  | "VariableNode";
+  | "VariableNode"
+  | "WhileStatementNode";

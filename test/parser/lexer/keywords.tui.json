@@ -188,11 +188,26 @@
   },
   {
     "start": 65,
+    "length": 5,
+    "kind": "WhileKeyword",
+    "trivia": [
+      {
+        "start": 64,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 71,
     "length": 0,
     "kind": "EndOfFile",
     "trivia": [
       {
-        "start": 64,
+        "start": 70,
         "length": 1,
         "kind": "Whitespace",
         "trivia": [],

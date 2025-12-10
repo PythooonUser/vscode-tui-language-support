@@ -1,0 +1,11 @@
+# while-statement-1
+while(foo) {}
+
+# while-statement-2
+while() {}
+
+# while-statement-3
+while( {
+
+# while-statement-4
+while
