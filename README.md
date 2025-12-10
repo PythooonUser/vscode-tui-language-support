@@ -14,6 +14,8 @@ The **tui** language extension currently adds the following features:
 - Code Section Folding
 - Indentation Rules
 - Syntax Highlighting
+- Diagnostics
+- Hover Support
 
 For the future some more features are planned.
 
