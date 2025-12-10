@@ -11,7 +11,7 @@ let client: LanguageClient;
 
 export function activate(context: ExtensionContext) {
   const serverModule = context.asAbsolutePath(
-    join("dist", "server", "server.js")
+    join("dist", "src", "server", "server.js")
   );
 
   const debugOptions = { execArgv: ["--nolazy", "--inspect=6009"] };

@@ -1,0 +1,69 @@
+[
+  {
+    "start": 0,
+    "length": 1,
+    "kind": "NumberLiteral",
+    "trivia": [],
+    "error": null
+  },
+  {
+    "start": 2,
+    "length": 1,
+    "kind": "NumberLiteral",
+    "trivia": [
+      {
+        "start": 1,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 4,
+    "length": 4,
+    "kind": "NumberLiteral",
+    "trivia": [
+      {
+        "start": 3,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 9,
+    "length": 5,
+    "kind": "NumberLiteral",
+    "trivia": [
+      {
+        "start": 8,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 15,
+    "length": 0,
+    "kind": "EndOfFile",
+    "trivia": [
+      {
+        "start": 14,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  }
+]

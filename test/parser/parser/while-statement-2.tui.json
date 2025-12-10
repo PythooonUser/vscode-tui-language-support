@@ -1,0 +1,65 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "WhileStatementNode",
+      "error": null,
+      "whileKeyword": {
+        "start": 0,
+        "length": 5,
+        "kind": "WhileKeyword",
+        "error": null
+      },
+      "condition": {
+        "kind": "ParenthesizedExpressionNode",
+        "error": null,
+        "leftParen": {
+          "start": 5,
+          "length": 1,
+          "kind": "LeftParenDelimiter",
+          "error": null
+        },
+        "expression": {
+          "kind": "MissingDeclarationNode",
+          "error": null,
+          "declaration": {
+            "start": 6,
+            "length": 0,
+            "kind": "Expression",
+            "error": "MissingToken"
+          }
+        },
+        "rightParen": {
+          "start": 6,
+          "length": 1,
+          "kind": "RightParenDelimiter",
+          "error": null
+        }
+      },
+      "statements": {
+        "kind": "CompoundStatementNode",
+        "error": null,
+        "leftBrace": {
+          "start": 8,
+          "length": 1,
+          "kind": "LeftBraceDelimiter",
+          "error": null
+        },
+        "statements": [],
+        "rightBrace": {
+          "start": 9,
+          "length": 1,
+          "kind": "RightBraceDelimiter",
+          "error": null
+        }
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 10,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "TableLiteralNode",
+        "error": null,
+        "leftDelimiter": {
+          "start": 0,
+          "length": 1,
+          "kind": "LeftBraceDelimiter",
+          "error": null
+        },
+        "elements": [
+          {
+            "kind": "ExpressionStatementNode",
+            "error": null,
+            "expression": {
+              "kind": "BinaryExpressionNode",
+              "error": null,
+              "leftOperand": {
+                "kind": "VariableNode",
+                "error": null,
+                "name": {
+                  "start": 2,
+                  "length": 3,
+                  "kind": "Name",
+                  "error": null
+                }
+              },
+              "operator": {
+                "start": 5,
+                "length": 1,
+                "kind": "ColonOperator",
+                "error": null
+              },
+              "rightOperand": {
+                "kind": "NumberLiteralNode",
+                "error": null,
+                "literal": {
+                  "start": 7,
+                  "length": 2,
+                  "kind": "NumberLiteral",
+                  "error": null
+                }
+              }
+            },
+            "delimiter": null
+          }
+        ],
+        "rightDelimiter": {
+          "start": 9,
+          "length": 1,
+          "kind": "RightBraceDelimiter",
+          "error": null
+        }
+      },
+      "delimiter": {
+        "start": 10,
+        "length": 1,
+        "kind": "CommaDelimiter",
+        "error": null
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 11,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "IfStatementNode",
+      "error": null,
+      "ifKeyword": {
+        "start": 0,
+        "length": 2,
+        "kind": "IfKeyword",
+        "error": null
+      },
+      "condition": {
+        "kind": "ParenthesizedExpressionNode",
+        "error": null,
+        "leftParen": {
+          "start": 3,
+          "length": 1,
+          "kind": "LeftParenDelimiter",
+          "error": null
+        },
+        "expression": {
+          "kind": "BinaryExpressionNode",
+          "error": null,
+          "leftOperand": {
+            "kind": "VariableNode",
+            "error": null,
+            "name": {
+              "start": 4,
+              "length": 1,
+              "kind": "Name",
+              "error": null
+            }
+          },
+          "operator": {
+            "start": 6,
+            "length": 2,
+            "kind": "ExclamationEqualsOperator",
+            "error": null
+          },
+          "rightOperand": {
+            "kind": "VariableNode",
+            "error": null,
+            "name": {
+              "start": 9,
+              "length": 1,
+              "kind": "Name",
+              "error": null
+            }
+          }
+        },
+        "rightParen": {
+          "start": 10,
+          "length": 1,
+          "kind": "RightParenDelimiter",
+          "error": null
+        }
+      },
+      "statements": {
+        "kind": "CompoundStatementNode",
+        "error": null,
+        "leftBrace": {
+          "start": 12,
+          "length": 1,
+          "kind": "LeftBraceDelimiter",
+          "error": null
+        },
+        "statements": [],
+        "rightBrace": {
+          "start": 13,
+          "length": 1,
+          "kind": "RightBraceDelimiter",
+          "error": null
+        }
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 14,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

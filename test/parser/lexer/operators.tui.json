@@ -1,0 +1,354 @@
+[
+  {
+    "start": 0,
+    "length": 2,
+    "kind": "PlusPlusOperator",
+    "trivia": [],
+    "error": null
+  },
+  {
+    "start": 3,
+    "length": 2,
+    "kind": "MinusMinusOperator",
+    "trivia": [
+      {
+        "start": 2,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 6,
+    "length": 2,
+    "kind": "AmpersandAmpersandOperator",
+    "trivia": [
+      {
+        "start": 5,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 9,
+    "length": 2,
+    "kind": "BarBarOperator",
+    "trivia": [
+      {
+        "start": 8,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 12,
+    "length": 2,
+    "kind": "LessThanEqualsOperator",
+    "trivia": [
+      {
+        "start": 11,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 15,
+    "length": 2,
+    "kind": "GreaterThanEqualsOperator",
+    "trivia": [
+      {
+        "start": 14,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 18,
+    "length": 1,
+    "kind": "LessThanOperator",
+    "trivia": [
+      {
+        "start": 17,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 20,
+    "length": 1,
+    "kind": "GreaterThanOperator",
+    "trivia": [
+      {
+        "start": 19,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 22,
+    "length": 2,
+    "kind": "ExclamationEqualsOperator",
+    "trivia": [
+      {
+        "start": 21,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 25,
+    "length": 2,
+    "kind": "EqualsEqualsOperator",
+    "trivia": [
+      {
+        "start": 24,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 28,
+    "length": 1,
+    "kind": "ExclamationOperator",
+    "trivia": [
+      {
+        "start": 27,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 30,
+    "length": 2,
+    "kind": "SlashEqualsOperator",
+    "trivia": [
+      {
+        "start": 29,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 33,
+    "length": 2,
+    "kind": "StarEqualsOperator",
+    "trivia": [
+      {
+        "start": 32,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 36,
+    "length": 2,
+    "kind": "PlusEqualsOperator",
+    "trivia": [
+      {
+        "start": 35,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 39,
+    "length": 2,
+    "kind": "MinusEqualsOperator",
+    "trivia": [
+      {
+        "start": 38,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 42,
+    "length": 1,
+    "kind": "PlusOperator",
+    "trivia": [
+      {
+        "start": 41,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 44,
+    "length": 1,
+    "kind": "MinusOperator",
+    "trivia": [
+      {
+        "start": 43,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 46,
+    "length": 1,
+    "kind": "SlashOperator",
+    "trivia": [
+      {
+        "start": 45,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 48,
+    "length": 1,
+    "kind": "StarOperator",
+    "trivia": [
+      {
+        "start": 47,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 50,
+    "length": 1,
+    "kind": "EqualsOperator",
+    "trivia": [
+      {
+        "start": 49,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 52,
+    "length": 1,
+    "kind": "ColonOperator",
+    "trivia": [
+      {
+        "start": 51,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 54,
+    "length": 1,
+    "kind": "QuestionOperator",
+    "trivia": [
+      {
+        "start": 53,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 56,
+    "length": 1,
+    "kind": "DotOperator",
+    "trivia": [
+      {
+        "start": 55,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 58,
+    "length": 0,
+    "kind": "EndOfFile",
+    "trivia": [
+      {
+        "start": 57,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  }
+]

@@ -1,0 +1,157 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ForStatementNode",
+      "error": null,
+      "forKeyword": {
+        "start": 0,
+        "length": 3,
+        "kind": "ForKeyword",
+        "error": null
+      },
+      "leftParen": {
+        "start": 4,
+        "length": 1,
+        "kind": "LeftParenDelimiter",
+        "error": null
+      },
+      "conditions": [
+        {
+          "kind": "ArgumentExpressionNode",
+          "error": null,
+          "argument": {
+            "kind": "BinaryExpressionNode",
+            "error": null,
+            "leftOperand": {
+              "kind": "VariableNode",
+              "error": null,
+              "name": {
+                "start": 5,
+                "length": 1,
+                "kind": "Name",
+                "error": null
+              }
+            },
+            "operator": {
+              "start": 7,
+              "length": 1,
+              "kind": "EqualsOperator",
+              "error": null
+            },
+            "rightOperand": {
+              "kind": "NumberLiteralNode",
+              "error": null,
+              "literal": {
+                "start": 9,
+                "length": 1,
+                "kind": "NumberLiteral",
+                "error": null
+              }
+            }
+          }
+        },
+        {
+          "start": 10,
+          "length": 1,
+          "kind": "CommaDelimiter",
+          "error": null
+        },
+        {
+          "kind": "ArgumentExpressionNode",
+          "error": null,
+          "argument": {
+            "kind": "BinaryExpressionNode",
+            "error": null,
+            "leftOperand": {
+              "kind": "VariableNode",
+              "error": null,
+              "name": {
+                "start": 12,
+                "length": 1,
+                "kind": "Name",
+                "error": null
+              }
+            },
+            "operator": {
+              "start": 14,
+              "length": 1,
+              "kind": "LessThanOperator",
+              "error": null
+            },
+            "rightOperand": {
+              "kind": "NumberLiteralNode",
+              "error": null,
+              "literal": {
+                "start": 16,
+                "length": 2,
+                "kind": "NumberLiteral",
+                "error": null
+              }
+            }
+          }
+        },
+        {
+          "start": 18,
+          "length": 1,
+          "kind": "CommaDelimiter",
+          "error": null
+        },
+        {
+          "kind": "ArgumentExpressionNode",
+          "error": null,
+          "argument": {
+            "kind": "PostfixUpdateExpressionNode",
+            "error": null,
+            "operand": {
+              "kind": "VariableNode",
+              "error": null,
+              "name": {
+                "start": 20,
+                "length": 1,
+                "kind": "Name",
+                "error": null
+              }
+            },
+            "operator": {
+              "start": 21,
+              "length": 2,
+              "kind": "PlusPlusOperator",
+              "error": null
+            }
+          }
+        }
+      ],
+      "rightParen": {
+        "start": 23,
+        "length": 1,
+        "kind": "RightParenDelimiter",
+        "error": null
+      },
+      "statements": {
+        "kind": "CompoundStatementNode",
+        "error": null,
+        "leftBrace": {
+          "start": 25,
+          "length": 1,
+          "kind": "LeftBraceDelimiter",
+          "error": null
+        },
+        "statements": [],
+        "rightBrace": {
+          "start": 26,
+          "length": 1,
+          "kind": "RightBraceDelimiter",
+          "error": null
+        }
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 27,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

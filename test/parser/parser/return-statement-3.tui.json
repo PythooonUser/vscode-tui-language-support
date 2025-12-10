@@ -1,0 +1,38 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ReturnStatementNode",
+      "error": null,
+      "returnKeyword": {
+        "start": 0,
+        "length": 6,
+        "kind": "ReturnKeyword",
+        "error": null
+      },
+      "expression": {
+        "kind": "VariableNode",
+        "error": null,
+        "name": {
+          "start": 7,
+          "length": 1,
+          "kind": "Name",
+          "error": null
+        }
+      },
+      "delimiter": {
+        "start": 8,
+        "length": 1,
+        "kind": "CommaDelimiter",
+        "error": null
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 9,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

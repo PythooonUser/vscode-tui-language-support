@@ -1,0 +1,29 @@
+# table-literal-1
+{}
+
+# table-literal-2
+[]
+
+# table-literal-3
+{},
+
+# table-literal-4
+[],
+
+# table-literal-5
+{ 42 }
+
+# table-literal-6
+{ foo = 42 }
+
+# table-literal-7
+{ "foo" = 42 }
+
+# table-literal-8
+{ foo, 42, "x" = true }
+
+# table-literal-9
+{ foo, [ 1, 2 ], "x" = { "Hello World", nil } }
+
+# table-literal-10
+{ foo: 42},

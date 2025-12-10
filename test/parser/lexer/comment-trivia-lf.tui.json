@@ -1,0 +1,73 @@
+[
+  {
+    "start": 82,
+    "length": 0,
+    "kind": "EndOfFile",
+    "trivia": [
+      {
+        "start": 0,
+        "length": 13,
+        "kind": "Comment",
+        "trivia": [],
+        "error": null
+      },
+      {
+        "start": 13,
+        "length": 2,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      },
+      {
+        "start": 15,
+        "length": 14,
+        "kind": "Comment",
+        "trivia": [],
+        "error": null
+      },
+      {
+        "start": 29,
+        "length": 2,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      },
+      {
+        "start": 31,
+        "length": 17,
+        "kind": "Comment",
+        "trivia": [],
+        "error": null
+      },
+      {
+        "start": 48,
+        "length": 2,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      },
+      {
+        "start": 50,
+        "length": 21,
+        "kind": "Comment",
+        "trivia": [],
+        "error": null
+      },
+      {
+        "start": 71,
+        "length": 2,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      },
+      {
+        "start": 73,
+        "length": 9,
+        "kind": "Comment",
+        "trivia": [],
+        "error": "UnexpectedEndOfFile"
+      }
+    ],
+    "error": null
+  }
+]

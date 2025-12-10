@@ -1,0 +1,147 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "IfStatementNode",
+      "error": null,
+      "ifKeyword": {
+        "start": 0,
+        "length": 2,
+        "kind": "IfKeyword",
+        "error": null
+      },
+      "condition": {
+        "kind": "ParenthesizedExpressionNode",
+        "error": null,
+        "leftParen": {
+          "start": 3,
+          "length": 1,
+          "kind": "LeftParenDelimiter",
+          "error": null
+        },
+        "expression": {
+          "kind": "MissingDeclarationNode",
+          "error": null,
+          "declaration": {
+            "start": 4,
+            "length": 0,
+            "kind": "Expression",
+            "error": "MissingToken"
+          }
+        },
+        "rightParen": {
+          "start": 4,
+          "length": 1,
+          "kind": "RightParenDelimiter",
+          "error": null
+        }
+      },
+      "statements": {
+        "kind": "CompoundStatementNode",
+        "error": null,
+        "leftBrace": {
+          "start": 6,
+          "length": 1,
+          "kind": "LeftBraceDelimiter",
+          "error": null
+        },
+        "statements": [],
+        "rightBrace": {
+          "start": 7,
+          "length": 1,
+          "kind": "RightBraceDelimiter",
+          "error": null
+        }
+      }
+    },
+    {
+      "kind": "ElseIfClauseNode",
+      "error": null,
+      "elseKeyword": null,
+      "ifKeyword": null,
+      "elseIfKeyword": {
+        "start": 9,
+        "length": 6,
+        "kind": "ElseIfKeyword",
+        "error": null
+      },
+      "condition": {
+        "kind": "ParenthesizedExpressionNode",
+        "error": null,
+        "leftParen": {
+          "start": 16,
+          "length": 1,
+          "kind": "LeftParenDelimiter",
+          "error": null
+        },
+        "expression": {
+          "kind": "MissingDeclarationNode",
+          "error": null,
+          "declaration": {
+            "start": 17,
+            "length": 0,
+            "kind": "Expression",
+            "error": "MissingToken"
+          }
+        },
+        "rightParen": {
+          "start": 17,
+          "length": 1,
+          "kind": "RightParenDelimiter",
+          "error": null
+        }
+      },
+      "statements": {
+        "kind": "CompoundStatementNode",
+        "error": null,
+        "leftBrace": {
+          "start": 19,
+          "length": 1,
+          "kind": "LeftBraceDelimiter",
+          "error": null
+        },
+        "statements": [],
+        "rightBrace": {
+          "start": 20,
+          "length": 1,
+          "kind": "RightBraceDelimiter",
+          "error": null
+        }
+      }
+    },
+    {
+      "kind": "ElseClauseNode",
+      "error": null,
+      "elseKeyword": {
+        "start": 22,
+        "length": 4,
+        "kind": "ElseKeyword",
+        "error": null
+      },
+      "statements": {
+        "kind": "CompoundStatementNode",
+        "error": null,
+        "leftBrace": {
+          "start": 27,
+          "length": 1,
+          "kind": "LeftBraceDelimiter",
+          "error": null
+        },
+        "statements": [],
+        "rightBrace": {
+          "start": 28,
+          "length": 1,
+          "kind": "RightBraceDelimiter",
+          "error": null
+        }
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 29,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

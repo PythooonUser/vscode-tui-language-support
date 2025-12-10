@@ -1,0 +1,17 @@
+# function-declaration-1
+function() {},
+
+# function-declaration-2
+function() {}
+
+# function-declaration-3
+foo = function() {},
+
+# function-declaration-4
+foo = function(bar) {},
+
+# function-declaration-5
+foo = function(bar, baz) {},
+
+# function-declaration-6
+foo = function(bar, baz,) {},

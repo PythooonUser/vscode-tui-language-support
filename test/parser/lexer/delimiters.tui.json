@@ -1,0 +1,114 @@
+[
+  {
+    "start": 0,
+    "length": 1,
+    "kind": "LeftParenDelimiter",
+    "trivia": [],
+    "error": null
+  },
+  {
+    "start": 2,
+    "length": 1,
+    "kind": "RightParenDelimiter",
+    "trivia": [
+      {
+        "start": 1,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 4,
+    "length": 1,
+    "kind": "LeftBracketDelimiter",
+    "trivia": [
+      {
+        "start": 3,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 6,
+    "length": 1,
+    "kind": "RightBracketDelimiter",
+    "trivia": [
+      {
+        "start": 5,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 8,
+    "length": 1,
+    "kind": "LeftBraceDelimiter",
+    "trivia": [
+      {
+        "start": 7,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 10,
+    "length": 1,
+    "kind": "RightBraceDelimiter",
+    "trivia": [
+      {
+        "start": 9,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 12,
+    "length": 1,
+    "kind": "CommaDelimiter",
+    "trivia": [
+      {
+        "start": 11,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 14,
+    "length": 0,
+    "kind": "EndOfFile",
+    "trivia": [
+      {
+        "start": 13,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  }
+]

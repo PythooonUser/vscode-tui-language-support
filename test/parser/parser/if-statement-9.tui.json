@@ -1,0 +1,72 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ElseIfClauseNode",
+      "error": null,
+      "elseKeyword": {
+        "start": 0,
+        "length": 4,
+        "kind": "ElseKeyword",
+        "error": null
+      },
+      "ifKeyword": {
+        "start": 5,
+        "length": 2,
+        "kind": "IfKeyword",
+        "error": null
+      },
+      "elseIfKeyword": null,
+      "condition": {
+        "kind": "ParenthesizedExpressionNode",
+        "error": null,
+        "leftParen": {
+          "start": 8,
+          "length": 1,
+          "kind": "LeftParenDelimiter",
+          "error": null
+        },
+        "expression": {
+          "kind": "MissingDeclarationNode",
+          "error": null,
+          "declaration": {
+            "start": 9,
+            "length": 0,
+            "kind": "Expression",
+            "error": "MissingToken"
+          }
+        },
+        "rightParen": {
+          "start": 9,
+          "length": 1,
+          "kind": "RightParenDelimiter",
+          "error": null
+        }
+      },
+      "statements": {
+        "kind": "CompoundStatementNode",
+        "error": null,
+        "leftBrace": {
+          "start": 11,
+          "length": 1,
+          "kind": "LeftBraceDelimiter",
+          "error": null
+        },
+        "statements": [],
+        "rightBrace": {
+          "start": 12,
+          "length": 1,
+          "kind": "RightBraceDelimiter",
+          "error": null
+        }
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 13,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "CallExpressionNode",
+        "error": null,
+        "expression": {
+          "kind": "VariableNode",
+          "error": null,
+          "name": {
+            "start": 0,
+            "length": 3,
+            "kind": "Name",
+            "error": null
+          }
+        },
+        "arguments": {
+          "kind": "ArgumentExpressionListNode",
+          "error": null,
+          "leftParen": {
+            "start": 3,
+            "length": 1,
+            "kind": "LeftParenDelimiter",
+            "error": null
+          },
+          "elements": [
+            {
+              "kind": "ArgumentExpressionNode",
+              "error": null,
+              "argument": {
+                "kind": "MemberAccessExpressionNode",
+                "error": null,
+                "expression": {
+                  "kind": "CallExpressionNode",
+                  "error": null,
+                  "expression": {
+                    "kind": "VariableNode",
+                    "error": null,
+                    "name": {
+                      "start": 4,
+                      "length": 3,
+                      "kind": "Name",
+                      "error": null
+                    }
+                  },
+                  "arguments": {
+                    "kind": "ArgumentExpressionListNode",
+                    "error": null,
+                    "leftParen": {
+                      "start": 7,
+                      "length": 1,
+                      "kind": "LeftParenDelimiter",
+                      "error": null
+                    },
+                    "elements": [],
+                    "rightParen": {
+                      "start": 8,
+                      "length": 1,
+                      "kind": "RightParenDelimiter",
+                      "error": null
+                    }
+                  }
+                },
+                "dot": {
+                  "start": 9,
+                  "length": 1,
+                  "kind": "DotOperator",
+                  "error": null
+                },
+                "member": {
+                  "start": 10,
+                  "length": 3,
+                  "kind": "Name",
+                  "error": null
+                }
+              }
+            }
+          ],
+          "rightParen": {
+            "start": 13,
+            "length": 1,
+            "kind": "RightParenDelimiter",
+            "error": null
+          }
+        }
+      },
+      "delimiter": {
+        "start": 14,
+        "length": 1,
+        "kind": "CommaDelimiter",
+        "error": null
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 15,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

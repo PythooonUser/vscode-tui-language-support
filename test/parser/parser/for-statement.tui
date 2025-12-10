@@ -1,0 +1,11 @@
+# for-statement-1
+for() {}
+
+# for-statement-2
+for(foo in bar) {}
+
+# for-statement-3
+for(index, foo in bar) {}
+
+# for-statement-4
+for (i = 0, i < 10, i++) {}

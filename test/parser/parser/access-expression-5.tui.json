@@ -1,0 +1,91 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "MemberAccessExpressionNode",
+        "error": null,
+        "expression": {
+          "kind": "TableLiteralNode",
+          "error": null,
+          "leftDelimiter": {
+            "start": 0,
+            "length": 1,
+            "kind": "LeftBracketDelimiter",
+            "error": null
+          },
+          "elements": [
+            {
+              "kind": "ExpressionStatementNode",
+              "error": null,
+              "expression": {
+                "kind": "NumberLiteralNode",
+                "error": null,
+                "literal": {
+                  "start": 1,
+                  "length": 1,
+                  "kind": "NumberLiteral",
+                  "error": null
+                }
+              },
+              "delimiter": {
+                "start": 2,
+                "length": 1,
+                "kind": "CommaDelimiter",
+                "error": null
+              }
+            },
+            {
+              "kind": "ExpressionStatementNode",
+              "error": null,
+              "expression": {
+                "kind": "NumberLiteralNode",
+                "error": null,
+                "literal": {
+                  "start": 4,
+                  "length": 1,
+                  "kind": "NumberLiteral",
+                  "error": null
+                }
+              },
+              "delimiter": null
+            }
+          ],
+          "rightDelimiter": {
+            "start": 5,
+            "length": 1,
+            "kind": "RightBracketDelimiter",
+            "error": null
+          }
+        },
+        "dot": {
+          "start": 6,
+          "length": 1,
+          "kind": "DotOperator",
+          "error": null
+        },
+        "member": {
+          "start": 7,
+          "length": 3,
+          "kind": "Name",
+          "error": null
+        }
+      },
+      "delimiter": {
+        "start": 10,
+        "length": 1,
+        "kind": "CommaDelimiter",
+        "error": null
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 11,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

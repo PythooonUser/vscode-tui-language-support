@@ -1,0 +1,120 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "BinaryExpressionNode",
+        "error": null,
+        "leftOperand": {
+          "kind": "VariableNode",
+          "error": null,
+          "name": {
+            "start": 0,
+            "length": 3,
+            "kind": "Name",
+            "error": null
+          }
+        },
+        "operator": {
+          "start": 4,
+          "length": 1,
+          "kind": "EqualsOperator",
+          "error": null
+        },
+        "rightOperand": {
+          "kind": "FunctionDeclarationNode",
+          "error": null,
+          "functionKeyword": {
+            "start": 6,
+            "length": 8,
+            "kind": "FunctionKeyword",
+            "error": null
+          },
+          "arguments": {
+            "kind": "ParameterDeclarationListNode",
+            "error": null,
+            "leftParen": {
+              "start": 14,
+              "length": 1,
+              "kind": "LeftParenDelimiter",
+              "error": null
+            },
+            "elements": [
+              {
+                "kind": "ParameterDeclarationNode",
+                "error": null,
+                "name": {
+                  "start": 15,
+                  "length": 3,
+                  "kind": "Name",
+                  "error": null
+                }
+              },
+              {
+                "start": 18,
+                "length": 1,
+                "kind": "CommaDelimiter",
+                "error": null
+              },
+              {
+                "kind": "ParameterDeclarationNode",
+                "error": null,
+                "name": {
+                  "start": 20,
+                  "length": 3,
+                  "kind": "Name",
+                  "error": null
+                }
+              },
+              {
+                "start": 23,
+                "length": 1,
+                "kind": "CommaDelimiter",
+                "error": null
+              }
+            ],
+            "rightParen": {
+              "start": 24,
+              "length": 1,
+              "kind": "RightParenDelimiter",
+              "error": null
+            }
+          },
+          "statements": {
+            "kind": "CompoundStatementNode",
+            "error": null,
+            "leftBrace": {
+              "start": 26,
+              "length": 1,
+              "kind": "LeftBraceDelimiter",
+              "error": null
+            },
+            "statements": [],
+            "rightBrace": {
+              "start": 27,
+              "length": 1,
+              "kind": "RightBraceDelimiter",
+              "error": null
+            }
+          },
+          "delimiter": null
+        }
+      },
+      "delimiter": {
+        "start": 28,
+        "length": 1,
+        "kind": "CommaDelimiter",
+        "error": null
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 29,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

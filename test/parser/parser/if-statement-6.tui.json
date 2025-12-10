@@ -1,0 +1,185 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "IfStatementNode",
+      "error": null,
+      "ifKeyword": {
+        "start": 0,
+        "length": 2,
+        "kind": "IfKeyword",
+        "error": null
+      },
+      "condition": {
+        "kind": "ParenthesizedExpressionNode",
+        "error": null,
+        "leftParen": {
+          "start": 3,
+          "length": 1,
+          "kind": "LeftParenDelimiter",
+          "error": null
+        },
+        "expression": {
+          "kind": "MissingDeclarationNode",
+          "error": null,
+          "declaration": {
+            "start": 4,
+            "length": 0,
+            "kind": "Expression",
+            "error": "MissingToken"
+          }
+        },
+        "rightParen": {
+          "start": 4,
+          "length": 1,
+          "kind": "RightParenDelimiter",
+          "error": null
+        }
+      },
+      "statements": {
+        "kind": "CompoundStatementNode",
+        "error": null,
+        "leftBrace": {
+          "start": 6,
+          "length": 1,
+          "kind": "LeftBraceDelimiter",
+          "error": null
+        },
+        "statements": [],
+        "rightBrace": {
+          "start": 7,
+          "length": 1,
+          "kind": "RightBraceDelimiter",
+          "error": null
+        }
+      }
+    },
+    {
+      "kind": "ElseIfClauseNode",
+      "error": null,
+      "elseKeyword": {
+        "start": 9,
+        "length": 4,
+        "kind": "ElseKeyword",
+        "error": null
+      },
+      "ifKeyword": {
+        "start": 14,
+        "length": 2,
+        "kind": "IfKeyword",
+        "error": null
+      },
+      "elseIfKeyword": null,
+      "condition": {
+        "kind": "ParenthesizedExpressionNode",
+        "error": null,
+        "leftParen": {
+          "start": 17,
+          "length": 1,
+          "kind": "LeftParenDelimiter",
+          "error": null
+        },
+        "expression": {
+          "kind": "MissingDeclarationNode",
+          "error": null,
+          "declaration": {
+            "start": 18,
+            "length": 0,
+            "kind": "Expression",
+            "error": "MissingToken"
+          }
+        },
+        "rightParen": {
+          "start": 18,
+          "length": 1,
+          "kind": "RightParenDelimiter",
+          "error": null
+        }
+      },
+      "statements": {
+        "kind": "CompoundStatementNode",
+        "error": null,
+        "leftBrace": {
+          "start": 20,
+          "length": 1,
+          "kind": "LeftBraceDelimiter",
+          "error": null
+        },
+        "statements": [],
+        "rightBrace": {
+          "start": 21,
+          "length": 1,
+          "kind": "RightBraceDelimiter",
+          "error": null
+        }
+      }
+    },
+    {
+      "kind": "ElseIfClauseNode",
+      "error": null,
+      "elseKeyword": {
+        "start": 23,
+        "length": 4,
+        "kind": "ElseKeyword",
+        "error": null
+      },
+      "ifKeyword": {
+        "start": 28,
+        "length": 2,
+        "kind": "IfKeyword",
+        "error": null
+      },
+      "elseIfKeyword": null,
+      "condition": {
+        "kind": "ParenthesizedExpressionNode",
+        "error": null,
+        "leftParen": {
+          "start": 31,
+          "length": 1,
+          "kind": "LeftParenDelimiter",
+          "error": null
+        },
+        "expression": {
+          "kind": "MissingDeclarationNode",
+          "error": null,
+          "declaration": {
+            "start": 32,
+            "length": 0,
+            "kind": "Expression",
+            "error": "MissingToken"
+          }
+        },
+        "rightParen": {
+          "start": 32,
+          "length": 1,
+          "kind": "RightParenDelimiter",
+          "error": null
+        }
+      },
+      "statements": {
+        "kind": "CompoundStatementNode",
+        "error": null,
+        "leftBrace": {
+          "start": 34,
+          "length": 1,
+          "kind": "LeftBraceDelimiter",
+          "error": null
+        },
+        "statements": [],
+        "rightBrace": {
+          "start": 35,
+          "length": 1,
+          "kind": "RightBraceDelimiter",
+          "error": null
+        }
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 36,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

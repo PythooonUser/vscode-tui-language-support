@@ -1,0 +1,39 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "TableLiteralNode",
+        "error": null,
+        "leftDelimiter": {
+          "start": 0,
+          "length": 1,
+          "kind": "LeftBracketDelimiter",
+          "error": null
+        },
+        "elements": [],
+        "rightDelimiter": {
+          "start": 1,
+          "length": 1,
+          "kind": "RightBracketDelimiter",
+          "error": null
+        }
+      },
+      "delimiter": {
+        "start": 2,
+        "length": 1,
+        "kind": "CommaDelimiter",
+        "error": null
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 3,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

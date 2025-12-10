@@ -1,0 +1,84 @@
+[
+  {
+    "start": 0,
+    "length": 8,
+    "kind": "Name",
+    "trivia": [],
+    "error": null
+  },
+  {
+    "start": 9,
+    "length": 9,
+    "kind": "Name",
+    "trivia": [
+      {
+        "start": 8,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 19,
+    "length": 9,
+    "kind": "Name",
+    "trivia": [
+      {
+        "start": 18,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 29,
+    "length": 9,
+    "kind": "Name",
+    "trivia": [
+      {
+        "start": 28,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 39,
+    "length": 8,
+    "kind": "Name",
+    "trivia": [
+      {
+        "start": 38,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 48,
+    "length": 0,
+    "kind": "EndOfFile",
+    "trivia": [
+      {
+        "start": 47,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  }
+]

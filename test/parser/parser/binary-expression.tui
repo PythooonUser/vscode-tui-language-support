@@ -1,0 +1,38 @@
+# binary-expression-1
+a + b,
+
+# binary-expression-2
+a - b,
+
+# binary-expression-3
+a * b,
+
+# binary-expression-4
+a / b,
+
+# binary-expression-5
+a + b * c,
+
+# binary-expression-6
+a - b / c,
+
+# binary-expression-7
+(a + b) * c,
+
+# binary-expression-8
+a > b,
+
+# binary-expression-9
+a >= b,
+
+# binary-expression-10
+a < b,
+
+# binary-expression-11
+a <= b,
+
+# binary-expression-12
+a == b,
+
+# binary-expression-13
+a != b,

@@ -1,0 +1,58 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "IndexedAccessExpressionNode",
+        "error": null,
+        "expression": {
+          "kind": "VariableNode",
+          "error": null,
+          "name": {
+            "start": 0,
+            "length": 3,
+            "kind": "Name",
+            "error": null
+          }
+        },
+        "leftBracket": {
+          "start": 3,
+          "length": 1,
+          "kind": "LeftBracketDelimiter",
+          "error": null
+        },
+        "index": {
+          "kind": "MissingDeclarationNode",
+          "error": null,
+          "declaration": {
+            "start": 4,
+            "length": 0,
+            "kind": "Index",
+            "error": "MissingToken"
+          }
+        },
+        "rightBracket": {
+          "start": 4,
+          "length": 0,
+          "kind": "RightBracketDelimiter",
+          "error": "MissingToken"
+        }
+      },
+      "delimiter": {
+        "start": 4,
+        "length": 1,
+        "kind": "CommaDelimiter",
+        "error": null
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 5,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

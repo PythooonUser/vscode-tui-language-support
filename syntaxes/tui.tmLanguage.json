@@ -27,7 +27,7 @@
     "keyword": {
       "patterns": [
         {
-          "match": "\\b(if|elseif|else|for|in|return)\\b",
+          "match": "\\b(if|elseif|else|for|while|return|and|or|in)\\b",
           "name": "keyword.control.tui"
         },
         {
@@ -77,6 +77,12 @@
               "name": "punctuation.definition.string.begin.tui"
             }
           },
+          "patterns": [
+            {
+              "name": "constant.character.escape.tui",
+              "match": "\\\\\""
+            }
+          ],
           "end": "\"",
           "endCaptures": {
             "0": {

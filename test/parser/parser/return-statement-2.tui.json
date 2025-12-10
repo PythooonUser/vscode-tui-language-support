@@ -1,0 +1,24 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ReturnStatementNode",
+      "error": null,
+      "returnKeyword": {
+        "start": 0,
+        "length": 6,
+        "kind": "ReturnKeyword",
+        "error": null
+      },
+      "expression": null,
+      "delimiter": null
+    }
+  ],
+  "endOfFile": {
+    "start": 6,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

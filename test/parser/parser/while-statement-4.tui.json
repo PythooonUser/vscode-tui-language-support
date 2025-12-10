@@ -1,0 +1,49 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "WhileStatementNode",
+      "error": null,
+      "whileKeyword": {
+        "start": 0,
+        "length": 5,
+        "kind": "WhileKeyword",
+        "error": null
+      },
+      "condition": {
+        "kind": "MissingDeclarationNode",
+        "error": null,
+        "declaration": {
+          "start": 5,
+          "length": 0,
+          "kind": "Expression",
+          "error": "MissingToken"
+        }
+      },
+      "statements": {
+        "kind": "CompoundStatementNode",
+        "error": null,
+        "leftBrace": {
+          "start": 5,
+          "length": 0,
+          "kind": "LeftBraceDelimiter",
+          "error": "MissingToken"
+        },
+        "statements": [],
+        "rightBrace": {
+          "start": 5,
+          "length": 0,
+          "kind": "RightBraceDelimiter",
+          "error": "MissingToken"
+        }
+      }
+    }
+  ],
+  "endOfFile": {
+    "start": 5,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

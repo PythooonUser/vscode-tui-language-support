@@ -1,0 +1,38 @@
+# access-expression-1
+foo.bar,
+
+# access-expression-2
+(foo).bar,
+
+# access-expression-3
+foo.bar.spam,
+
+# access-expression-4
+foo[0].bar,
+
+# access-expression-5
+[0, 1].bar,
+
+# access-expression-6
+"Hello World".bar,
+
+# access-expression-7
+foo = .bar,
+
+# access-expression-8
+.foo = 4,
+
+# access-expression-9
+foo[0],
+
+# access-expression-10
+foo[bar().baz + 1],
+
+# access-expression-11
+foo[],
+
+# access-expression-12
+foo[,
+
+# access-expression-13
+foo[foo[0][0]],
