@@ -47,7 +47,7 @@ documents.onDidChangeContent((event) => {
   ast.walk((element) => {
     if (element.error) {
       const diagnostic: Diagnostic = {
-        severity: DiagnosticSeverity.Warning,
+        severity: DiagnosticSeverity.Error,
         range: {
           start: event.document.positionAt(element.start),
           end: event.document.positionAt(element.start + element.length),
