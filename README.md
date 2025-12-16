@@ -21,6 +21,10 @@ For the future some more features are planned.
 
 _Please note that development goes slowly since this is a free-time project only._
 
+## Agents
+
+In order to ease the onboarding of Agents for this codebase we provide an [AGENTS](https://github.com/PythooonUser/vscode-tui-language-support/blob/main/AGENTS.md) file with instructions about e.g. architecture and testing.
+
 ## Known Issues
 
 No known issues.
