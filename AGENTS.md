@@ -1,19 +1,19 @@
-# Agent Guide: vscode-tui-language-support
+# Agent OnBoarding: vscode-tui-language-support
 
-This VS Code extension adds language support for the **tui** programming language. This guide provides essential context for AI agents working on this codebase.
+This VS Code extension adds language support for the **tui** programming language (see https://github.com/mjdave/tui). This guide provides essential context for AI agents working on this codebase.
 
 ## Project Architecture
 
 The project follows a **client-server** architecture:
 
 - **Client** (`src/client/client.ts`): VS Code extension entry point that loads the language server
-- **Server** (`src/server/server.ts`): Language server providing diagnostics and hover information
+- **Server** (`src/server/server.ts`): Language server providing diagnostics, hover information, and other editor features
 - **Parser** (`src/parser/`): Core compilation pipeline (lexer → parser → AST)
 
 ### Critical Data Flow
 
 ```
-Source Code → Lexer (tokenization) → Parser (AST generation) → Server (diagnostics/hover)
+Source Code → Lexer (tokenization) → Parser (AST generation) → Linter (diagnostics) → Server (diagnostics/hover/other)
 ```
 
 The server caches parsed ASTs in `DocumentCache` and updates on document changes. All AST nodes implement a `walk()` method for tree traversal during error reporting.
@@ -55,6 +55,8 @@ Tests use a **snapshot-based pattern** (similar to snapshot testing):
    - Contains serialized AST (excludes `parent`, `trivia`, `document` properties)
    - Location: `test/parser/parser/<test-name>.tui.json`
 
+Same applies for the lexer, linting diagnostics, etc.
+
 ### Test Workflow
 
 ```bash
@@ -74,30 +76,13 @@ When adding a test case:
 
 ### Error Handling
 
-- Every node has an `error` field (TokenError or ParseContextError or null)
+- Every node or token has a nullable `error` field (TokenError or ParseContextError)
 - Errors contain: `message`, `start`, `length`
-- Server reports all errors found during AST walk with `DiagnosticSeverity.Error`
 
 ### Token Positioning
 
 - All tokens/nodes store `start` (byte offset) and `length` (in bytes)
 - Used for hover resolution: find node at document offset, return hover info
-
-### Node Serialization
-
-During tests, nodes are JSON stringified with a replacer function that:
-
-- **Strips**: `parent`, `trivia`, `document` (circular references & implementation details)
-- **Preserves**: `kind`, `error`, positional info, all named properties
-
-Example from `parser.test.ts`:
-
-```typescript
-JSON.stringify(actual, (key, value) => {
-  if (["parent", "trivia", "document"].includes(key)) return;
-  return value;
-});
-```
 
 ### AST Navigation
 
