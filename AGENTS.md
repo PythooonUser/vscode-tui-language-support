@@ -53,3 +53,9 @@ npm run utils:parser  # generate parser fixtures
 - The project compiles to `dist/`; built files are referenced from the `main` field in `package.json`.
 - Use the tools in the `tools/` folder to regenerate or inspect lexer/parser fixtures when updating the grammar or tokenization.
 - When changing diagnostics or parser behavior, add or update fixtures under `test/parser/`.
+
+## Closing Remarks
+
+- Always try to make as minimal changes as possible
+- Always create tests to cover new or updated/fixed functionality
+- Don't create comments when they are not necessary
