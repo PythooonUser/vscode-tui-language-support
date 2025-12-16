@@ -36,3 +36,6 @@ a == b,
 
 # binary-expression-13
 a != b,
+
+# binary-expression-14
+a in b,
