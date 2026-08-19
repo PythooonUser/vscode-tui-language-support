@@ -1,15 +1,13 @@
 import { TextDocument } from "vscode-languageserver-textdocument";
 import {
   createConnection,
-  Diagnostic,
-  DiagnosticSeverity,
   ProposedFeatures,
   TextDocuments,
   TextDocumentSyncKind,
 } from "vscode-languageserver/node";
-import { VariableNode } from "../parser";
 import { DocumentCache } from "./document-cache";
 import { HoverResolver } from "./hover-resolver";
+import { Linter } from "./linter";
 
 const cache = new DocumentCache();
 const connection = createConnection(ProposedFeatures.all);
@@ -42,25 +40,7 @@ documents.onDidChangeContent((event) => {
   const ast = cache.get(event.document.uri)?.ast;
   if (!ast) return [];
 
-  const diagnostics: Diagnostic[] = [];
-
-  ast.walk((element) => {
-    if (element.error) {
-      const diagnostic: Diagnostic = {
-        severity: DiagnosticSeverity.Error,
-        range: {
-          start: event.document.positionAt(element.start),
-          end: event.document.positionAt(element.start + element.length),
-        },
-        message: `ERROR: ${element.error}`,
-        code: "100",
-        source: "tui",
-      };
-
-      diagnostics.push(diagnostic);
-    }
-  });
-
+  const diagnostics = new Linter().lint(event, ast);
   connection.sendDiagnostics({ uri: event.document.uri, diagnostics });
 });
 

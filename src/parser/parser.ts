@@ -104,7 +104,7 @@ export class Parser {
       0,
       kind,
       [],
-      "MissingToken"
+      "MissingToken",
     );
     missingToken.parent = parent;
 
@@ -139,7 +139,7 @@ export class Parser {
       0,
       kinds[0],
       [],
-      "MissingToken"
+      "MissingToken",
     );
     missingToken.parent = parent;
 
@@ -163,7 +163,7 @@ export class Parser {
 
   private getParseContextHistory(): ParseContext[] {
     return (["SourceElements"] as ParseContext[]).concat(
-      this.parseContexts.slice(0, -1)
+      this.parseContexts.slice(0, -1),
     );
   }
 
@@ -177,7 +177,7 @@ export class Parser {
 
   private parseElementList(
     parent: Node,
-    context: ParseContext
+    context: ParseContext,
   ): NodeOrTokenArray {
     this.setCurrentParseContext(context);
 
@@ -197,6 +197,7 @@ export class Parser {
 
       const skippedToken = this.token;
       skippedToken.error = "SkippedToken";
+      skippedToken.parent = parent;
       elementList.push(skippedToken);
       this.advance();
     }
@@ -225,7 +226,7 @@ export class Parser {
 
   private isElementListTerminator(
     context: ParseContext,
-    token: Token
+    token: Token,
   ): boolean {
     const kind = token.kind;
 
@@ -410,7 +411,7 @@ export class Parser {
     node.conditions = this.parseElementList(
       node,
       // FIXME: Is an argument expression list the correct way to go?
-      "ArgumentExpressionListElement"
+      "ArgumentExpressionListElement",
     );
     node.rightParen = this.consume(node, "RightParenDelimiter");
 
@@ -451,8 +452,9 @@ export class Parser {
         0,
         "Expression",
         [],
-        "MissingToken"
+        "MissingToken",
       );
+      node.declaration.parent = node;
 
       return node;
     }
@@ -499,8 +501,9 @@ export class Parser {
           0,
           "Expression",
           [],
-          "MissingToken"
+          "MissingToken",
         );
+        node.declaration.parent = node;
 
         return node;
     }
@@ -533,9 +536,9 @@ export class Parser {
         token,
         this.parseBinaryExpressionOrHigher(
           precedenceAndAssociativity.precedence,
-          parent
+          parent,
         ),
-        parent
+        parent,
       );
     }
 
@@ -546,7 +549,7 @@ export class Parser {
     leftOperand: Node,
     operator: Token,
     rightOperand: Node,
-    parent: Node
+    parent: Node,
   ): BinaryExpressionNode {
     const node = new BinaryExpressionNode();
     node.parent = parent;
@@ -591,7 +594,7 @@ export class Parser {
   }
 
   private parsePrefixUpdateExpression(
-    parent: Node | null
+    parent: Node | null,
   ): PrefixUpdateExpressionNode {
     const node = new PrefixUpdateExpressionNode();
     node.parent = parent;
@@ -626,7 +629,7 @@ export class Parser {
   }
 
   private parsePostfixUpdateExpression(
-    expression: Node
+    expression: Node,
   ): PostfixUpdateExpressionNode {
     const node = new PostfixUpdateExpressionNode();
     node.parent = expression.parent;
@@ -684,7 +687,7 @@ export class Parser {
   }
 
   private parseParenthesizedExpression(
-    parent: Node
+    parent: Node,
   ): ParenthesizedExpressionNode {
     const node = new ParenthesizedExpressionNode();
     node.parent = parent;
@@ -725,7 +728,7 @@ export class Parser {
   }
 
   private parseArgumentExpressionList(
-    parent: Node
+    parent: Node,
   ): ArgumentExpressionListNode {
     const node = new ArgumentExpressionListNode();
     node.parent = parent;
@@ -733,7 +736,7 @@ export class Parser {
     node.leftParen = this.consume(node, "LeftParenDelimiter");
     node.elements = this.parseElementList(
       node,
-      "ArgumentExpressionListElement"
+      "ArgumentExpressionListElement",
     );
     node.rightParen = this.consume(node, "RightParenDelimiter");
 
@@ -741,7 +744,7 @@ export class Parser {
   }
 
   private parseArgumentExpressionListElement(
-    parent: Node
+    parent: Node,
   ): Token | ArgumentExpressionNode {
     if (this.token?.kind === "CommaDelimiter") {
       return this.consume(parent, "CommaDelimiter");
@@ -773,7 +776,7 @@ export class Parser {
   }
 
   private parseFunctionDeclarationExpression(
-    parent: Node
+    parent: Node,
   ): FunctionDeclarationNode {
     const node = new FunctionDeclarationNode();
     node.parent = parent;
@@ -786,7 +789,7 @@ export class Parser {
   }
 
   private parseParameterDeclarationList(
-    parent: Node
+    parent: Node,
   ): ParameterDeclarationListNode {
     const node = new ParameterDeclarationListNode();
     node.parent = parent;
@@ -824,7 +827,7 @@ export class Parser {
   }
 
   private parseMemberAccessExpression(
-    expression: Node
+    expression: Node,
   ): MemberAccessExpressionNode {
     const node = new MemberAccessExpressionNode();
     node.parent = expression.parent;
@@ -850,7 +853,7 @@ export class Parser {
         0,
         "MemberName",
         [],
-        "MissingToken"
+        "MissingToken",
       );
       missingToken.parent = parent;
 
@@ -859,7 +862,7 @@ export class Parser {
   }
 
   private parseIndexedAccessExpression(
-    expression: Node
+    expression: Node,
   ): IndexedAccessExpressionNode {
     const node = new IndexedAccessExpressionNode();
     node.parent = expression.parent;
