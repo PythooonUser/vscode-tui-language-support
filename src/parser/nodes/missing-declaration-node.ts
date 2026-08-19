@@ -10,6 +10,14 @@ export class MissingDeclarationNode extends Node {
     this.kind = "MissingDeclarationNode";
   }
 
+  override get start() {
+    return this.declaration.start;
+  }
+
+  override get length() {
+    return this.declaration.length;
+  }
+
   public override toJSON() {
     return {
       kind: this.kind,

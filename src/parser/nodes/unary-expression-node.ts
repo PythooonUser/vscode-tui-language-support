@@ -11,6 +11,15 @@ export class UnaryExpressionNode extends Node {
     this.kind = "UnaryExpressionNode";
   }
 
+  override get start() {
+    return this.operator.start;
+  }
+
+  override get length() {
+    const start = this.operand.start - this.operator.start;
+    return start + this.operand.length;
+  }
+
   override toJSON() {
     return {
       kind: this.kind,

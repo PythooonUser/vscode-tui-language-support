@@ -1,6 +1,4 @@
 import { Token } from "../token";
-import { CompoundStatementNode } from "./compound-statement-node";
-import { ElseClauseNode } from "./else-clause-node";
 import { Node } from "./node";
 
 export class MemberAccessExpressionNode extends Node {
@@ -12,6 +10,15 @@ export class MemberAccessExpressionNode extends Node {
     super();
 
     this.kind = "MemberAccessExpressionNode";
+  }
+
+  override get start() {
+    return this.expression.start;
+  }
+
+  override get length() {
+    const start = this.member.start - this.expression.start;
+    return start + this.member.length;
   }
 
   override toJSON() {

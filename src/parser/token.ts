@@ -1,3 +1,4 @@
+import { NodeKind } from "./node-kind";
 import { Node } from "./nodes";
 import { TokenError } from "./token-error";
 import { TokenKind } from "./token-kind";
@@ -19,8 +20,24 @@ export class Token {
   get content() {
     return this.parent.root.document.slice(
       this.start,
-      this.start + this.length
+      this.start + this.length,
     );
+  }
+
+  public getParentOfKind(kind: NodeKind): Node | null {
+    let node = this.parent;
+
+    if (node.kind === kind) {
+      return node;
+    }
+
+    while (node.parent !== null) {
+      node = node.parent;
+
+      if (node.kind === kind) return node;
+    }
+
+    return null;
   }
 
   constructor(
@@ -28,7 +45,7 @@ export class Token {
     public length: number,
     public kind: TokenKind,
     public trivia: Token[],
-    public error: TokenError | null
+    public error: TokenError | null,
   ) {}
 
   toJSON() {

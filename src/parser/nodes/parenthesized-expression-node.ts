@@ -12,6 +12,15 @@ export class ParenthesizedExpressionNode extends Node {
     this.kind = "ParenthesizedExpressionNode";
   }
 
+  override get start() {
+    return this.leftParen.start;
+  }
+
+  override get length() {
+    const start = this.rightParen.start - this.leftParen.start;
+    return start + this.rightParen.length;
+  }
+
   override toJSON() {
     return {
       kind: this.kind,

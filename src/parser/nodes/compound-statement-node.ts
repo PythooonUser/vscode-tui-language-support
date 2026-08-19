@@ -12,6 +12,15 @@ export class CompoundStatementNode extends Node {
     this.kind = "CompoundStatementNode";
   }
 
+  override get start() {
+    return this.leftBrace.start;
+  }
+
+  override get length() {
+    const start = this.rightBrace.start - this.leftBrace.start;
+    return start + this.rightBrace.length;
+  }
+
   public override toJSON() {
     return {
       kind: this.kind,

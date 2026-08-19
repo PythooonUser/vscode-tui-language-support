@@ -13,6 +13,15 @@ export class IndexedAccessExpressionNode extends Node {
     this.kind = "IndexedAccessExpressionNode";
   }
 
+  override get start() {
+    return this.expression.start;
+  }
+
+  override get length() {
+    const start = this.rightBracket.start - this.expression.start;
+    return start + this.rightBracket.length;
+  }
+
   override toJSON() {
     return {
       kind: this.kind,

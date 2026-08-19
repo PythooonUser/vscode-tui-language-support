@@ -10,6 +10,14 @@ export class VariableNode extends Node {
     this.kind = "VariableNode";
   }
 
+  override get start() {
+    return this.name.start;
+  }
+
+  override get length() {
+    return this.name.length;
+  }
+
   public override toJSON() {
     return { kind: this.kind, error: this.error, name: this.name };
   }

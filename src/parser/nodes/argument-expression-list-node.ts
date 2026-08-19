@@ -11,6 +11,15 @@ export class ArgumentExpressionListNode extends ListNode {
     this.kind = "ArgumentExpressionListNode";
   }
 
+  override get start() {
+    return this.leftParen.start;
+  }
+
+  override get length() {
+    const start = this.rightParen.start - this.leftParen.start;
+    return start + this.rightParen.length;
+  }
+
   public override toJSON() {
     return {
       kind: this.kind,

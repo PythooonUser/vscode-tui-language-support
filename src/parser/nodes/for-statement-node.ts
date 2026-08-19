@@ -15,6 +15,15 @@ export class ForStatementNode extends Node {
     this.kind = "ForStatementNode";
   }
 
+  override get start() {
+    return this.forKeyword.start;
+  }
+
+  override get length() {
+    const start = this.statements.start - this.forKeyword.start;
+    return start + this.statements.length;
+  }
+
   public override toJSON() {
     return {
       kind: this.kind,

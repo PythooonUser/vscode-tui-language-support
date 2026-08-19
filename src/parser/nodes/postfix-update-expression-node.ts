@@ -11,6 +11,15 @@ export class PostfixUpdateExpressionNode extends Node {
     this.kind = "PostfixUpdateExpressionNode";
   }
 
+  override get start() {
+    return this.operand.start;
+  }
+
+  override get length() {
+    const start = this.operator.start - this.operand.start;
+    return start + this.operator.length;
+  }
+
   public override toJSON() {
     return {
       kind: this.kind,

@@ -12,6 +12,15 @@ export class TableLiteralNode extends Node {
     this.kind = "TableLiteralNode";
   }
 
+  override get start() {
+    return this.leftDelimiter.start;
+  }
+
+  override get length() {
+    const start = this.rightDelimiter.start - this.leftDelimiter.start;
+    return start + this.rightDelimiter.length;
+  }
+
   public override toJSON() {
     return {
       kind: this.kind,

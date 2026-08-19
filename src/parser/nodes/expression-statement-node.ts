@@ -11,6 +11,19 @@ export class ExpressionStatementNode extends Node {
     this.kind = "ExpressionStatementNode";
   }
 
+  override get start() {
+    return this.expression.start;
+  }
+
+  override get length() {
+    if (!this.delimiter) {
+      return this.expression.length;
+    }
+
+    const start = this.delimiter.start - this.expression.start;
+    return start + this.expression.length;
+  }
+
   override toJSON() {
     return {
       kind: this.kind,

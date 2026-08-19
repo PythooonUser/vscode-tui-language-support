@@ -11,6 +11,15 @@ export class PrefixUpdateExpressionNode extends Node {
     this.kind = "PrefixUpdateExpressionNode";
   }
 
+  override get start() {
+    return this.operator.start;
+  }
+
+  override get length() {
+    const start = this.operand.start - this.operator.start;
+    return start + this.operand.length;
+  }
+
   public override toJSON() {
     return {
       kind: this.kind,

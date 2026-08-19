@@ -12,6 +12,15 @@ export class WhileStatementNode extends Node {
     this.kind = "WhileStatementNode";
   }
 
+  override get start() {
+    return this.whileKeyword.start;
+  }
+
+  override get length() {
+    const start = this.statements.start - this.whileKeyword.start;
+    return start + this.statements.length;
+  }
+
   public override toJSON() {
     return {
       kind: this.kind,

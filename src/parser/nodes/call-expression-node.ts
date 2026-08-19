@@ -11,6 +11,15 @@ export class CallExpressionNode extends Node {
     this.kind = "CallExpressionNode";
   }
 
+  override get start() {
+    return this.expression.start;
+  }
+
+  override get length() {
+    const start = this.arguments.start - this.expression.start;
+    return start + this.arguments.length;
+  }
+
   override toJSON() {
     return {
       kind: this.kind,

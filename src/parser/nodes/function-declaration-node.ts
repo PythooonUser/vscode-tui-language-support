@@ -15,6 +15,20 @@ export class FunctionDeclarationNode extends Node {
     this.kind = "FunctionDeclarationNode";
   }
 
+  override get start() {
+    return this.functionKeyword.start;
+  }
+
+  override get length() {
+    if (this.delimiter) {
+      const start = this.delimiter.start - this.functionKeyword.start;
+      return start + this.delimiter.length;
+    }
+
+    const start = this.statements.start - this.functionKeyword.start;
+    return start + this.statements.length;
+  }
+
   override toJSON() {
     return {
       kind: this.kind,

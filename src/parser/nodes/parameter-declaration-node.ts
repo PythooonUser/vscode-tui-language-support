@@ -10,6 +10,14 @@ export class ParameterDeclarationNode extends Node {
     this.kind = "ParameterDeclarationNode";
   }
 
+  override get start() {
+    return this.name.start;
+  }
+
+  override get length() {
+    return this.name.length;
+  }
+
   public override toJSON() {
     return {
       kind: this.kind,

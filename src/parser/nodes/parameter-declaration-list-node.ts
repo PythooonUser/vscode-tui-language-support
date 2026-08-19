@@ -11,6 +11,15 @@ export class ParameterDeclarationListNode extends ListNode {
     this.kind = "ParameterDeclarationListNode";
   }
 
+  override get start() {
+    return this.leftParen.start;
+  }
+
+  override get length() {
+    const start = this.rightParen.start - this.leftParen.start;
+    return start + this.rightParen.length;
+  }
+
   public override toJSON() {
     return {
       kind: this.kind,

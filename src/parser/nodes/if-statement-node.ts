@@ -13,6 +13,15 @@ export class IfStatementNode extends Node {
     this.kind = "IfStatementNode";
   }
 
+  override get start() {
+    return this.ifKeyword.start;
+  }
+
+  override get length() {
+    const start = this.statements.start - this.ifKeyword.start;
+    return start + this.statements.length;
+  }
+
   override toJSON() {
     return {
       kind: this.kind,

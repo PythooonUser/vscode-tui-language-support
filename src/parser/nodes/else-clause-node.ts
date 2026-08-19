@@ -12,6 +12,15 @@ export class ElseClauseNode extends Node {
     this.kind = "ElseClauseNode";
   }
 
+  override get start() {
+    return this.elseKeyword.start;
+  }
+
+  override get length() {
+    const start = this.statements.start - this.elseKeyword.start;
+    return start + this.statements.length;
+  }
+
   override toJSON() {
     return {
       kind: this.kind,

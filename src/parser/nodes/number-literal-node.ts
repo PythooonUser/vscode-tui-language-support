@@ -10,6 +10,14 @@ export class NumberLiteralNode extends Node {
     this.kind = "NumberLiteralNode";
   }
 
+  override get start() {
+    return this.literal.start;
+  }
+
+  override get length() {
+    return this.literal.length;
+  }
+
   override toJSON() {
     return { kind: this.kind, error: this.error, literal: this.literal };
   }

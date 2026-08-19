@@ -10,6 +10,14 @@ export class NullLiteralNode extends Node {
     this.kind = "NullLiteralNode";
   }
 
+  override get start() {
+    return this.literal.start;
+  }
+
+  override get length() {
+    return this.literal.length;
+  }
+
   public override toJSON() {
     return { kind: this.kind, error: this.error, literal: this.literal };
   }

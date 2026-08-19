@@ -30,6 +30,14 @@ export abstract class Node {
     return node;
   }
 
+  public get start(): number {
+    throw new Error(`'start' not implemented on ${this.kind}.`);
+  }
+
+  public get length(): number {
+    throw new Error(`'length' not implemented on ${this.kind}.`);
+  }
+
   walk(callback: NodeWalker): void {
     for (const key in this) {
       if (["parent", "kind", "error"].includes(key)) {
