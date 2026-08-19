@@ -14,6 +14,11 @@
           "name": "comment.line.number-sign.tui",
           "begin": "#",
           "end": "$"
+        },
+        {
+          "name": "comment.block.tui",
+          "begin": "/\\*",
+          "end": "\\*/"
         }
       ]
     },

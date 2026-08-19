@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - Lexer and Parser for `tui` source code
 - Syntax Highlighting for language keywords `and`, `or` and `while`
+- Syntax Highlighting for block comments
 - Diagnostics for token errors per file
 - Basic Hover Support for symbols
 
