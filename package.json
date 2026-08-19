@@ -54,7 +54,7 @@
     "@vscode/vsce": "^3.9.2",
     "mocha": "^11.2.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "typescript": "^7.0.2"
   },
   "dependencies": {
     "vscode-languageclient": "^9.0.1",
