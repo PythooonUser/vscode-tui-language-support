@@ -39,6 +39,9 @@ export abstract class Node {
       const child = this[key];
 
       if (child instanceof Token) {
+        for (const trivia of child.trivia) {
+          if (callback(trivia)) return;
+        }
         if (callback(child)) return;
       } else if (child instanceof Node) {
         if (callback(child)) return;
@@ -46,6 +49,9 @@ export abstract class Node {
       } else if (Array.isArray(child)) {
         for (const element of child) {
           if (element instanceof Token) {
+            for (const trivia of element.trivia) {
+              if (callback(trivia)) return;
+            }
             if (callback(element)) return;
           } else if (element instanceof Node) {
             if (callback(element)) return;

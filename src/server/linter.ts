@@ -20,6 +20,8 @@ export class Linter {
         if (element.error === "UnexpectedEndOfFile") {
           if (element.parent.kind === "StringLiteralNode") {
             message = "Terminate this string with a closing character.";
+          } else if (element.kind === "Comment") {
+            message = "Terminate this block comment with closing characters.";
           }
         }
 
