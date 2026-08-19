@@ -25,6 +25,10 @@ export class Linter {
           }
         }
 
+        if (element.error === "SkippedToken") {
+          message = `Remove the skipped token '${element.content}'.`;
+        }
+
         const diagnostic: Diagnostic = {
           severity: DiagnosticSeverity.Error,
           range: {
