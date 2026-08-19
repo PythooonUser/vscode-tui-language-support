@@ -2,6 +2,11 @@
 .vscode/
 .github/
 .gitignore
-.dist/
+dist/test/
+dist/tools/
+dist/tsconfig.tsbuildinfo
 node_modules/
 src/
+test/
+tools/
+tsconfig.json
