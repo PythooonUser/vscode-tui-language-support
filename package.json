@@ -38,19 +38,7 @@
         "scopeName": "source.tui",
         "path": "./syntaxes/tui.tmLanguage.json"
       }
-    ],
-    "configuration": {
-      "type": "object",
-      "title": "vscode-tui-language-support",
-      "properties": {
-        "tuiLanguageServer.maxNumberOfProblems": {
-          "scope": "resource",
-          "type": "number",
-          "default": 100,
-          "description": "Controls the maximum number of problems shown."
-        }
-      }
-    }
+    ]
   },
   "main": "dist/src/client/client",
   "scripts": {
