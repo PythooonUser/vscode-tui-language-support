@@ -14,22 +14,28 @@ The **tui** language extension currently adds the following features:
 - Code Section Folding
 - Indentation Rules
 - Syntax Highlighting
-- Diagnostics
-- Hover Support
+- **NEW!** Diagnostics (experimental!)
+- **NEW!** Hover Support (experimental!)
 
 For the future some more features are planned.
 
 _Please note that development goes slowly since this is a free-time project only._
 
-## Known Issues
+## Feedback
 
-No known issues.
-
-_If you find a bug, have a question or feature request, [please feel free to create an issue](https://github.com/PythooonUser/vscode-tui-language-support/issues/new) or [reach out to me on BlueSky](https://bsky.app/profile/pythooonuser.bsky.social). I try to answer your issue as fast as possible. Please note, however, that my support for this extension is limited, because I build it in my free time and therefore development goes slowly._
+_If you find a bug, have a question or feature request, [please feel free to create an issue](https://github.com/PythooonUser/vscode-tui-language-support/issues/new) or [reach out to me on BlueSky](https://bsky.app/profile/pythooonuser.bsky.social). I try to answer your issue as fast as possible. Please note, however, that my support for this extension is limited, because I'm building it in my free time and therefore development goes slowly._
 
 ## Release Notes
 
 For further details please refer to the [CHANGELOG](https://github.com/PythooonUser/vscode-tui-language-support/blob/main/CHANGELOG.md).
+
+## Development
+
+Clone the repository. Make sure to run the latest `node` version and use `$ npm install` to grab all necessary dependencies. Then hit `F5` in VSCode to open up a new VSCode instance with the extension loaded.
+
+Make sure to always add tests, which can be run by `$ npm test`.
+
+Deployment packages the extension for publishing on the VSCode marketplace, use `$ vsce package` or `$vsce publish` _(ask maintainer for credentials)_.
 
 ## License
 
