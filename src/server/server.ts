@@ -8,6 +8,7 @@ import {
 import { DocumentCache } from "./document-cache";
 import { HoverResolver } from "./hover-resolver";
 import { Linter } from "./linter";
+import { Formatter } from "./formatter";
 
 const cache = new DocumentCache();
 const connection = createConnection(ProposedFeatures.all);
@@ -18,6 +19,7 @@ connection.onInitialize((params) => ({
   capabilities: {
     textDocumentSync: TextDocumentSyncKind.Incremental,
     hoverProvider: true,
+    documentFormattingProvider: true,
   },
 }));
 
@@ -32,6 +34,17 @@ connection.onHover((params) => {
 
   const hoverResolver = new HoverResolver();
   return hoverResolver.resolve(offset, ast);
+});
+
+connection.onDocumentFormatting((params) => {
+  const document = documents.get(params.textDocument.uri);
+  if (!document) return null;
+
+  const ast = cache.get(document.uri)?.ast;
+  if (!ast) return null;
+
+  const formatter = new Formatter();
+  return formatter.format(document, ast);
 });
 
 documents.onDidChangeContent((event) => {
