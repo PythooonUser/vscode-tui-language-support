@@ -45,7 +45,10 @@ connection.onDocumentFormatting((params) => {
 
   const formatter = new Formatter();
   // TODO: Read that from `.tuirc`. For now, we provide sensible defaults.
-  const options: FormatterOptions = { "null-literal": "null" };
+  const options: FormatterOptions = {
+    "null-literal": "null",
+    "table-literal": "brace",
+  };
   return formatter.format(document, ast, options);
 });
 
