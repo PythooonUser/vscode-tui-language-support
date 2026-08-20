@@ -38,7 +38,32 @@
         "scopeName": "source.tui",
         "path": "./syntaxes/tui.tmLanguage.json"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "vscode-tui-language-support",
+      "properties": {
+        "vscode-tui-language-support.null-literal": {
+          "type": "string",
+          "enum": [
+            "null",
+            "nil",
+            "any"
+          ],
+          "default": "any",
+          "description": "The literal to use for nullable values"
+        },
+        "vscode-tui-language-support.table-literal": {
+          "type": "string",
+          "enum": [
+            "brace",
+            "bracket",
+            "any"
+          ],
+          "default": "any",
+          "description": "The delimiters to use for table literals"
+        }
+      }
+    }
   },
   "main": "dist/src/client/client",
   "scripts": {

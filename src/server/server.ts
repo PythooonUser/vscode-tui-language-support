@@ -10,6 +10,9 @@ import { HoverResolver } from "./hover-resolver";
 import { Linter } from "./linter";
 import { Formatter, FormatterOptions } from "./formatter";
 
+type ExtensionConfiguration = FormatterOptions;
+let extensionConfiguration: ExtensionConfiguration | undefined = undefined;
+
 const cache = new DocumentCache();
 const connection = createConnection(ProposedFeatures.all);
 
@@ -22,6 +25,18 @@ connection.onInitialize((params) => ({
     documentFormattingProvider: true,
   },
 }));
+
+connection.onInitialized(async (params) => {
+  extensionConfiguration = await connection.workspace.getConfiguration(
+    "vscode-tui-language-support",
+  );
+});
+
+connection.onDidChangeConfiguration(async (params) => {
+  extensionConfiguration = await connection.workspace.getConfiguration(
+    "vscode-tui-language-support",
+  );
+});
 
 connection.onHover((params) => {
   const document = documents.get(params.textDocument.uri);
@@ -46,8 +61,8 @@ connection.onDocumentFormatting((params) => {
   const formatter = new Formatter();
   // TODO: Read that from `.tuirc`. For now, we provide sensible defaults.
   const options: FormatterOptions = {
-    "null-literal": "null",
-    "table-literal": "brace",
+    "null-literal": extensionConfiguration?.["null-literal"] ?? "any",
+    "table-literal": extensionConfiguration?.["table-literal"] ?? "any",
   };
   return formatter.format(document, ast, options);
 });
