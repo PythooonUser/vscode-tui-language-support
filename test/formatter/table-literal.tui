@@ -1,0 +1,8 @@
+# table-literal-1 { "table-literal": "brace" }
+[ ], { }
+
+# table-literal-2 { "table-literal": "bracket" }
+[ ], { }
+
+# table-literal-3 { "table-literal": "any" }
+[ ], { }
