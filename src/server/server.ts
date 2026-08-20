@@ -8,7 +8,7 @@ import {
 import { DocumentCache } from "./document-cache";
 import { HoverResolver } from "./hover-resolver";
 import { Linter } from "./linter";
-import { Formatter } from "./formatter";
+import { Formatter, FormatterOptions } from "./formatter";
 
 const cache = new DocumentCache();
 const connection = createConnection(ProposedFeatures.all);
@@ -44,7 +44,9 @@ connection.onDocumentFormatting((params) => {
   if (!ast) return null;
 
   const formatter = new Formatter();
-  return formatter.format(document, ast);
+  // TODO: Read that from `.tuirc`. For now, we provide sensible defaults.
+  const options: FormatterOptions = { "null-literal": "null" };
+  return formatter.format(document, ast, options);
 });
 
 documents.onDidChangeContent((event) => {

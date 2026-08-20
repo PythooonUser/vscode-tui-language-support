@@ -45,7 +45,8 @@
     "compile": "tsc -b",
     "test": "mocha --require ts-node/register **/*.test.ts",
     "utils:lexer": "node --require ts-node/register ./tools/lexer-utils.ts",
-    "utils:parser": "node --require ts-node/register ./tools/parser-utils.ts"
+    "utils:parser": "node --require ts-node/register ./tools/parser-utils.ts",
+    "utils:formatter": "node --require ts-node/register ./tools/formatter-utils.ts"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
