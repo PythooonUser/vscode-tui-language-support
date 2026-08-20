@@ -11,7 +11,7 @@ let client: LanguageClient;
 
 export function activate(context: ExtensionContext) {
   const serverModule = context.asAbsolutePath(
-    join("dist", "src", "server", "server.js")
+    join("dist", "src", "server", "server.js"),
   );
 
   const debugOptions = { execArgv: ["--nolazy", "--inspect=6009"] };
@@ -29,6 +29,7 @@ export function activate(context: ExtensionContext) {
     documentSelector: [{ scheme: "file", language: "tui" }],
     synchronize: {
       fileEvents: workspace.createFileSystemWatcher("**/.clientrc"),
+      configurationSection: "vscode-tui-language-support",
     },
   };
 
@@ -36,7 +37,7 @@ export function activate(context: ExtensionContext) {
     "tui",
     "tui Language Server",
     serverOptions,
-    clientOptions
+    clientOptions,
   );
 
   client.start();

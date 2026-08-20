@@ -8,6 +8,10 @@ import {
 import { DocumentCache } from "./document-cache";
 import { HoverResolver } from "./hover-resolver";
 import { Linter } from "./linter";
+import { Formatter, FormatterOptions } from "./formatter";
+
+type ExtensionConfiguration = FormatterOptions;
+let extensionConfiguration: ExtensionConfiguration | undefined = undefined;
 
 const cache = new DocumentCache();
 const connection = createConnection(ProposedFeatures.all);
@@ -18,8 +22,21 @@ connection.onInitialize((params) => ({
   capabilities: {
     textDocumentSync: TextDocumentSyncKind.Incremental,
     hoverProvider: true,
+    documentFormattingProvider: true,
   },
 }));
+
+connection.onInitialized(async (params) => {
+  extensionConfiguration = await connection.workspace.getConfiguration(
+    "vscode-tui-language-support",
+  );
+});
+
+connection.onDidChangeConfiguration(async (params) => {
+  extensionConfiguration = await connection.workspace.getConfiguration(
+    "vscode-tui-language-support",
+  );
+});
 
 connection.onHover((params) => {
   const document = documents.get(params.textDocument.uri);
@@ -32,6 +49,22 @@ connection.onHover((params) => {
 
   const hoverResolver = new HoverResolver();
   return hoverResolver.resolve(offset, ast);
+});
+
+connection.onDocumentFormatting((params) => {
+  const document = documents.get(params.textDocument.uri);
+  if (!document) return null;
+
+  const ast = cache.get(document.uri)?.ast;
+  if (!ast) return null;
+
+  const formatter = new Formatter();
+  // TODO: Read that from `.tuirc`. For now, we provide sensible defaults.
+  const options: FormatterOptions = {
+    "null-literal": extensionConfiguration?.["null-literal"] ?? "any",
+    "table-literal": extensionConfiguration?.["table-literal"] ?? "any",
+  };
+  return formatter.format(document, ast, options);
 });
 
 documents.onDidChangeContent((event) => {

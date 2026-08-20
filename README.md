@@ -16,10 +16,15 @@ The **tui** language extension currently adds the following features:
 - Syntax Highlighting
 - **NEW!** Diagnostics (experimental!)
 - **NEW!** Hover Support (experimental!)
+- **NEW!** Formatting (experimental!)
 
 For the future some more features are planned.
 
 _Please note that development goes slowly since this is a free-time project only._
+
+## Settings
+
+Currently, we only provide basic formatting options, e.g. the characters to use for nullable types or table delimiters.
 
 ## Feedback
 

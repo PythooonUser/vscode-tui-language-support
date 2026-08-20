@@ -1,0 +1,8 @@
+# null-literal-1 { "null-literal": "null" }
+nil, null
+
+# null-literal-2 { "null-literal": "nil" }
+nil, null
+
+# null-literal-3 { "null-literal": "any" }
+nil, null
