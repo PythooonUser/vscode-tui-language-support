@@ -6,3 +6,6 @@
 
 # table-literal-3 { "table-literal": "any" }
 [ ], { }
+
+# table-literal-4 { "table-literal": "any" }
+{
