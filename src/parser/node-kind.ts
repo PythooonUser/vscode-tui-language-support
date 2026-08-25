@@ -3,6 +3,7 @@ export type NodeKind =
   | "ArgumentExpressionNode"
   | "BinaryExpressionNode"
   | "BoolLiteralNode"
+  | "BreakStatementNode"
   | "CallExpressionNode"
   | "CompoundStatementNode"
   | "ElseClauseNode"

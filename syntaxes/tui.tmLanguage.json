@@ -32,7 +32,7 @@
     "keyword": {
       "patterns": [
         {
-          "match": "\\b(if|elseif|else|for|while|return|and|or|in)\\b",
+          "match": "\\b(if|elseif|else|for|while|return|and|or|in|break)\\b",
           "name": "keyword.control.tui"
         },
         {

@@ -9,3 +9,8 @@ for(index, foo in bar) {}
 
 # for-statement-4
 for (i = 0, i < 10, i++) {}
+
+# for-statement-5
+for(foo in bar) {
+    break
+}

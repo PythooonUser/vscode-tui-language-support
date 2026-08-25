@@ -203,11 +203,26 @@
   },
   {
     "start": 71,
+    "length": 5,
+    "kind": "BreakKeyword",
+    "trivia": [
+      {
+        "start": 70,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 77,
     "length": 0,
     "kind": "EndOfFile",
     "trivia": [
       {
-        "start": 70,
+        "start": 76,
         "length": 1,
         "kind": "Whitespace",
         "trivia": [],

@@ -4,6 +4,7 @@ export type TokenKind =
   | "AmpersandAmpersandOperator"
   | "AndKeyword"
   | "BarBarOperator"
+  | "BreakKeyword"
   | "ColonOperator"
   | "CommaDelimiter"
   | "Comment"
@@ -94,6 +95,7 @@ export const OperatorTokenMap: TokenKindMap = {
 
 export const KeywordTokenMap: TokenKindMap = {
   and: "AndKeyword",
+  break: "BreakKeyword",
   else: "ElseKeyword",
   elseif: "ElseIfKeyword",
   false: "FalseKeyword",

@@ -30,6 +30,7 @@ import {
   ForStatementNode,
   ElseIfClauseNode,
   WhileStatementNode,
+  BreakStatementNode,
 } from "./nodes";
 import {
   InvalidOperatorPrecedenceAndAssociativity,
@@ -281,6 +282,7 @@ export class Parser {
       case "ForKeyword":
       case "ReturnKeyword":
       case "WhileKeyword":
+      case "BreakKeyword":
         return true;
       default:
         return this.isExpressionInitiator(token);
@@ -341,6 +343,8 @@ export class Parser {
         return this.parseForStatement(parent);
       case "WhileKeyword":
         return this.parseWhileStatement(parent);
+      case "BreakKeyword":
+        return this.parseBreakStatement(parent);
       default:
         return this.parseExpressionStatement(parent);
     }
@@ -919,6 +923,15 @@ export class Parser {
     node.statements = this.parseCompoundStatement(node);
 
     this.scope = this.scope.pop();
+    return node;
+  }
+
+  private parseBreakStatement(parent: Node): BreakStatementNode {
+    const node = new BreakStatementNode();
+    node.parent = parent;
+
+    node.breakKeyword = this.consume(node, "BreakKeyword");
+
     return node;
   }
 }

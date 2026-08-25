@@ -28,3 +28,4 @@ export * from "./table-literal-node";
 export * from "./unary-expression-node";
 export * from "./variable-node";
 export * from "./while-statement-node";
+export * from "./break-statement-node";
