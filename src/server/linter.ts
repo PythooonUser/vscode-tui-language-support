@@ -4,7 +4,9 @@ import {
   DiagnosticSeverity,
   TextDocumentChangeEvent,
 } from "vscode-languageserver/node";
-import { Node, SourceDocumentNode, VariableNode } from "../parser";
+import { Node, SourceDocumentNode, Token, VariableNode } from "../parser";
+import { Scope } from "../parser/scope";
+import { Symbol } from "../parser/symbol";
 
 export class Linter {
   public lint(
@@ -73,6 +75,26 @@ export class Linter {
 
       diagnostics.push(diagnostic);
     });
+
+    const languageScope = new Scope();
+    languageScope.define(new Symbol("print"));
+    languageScope.define(new Symbol("error"));
+    languageScope.define(new Symbol("exit"));
+    languageScope.define(new Symbol("readValue"));
+    languageScope.define(new Symbol("clear"));
+    languageScope.define(new Symbol("system"));
+    languageScope.define(new Symbol("platform"));
+    languageScope.define(new Symbol("require"));
+    languageScope.define(new Symbol("type"));
+    languageScope.define(new Symbol("debug"));
+    languageScope.define(new Symbol("table"));
+    languageScope.define(new Symbol("string"));
+    languageScope.define(new Symbol("file"));
+    languageScope.define(new Symbol("math"));
+
+    const documentScope = ast.scope;
+    documentScope.parent = languageScope;
+    ast.scope = languageScope;
 
     ast.walk((nodeOrToken) => {
       if (nodeOrToken instanceof Node && nodeOrToken.kind === "VariableNode") {

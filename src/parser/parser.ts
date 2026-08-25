@@ -39,6 +39,7 @@ import {
 import { ParseContext } from "./parse-context";
 import { ParseContextError } from "./parse-context-error";
 import { Scope } from "./scope";
+import { Symbol } from "./symbol";
 import { Token } from "./token";
 import {
   BoolLiteralKinds,
@@ -578,7 +579,7 @@ export class Parser {
       VariableAssignmentKinds.includes(node.operator.kind) &&
       node.leftOperand.kind === "VariableNode"
     ) {
-      this.scope?.define((node.leftOperand as VariableNode).name);
+      this.scope?.define(new Symbol((node.leftOperand as VariableNode).name));
     }
 
     return node;
@@ -848,7 +849,7 @@ export class Parser {
     node.parent = parent;
 
     node.name = this.consume(node, "Name");
-    this.scope?.define(node.name);
+    this.scope?.define(new Symbol(node.name));
 
     return node;
   }

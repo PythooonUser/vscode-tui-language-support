@@ -1,17 +1,18 @@
-import { Token } from ".";
+import { Symbol } from "./symbol";
+import { Token } from "./token";
 
 export type ScopeWalker = (scope: Scope) => void;
 
 export class Scope {
-  public readonly parent: Scope | null;
+  public parent: Scope | null;
 
-  public readonly symbols: Token[] = [];
+  public readonly symbols: Symbol[] = [];
 
   public constructor(parent: Scope | null = null) {
     this.parent = parent;
   }
 
-  public define(symbol: Token) {
+  public define(symbol: Symbol) {
     this.symbols.push(symbol);
   }
 
@@ -28,7 +29,11 @@ export class Scope {
     let scope: Scope | null = this;
 
     while (scope) {
-      const hit = scope.symbols.find((symbol) => symbol.content === name);
+      const hit = scope.symbols.find(
+        (symbol) =>
+          (symbol.name instanceof Token && symbol.name.content === name) ||
+          (symbol.name as string) === name,
+      );
       if (hit) return hit;
       scope = scope.parent;
     }
