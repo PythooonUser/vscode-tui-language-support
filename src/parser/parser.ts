@@ -37,6 +37,7 @@ import {
 } from "./operator-precedence-associativity";
 import { ParseContext } from "./parse-context";
 import { ParseContextError } from "./parse-context-error";
+import { Scope } from "./scope";
 import { Token } from "./token";
 import {
   BoolLiteralKinds,
@@ -45,6 +46,7 @@ import {
   PrefixUpdateOperatorKinds,
   TokenKind,
   UnaryOperatorKinds,
+  VariableAssignmentKinds,
 } from "./token-kind";
 import { NodeOrTokenArray, OptionalToken } from "./types";
 
@@ -52,11 +54,13 @@ export class Parser {
   private lexer: Lexer;
   private token: OptionalToken;
   private parseContexts: ParseContext[];
+  private scope: Scope | null;
 
   constructor() {
     this.lexer = new Lexer();
     this.token = null;
     this.parseContexts = [];
+    this.scope = new Scope();
   }
 
   /**
@@ -73,6 +77,7 @@ export class Parser {
     node.statements = this.parseElementList(node, "SourceElements");
     node.endOfFile = this.consume(node, "EndOfFile");
     node.document = document;
+    node.scope = this.scope!;
 
     this.advance();
 
@@ -83,6 +88,7 @@ export class Parser {
     this.lexer.reset(document);
     this.token = null;
     this.parseContexts = [];
+    this.scope = new Scope();
   }
 
   private advance(): void {
@@ -404,6 +410,7 @@ export class Parser {
   private parseForStatement(parent: Node): ForStatementNode {
     const node = new ForStatementNode();
     node.parent = parent;
+    this.scope = this.scope!.push();
 
     node.forKeyword = this.consume(node, "ForKeyword");
 
@@ -417,6 +424,7 @@ export class Parser {
 
     node.statements = this.parseCompoundStatement(node);
 
+    this.scope = this.scope.pop();
     return node;
   }
 
@@ -562,6 +570,13 @@ export class Parser {
     node.operator = operator;
     node.rightOperand = rightOperand;
 
+    if (
+      VariableAssignmentKinds.includes(node.operator.kind) &&
+      node.leftOperand.kind === "VariableNode"
+    ) {
+      this.scope?.define((node.leftOperand as VariableNode).name);
+    }
+
     return node;
   }
 
@@ -664,6 +679,7 @@ export class Parser {
     node.parent = parent;
 
     node.name = this.consume(node, "Name");
+    node.scope = this.scope!;
 
     return node;
   }
@@ -702,6 +718,7 @@ export class Parser {
   private parseTableLiteral(parent: Node): TableLiteralNode {
     const node = new TableLiteralNode();
     node.parent = parent;
+    this.scope = this.scope!.push();
 
     node.leftDelimiter = this.consumeChoice(node, [
       "LeftBracketDelimiter",
@@ -713,6 +730,7 @@ export class Parser {
       "RightBraceDelimiter",
     ]);
 
+    this.scope = this.scope.pop();
     return node;
   }
 
@@ -765,6 +783,7 @@ export class Parser {
   private parseFunctionDeclaration(parent: Node): FunctionDeclarationNode {
     const node = new FunctionDeclarationNode();
     node.parent = parent;
+    this.scope = this.scope!.push();
 
     node.functionKeyword = this.consume(node, "FunctionKeyword");
     node.arguments = this.parseParameterDeclarationList(node);
@@ -772,6 +791,7 @@ export class Parser {
 
     node.delimiter = this.consumeOptional(node, "CommaDelimiter");
 
+    this.scope = this.scope.pop();
     return node;
   }
 
@@ -780,11 +800,13 @@ export class Parser {
   ): FunctionDeclarationNode {
     const node = new FunctionDeclarationNode();
     node.parent = parent;
+    this.scope = this.scope!.push();
 
     node.functionKeyword = this.consume(node, "FunctionKeyword");
     node.arguments = this.parseParameterDeclarationList(node);
     node.statements = this.parseCompoundStatement(node);
 
+    this.scope = this.scope.pop();
     return node;
   }
 
@@ -822,6 +844,7 @@ export class Parser {
     node.parent = parent;
 
     node.name = this.consume(node, "Name");
+    this.scope?.define(node.name);
 
     return node;
   }
@@ -889,11 +912,13 @@ export class Parser {
   private parseWhileStatement(parent: Node): WhileStatementNode {
     const node = new WhileStatementNode();
     node.parent = parent;
+    this.scope = this.scope!.push();
 
     node.whileKeyword = this.consume(node, "WhileKeyword");
     node.condition = this.parseExpression(node);
     node.statements = this.parseCompoundStatement(node);
 
+    this.scope = this.scope.pop();
     return node;
   }
 }

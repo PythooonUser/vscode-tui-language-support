@@ -1,8 +1,10 @@
+import { Scope } from "../scope";
 import { Token } from "../token";
 import { Node } from "./node";
 
 export class VariableNode extends Node {
   public name!: Token;
+  public scope!: Scope;
 
   constructor() {
     super();

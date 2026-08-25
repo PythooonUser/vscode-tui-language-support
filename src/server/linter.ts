@@ -4,7 +4,7 @@ import {
   DiagnosticSeverity,
   TextDocumentChangeEvent,
 } from "vscode-languageserver/node";
-import { SourceDocumentNode } from "../parser";
+import { Node, SourceDocumentNode, VariableNode } from "../parser";
 
 export class Linter {
   public lint(
@@ -72,6 +72,28 @@ export class Linter {
       };
 
       diagnostics.push(diagnostic);
+    });
+
+    ast.walk((nodeOrToken) => {
+      if (nodeOrToken instanceof Node && nodeOrToken.kind === "VariableNode") {
+        const symbol = nodeOrToken as VariableNode;
+        if (!symbol.scope.lookup(symbol.name.content)) {
+          const diagnostic: Diagnostic = {
+            severity: DiagnosticSeverity.Warning,
+            range: {
+              start: event.document.positionAt(symbol.name.start),
+              end: event.document.positionAt(
+                symbol.name.start + symbol.name.length,
+              ),
+            },
+            message: `Undefined symbol '${symbol.name.content}'.`,
+            code: "undefined-symbol",
+            source: "tui",
+          };
+
+          diagnostics.push(diagnostic);
+        }
+      }
     });
 
     return diagnostics;

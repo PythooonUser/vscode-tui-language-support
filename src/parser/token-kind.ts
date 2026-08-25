@@ -129,3 +129,8 @@ export const PostfixUpdateOperatorKinds: TokenKind[] = [
 export const BoolLiteralKinds: TokenKind[] = ["TrueKeyword", "FalseKeyword"];
 
 export const NullLiteralKinds: TokenKind[] = ["NullKeyword", "NilKeyword"];
+
+export const VariableAssignmentKinds: TokenKind[] = [
+  "EqualsOperator",
+  "ColonOperator",
+];

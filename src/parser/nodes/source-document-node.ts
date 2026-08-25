@@ -1,11 +1,13 @@
 import { Token } from "../token";
 import { NodeOrTokenArray } from "../types";
 import { Node } from ".";
+import { Scope } from "../scope";
 
 export class SourceDocumentNode extends Node {
   public statements: NodeOrTokenArray = [];
   public endOfFile!: Token;
   public document = "";
+  public scope!: Scope;
 
   constructor() {
     super();
