@@ -1,0 +1,10 @@
+# scope-1
+foo,
+
+# scope-2
+foo = {},
+foo.bar,
+
+# scope-3
+foo = { bar: 42 },
+foo.bar,

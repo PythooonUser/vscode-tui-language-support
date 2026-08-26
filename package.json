@@ -69,9 +69,10 @@
   "scripts": {
     "compile": "tsc -b",
     "test": "mocha --node-option=import=tsx **/*.test.ts",
-    "utils:lexer": "node ./tools/lexer-utils.ts",
-    "utils:parser": "node ./tools/parser-utils.ts",
-    "utils:formatter": "node ./tools/formatter-utils.ts"
+    "utils:lexer": "npx tsx ./tools/lexer-utils.ts",
+    "utils:parser": "npx tsx ./tools/parser-utils.ts",
+    "utils:formatter": "npx tsx ./tools/formatter-utils.ts",
+    "utils:linter": "npx tsx ./tools/linter-utils.ts"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",

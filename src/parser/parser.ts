@@ -576,6 +576,14 @@ export class Parser {
     node.rightOperand = rightOperand;
 
     if (
+      node.operator.kind === "EqualsOperator" &&
+      leftOperand.kind === "VariableNode" &&
+      rightOperand.kind === "TableLiteralNode"
+    ) {
+      const symbol = new Symbol((node.leftOperand as VariableNode).name);
+      symbol.members = (rightOperand as TableLiteralNode).members;
+      this.scope?.define(symbol);
+    } else if (
       VariableAssignmentKinds.includes(node.operator.kind) &&
       node.leftOperand.kind === "VariableNode"
     ) {
@@ -735,6 +743,7 @@ export class Parser {
       "RightBraceDelimiter",
     ]);
 
+    node.members = this.scope;
     this.scope = this.scope.pop();
     return node;
   }

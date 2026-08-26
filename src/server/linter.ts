@@ -4,7 +4,12 @@ import {
   DiagnosticSeverity,
   TextDocumentChangeEvent,
 } from "vscode-languageserver/node";
-import { Node, SourceDocumentNode, VariableNode } from "../parser";
+import {
+  MemberAccessExpressionNode,
+  Node,
+  SourceDocumentNode,
+  VariableNode,
+} from "../parser";
 import { Scope } from "../parser/scope";
 import { Symbol } from "../parser/symbol";
 
@@ -96,7 +101,16 @@ export class Linter {
     languageScope.define(new Symbol("platform"));
     languageScope.define(new Symbol("require"));
     languageScope.define(new Symbol("type"));
-    languageScope.define(new Symbol("debug"));
+
+    const debugSymbol = new Symbol("debug");
+    const debugSymbolMembers = new Scope();
+    debugSymbolMembers.define(new Symbol("getFileName"));
+    debugSymbolMembers.define(new Symbol("getLineNumber"));
+    debugSymbolMembers.define(new Symbol("break"));
+    debugSymbolMembers.define(new Symbol("backtrace"));
+    debugSymbol.members = debugSymbolMembers;
+    languageScope.define(debugSymbol);
+
     languageScope.define(new Symbol("table"));
     languageScope.define(new Symbol("string"));
     languageScope.define(new Symbol("file"));
@@ -107,23 +121,58 @@ export class Linter {
     ast.scope = languageScope;
 
     ast.walk((nodeOrToken) => {
-      if (nodeOrToken instanceof Node && nodeOrToken.kind === "VariableNode") {
-        const symbol = nodeOrToken as VariableNode;
-        if (!symbol.scope.lookup(symbol.name.content)) {
-          const diagnostic: Diagnostic = {
-            severity: DiagnosticSeverity.Warning,
-            range: {
-              start: event.document.positionAt(symbol.name.start),
-              end: event.document.positionAt(
-                symbol.name.start + symbol.name.length,
-              ),
-            },
-            message: `Undefined symbol '${symbol.name.content}'.`,
-            code: "undefined-symbol",
-            source: "tui",
-          };
+      if (nodeOrToken instanceof Node) {
+        if (nodeOrToken.kind === "VariableNode") {
+          const symbol = nodeOrToken as VariableNode;
+          if (!symbol.scope.lookup(symbol.name.content)) {
+            const diagnostic: Diagnostic = {
+              severity: DiagnosticSeverity.Warning,
+              range: {
+                start: event.document.positionAt(symbol.name.start),
+                end: event.document.positionAt(
+                  symbol.name.start + symbol.name.length,
+                ),
+              },
+              message: `Undefined symbol '${symbol.name.content}'.`,
+              code: "undefined-symbol",
+              source: "tui",
+            };
 
-          diagnostics.push(diagnostic);
+            diagnostics.push(diagnostic);
+          }
+        } else if (nodeOrToken.kind === "MemberAccessExpressionNode") {
+          const memberAccess = nodeOrToken as MemberAccessExpressionNode;
+          let baseNode: Node = memberAccess.expression;
+          while (baseNode.kind === "MemberAccessExpressionNode") {
+            baseNode = (baseNode as MemberAccessExpressionNode).expression;
+          }
+
+          if (baseNode.kind === "VariableNode") {
+            const baseVariableNode = baseNode as VariableNode;
+            const symbol = baseVariableNode.scope.lookup(
+              baseVariableNode.name.content,
+            );
+
+            if (
+              !symbol ||
+              !symbol.members?.lookup(memberAccess.member.content)
+            ) {
+              const diagnostic: Diagnostic = {
+                severity: DiagnosticSeverity.Warning,
+                range: {
+                  start: event.document.positionAt(memberAccess.member.start),
+                  end: event.document.positionAt(
+                    memberAccess.member.start + memberAccess.member.length,
+                  ),
+                },
+                message: `Undefined member '${memberAccess.member.content}'.`,
+                code: "undefined-symbol",
+                source: "tui",
+              };
+
+              diagnostics.push(diagnostic);
+            }
+          }
         }
       }
     });

@@ -1,3 +1,4 @@
+import { Scope } from "../scope";
 import { Token } from "../token";
 import { Node } from "./node";
 
@@ -5,6 +6,7 @@ export class TableLiteralNode extends Node {
   public leftDelimiter!: Token;
   public elements: (Node | Token)[] = [];
   public rightDelimiter!: Token;
+  public members: Scope | null = null;
 
   constructor() {
     super();
