@@ -5,10 +5,8 @@
     "outDir": "dist",
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noImplicitOverride": true
-  },
-  "ts-node": {
-    "transpileOnly": true,
-    "files": true
+    "noImplicitOverride": true,
+    "skipLibCheck": true,
+    "types": ["mocha", "node"]
   }
 }

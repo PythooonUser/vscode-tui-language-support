@@ -68,10 +68,10 @@
   "main": "dist/src/client/client",
   "scripts": {
     "compile": "tsc -b",
-    "test": "mocha --require ts-node/register **/*.test.ts",
-    "utils:lexer": "node --require ts-node/register ./tools/lexer-utils.ts",
-    "utils:parser": "node --require ts-node/register ./tools/parser-utils.ts",
-    "utils:formatter": "node --require ts-node/register ./tools/formatter-utils.ts"
+    "test": "mocha --node-option=import=tsx **/*.test.ts",
+    "utils:lexer": "node ./tools/lexer-utils.ts",
+    "utils:parser": "node ./tools/parser-utils.ts",
+    "utils:formatter": "node ./tools/formatter-utils.ts"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
@@ -79,7 +79,7 @@
     "@types/vscode": "^1.99.1",
     "@vscode/vsce": "^3.9.2",
     "mocha": "^11.2.2",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.23.12",
     "typescript": "^7.0.2"
   },
   "dependencies": {
