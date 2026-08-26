@@ -4,7 +4,7 @@ import {
   DiagnosticSeverity,
   TextDocumentChangeEvent,
 } from "vscode-languageserver/node";
-import { Node, SourceDocumentNode, Token, VariableNode } from "../parser";
+import { Node, SourceDocumentNode, VariableNode } from "../parser";
 import { Scope } from "../parser/scope";
 import { Symbol } from "../parser/symbol";
 
@@ -76,6 +76,16 @@ export class Linter {
       diagnostics.push(diagnostic);
     });
 
+    this.checkForUndefinedSymbols(event, ast, diagnostics);
+
+    return diagnostics;
+  }
+
+  private checkForUndefinedSymbols(
+    event: TextDocumentChangeEvent<TextDocument>,
+    ast: SourceDocumentNode,
+    diagnostics: Diagnostic[],
+  ) {
     const languageScope = new Scope();
     languageScope.define(new Symbol("print"));
     languageScope.define(new Symbol("error"));
@@ -117,7 +127,5 @@ export class Linter {
         }
       }
     });
-
-    return diagnostics;
   }
 }
