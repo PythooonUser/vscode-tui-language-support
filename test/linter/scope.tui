@@ -8,3 +8,9 @@ foo.bar,
 # scope-3
 foo = { bar: 42 },
 foo.bar,
+
+# scope-4
+x = 42,
+foo = {
+    .x = 10,
+}

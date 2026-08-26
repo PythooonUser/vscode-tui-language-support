@@ -92,6 +92,11 @@ export class Linter {
     diagnostics: Diagnostic[],
   ) {
     const languageScope = new Scope();
+    languageScope.define(new Symbol("vec2"));
+    languageScope.define(new Symbol("vec3"));
+    languageScope.define(new Symbol("vec4"));
+    languageScope.define(new Symbol("mat3"));
+
     languageScope.define(new Symbol("print"));
     languageScope.define(new Symbol("error"));
     languageScope.define(new Symbol("exit"));
@@ -111,10 +116,96 @@ export class Linter {
     debugSymbol.members = debugSymbolMembers;
     languageScope.define(debugSymbol);
 
-    languageScope.define(new Symbol("table"));
-    languageScope.define(new Symbol("string"));
-    languageScope.define(new Symbol("file"));
-    languageScope.define(new Symbol("math"));
+    const tableSymbol = new Symbol("table");
+    const tableSymbolMembers = new Scope();
+    tableSymbolMembers.define(new Symbol("count"));
+    tableSymbolMembers.define(new Symbol("insert"));
+    tableSymbolMembers.define(new Symbol("remove"));
+    tableSymbolMembers.define(new Symbol("shuffle"));
+    tableSymbolMembers.define(new Symbol("sort"));
+    tableSymbolMembers.define(new Symbol("clone"));
+    tableSymbol.members = tableSymbolMembers;
+    languageScope.define(tableSymbol);
+
+    const stringSymbol = new Symbol("string");
+    const stringSymbolMembers = new Scope();
+    stringSymbolMembers.define(new Symbol("length"));
+    stringSymbolMembers.define(new Symbol("format"));
+    stringSymbolMembers.define(new Symbol("find"));
+    stringSymbolMembers.define(new Symbol("subString"));
+    stringSymbolMembers.define(new Symbol("sha1"));
+    stringSymbolMembers.define(new Symbol("split"));
+    stringSymbolMembers.define(new Symbol("replace"));
+    stringSymbolMembers.define(new Symbol("lower"));
+    stringSymbolMembers.define(new Symbol("upper"));
+    stringSymbolMembers.define(new Symbol("eachChar"));
+    stringSymbolMembers.define(new Symbol("eachLine"));
+    stringSymbol.members = stringSymbolMembers;
+    languageScope.define(stringSymbol);
+
+    const fileSymbol = new Symbol("file");
+    const fileSymbolMembers = new Scope();
+    fileSymbolMembers.define(new Symbol("directoryContents"));
+    fileSymbolMembers.define(new Symbol("load"));
+    fileSymbolMembers.define(new Symbol("loadBinary"));
+    fileSymbolMembers.define(new Symbol("save"));
+    fileSymbolMembers.define(new Symbol("saveBinary"));
+    fileSymbolMembers.define(new Symbol("loadData"));
+    fileSymbolMembers.define(new Symbol("saveData"));
+    fileSymbolMembers.define(new Symbol("sha1"));
+    fileSymbolMembers.define(new Symbol("isDirectory"));
+    fileSymbolMembers.define(new Symbol("fileName"));
+    fileSymbolMembers.define(new Symbol("extension"));
+    fileSymbolMembers.define(new Symbol("changeExtension"));
+    fileSymbolMembers.define(new Symbol("removeExtension"));
+    fileSymbolMembers.define(new Symbol("removeLastPathComponent"));
+    fileSymbolMembers.define(new Symbol("getAbsolutePath"));
+    fileSymbolMembers.define(new Symbol("isSubPath"));
+    fileSymbolMembers.define(new Symbol("move"));
+    fileSymbolMembers.define(new Symbol("copy"));
+    fileSymbolMembers.define(new Symbol("remove"));
+    fileSymbolMembers.define(new Symbol("mkdir"));
+    fileSymbolMembers.define(new Symbol("fileExists"));
+    fileSymbolMembers.define(new Symbol("isSymLink"));
+    fileSymbolMembers.define(new Symbol("createDirectoriesIfNeededForDirPath"));
+    fileSymbolMembers.define(
+      new Symbol("createDirectoriesIfNeededForFilePath"),
+    );
+    fileSymbol.members = fileSymbolMembers;
+    languageScope.define(fileSymbol);
+
+    const mathSymbol = new Symbol("math");
+    const mathSymbolMembers = new Scope();
+    mathSymbolMembers.define(new Symbol("random"));
+    mathSymbolMembers.define(new Symbol("randomInt"));
+    mathSymbolMembers.define(new Symbol("sqrt"));
+    mathSymbolMembers.define(new Symbol("exp"));
+    mathSymbolMembers.define(new Symbol("log"));
+    mathSymbolMembers.define(new Symbol("log10"));
+    mathSymbolMembers.define(new Symbol("floor"));
+    mathSymbolMembers.define(new Symbol("ceil"));
+    mathSymbolMembers.define(new Symbol("fmod"));
+    mathSymbolMembers.define(new Symbol("pow"));
+    mathSymbolMembers.define(new Symbol("abs"));
+    mathSymbolMembers.define(new Symbol("max"));
+    mathSymbolMembers.define(new Symbol("min"));
+    mathSymbolMembers.define(new Symbol("clamp"));
+    mathSymbolMembers.define(new Symbol("mix"));
+    mathSymbolMembers.define(new Symbol("sin"));
+    mathSymbolMembers.define(new Symbol("cos"));
+    mathSymbolMembers.define(new Symbol("tan"));
+    mathSymbolMembers.define(new Symbol("asin"));
+    mathSymbolMembers.define(new Symbol("acos"));
+    mathSymbolMembers.define(new Symbol("atan"));
+    mathSymbolMembers.define(new Symbol("atan2"));
+    mathSymbolMembers.define(new Symbol("length"));
+    mathSymbolMembers.define(new Symbol("length2"));
+    mathSymbolMembers.define(new Symbol("normalize"));
+    mathSymbolMembers.define(new Symbol("dot"));
+    mathSymbolMembers.define(new Symbol("cross"));
+    mathSymbolMembers.define(new Symbol("rotate"));
+    mathSymbol.members = mathSymbolMembers;
+    languageScope.define(mathSymbol);
 
     const documentScope = ast.scope;
     documentScope.parent = languageScope;

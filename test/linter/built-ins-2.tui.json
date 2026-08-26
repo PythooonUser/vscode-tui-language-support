@@ -1,0 +1,50 @@
+[
+  {
+    "severity": 1,
+    "range": {
+      "start": {
+        "line": 2,
+        "character": 6
+      },
+      "end": {
+        "line": 2,
+        "character": 6
+      }
+    },
+    "message": "Provide the missing character 'MemberName' here.",
+    "code": "100",
+    "source": "tui"
+  },
+  {
+    "severity": 1,
+    "range": {
+      "start": {
+        "line": 2,
+        "character": 12
+      },
+      "end": {
+        "line": 2,
+        "character": 12
+      }
+    },
+    "message": "Provide a valid expression here.",
+    "code": "100",
+    "source": "tui"
+  },
+  {
+    "severity": 2,
+    "range": {
+      "start": {
+        "line": 2,
+        "character": 6
+      },
+      "end": {
+        "line": 2,
+        "character": 6
+      }
+    },
+    "message": "Undefined member ''.",
+    "code": "undefined-symbol",
+    "source": "tui"
+  }
+]

@@ -1,0 +1,16 @@
+# built-ins-1
+print(""),
+error(""),
+exit(0),
+readValue(),
+clear(),
+system(""),
+platform(),
+require(""),
+type(),
+
+# built-ins-2
+debug.getFileName(),
+debug.getLineNumber(),
+debug.break(),
+debug.backtrace(),
