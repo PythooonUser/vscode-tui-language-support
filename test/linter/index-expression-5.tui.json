@@ -1,0 +1,50 @@
+[
+  {
+    "severity": 1,
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 4
+      },
+      "end": {
+        "line": 0,
+        "character": 4
+      }
+    },
+    "message": "Provide a valid index here.",
+    "code": "100",
+    "source": "tui"
+  },
+  {
+    "severity": 1,
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 4
+      },
+      "end": {
+        "line": 0,
+        "character": 4
+      }
+    },
+    "message": "Close this expression with the missing ']' character.",
+    "code": "100",
+    "source": "tui"
+  },
+  {
+    "severity": 2,
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 0
+      },
+      "end": {
+        "line": 0,
+        "character": 3
+      }
+    },
+    "message": "Undefined symbol 'foo'.",
+    "code": "undefined-symbol",
+    "source": "tui"
+  }
+]

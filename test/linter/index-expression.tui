@@ -1,0 +1,14 @@
+# index-expression-1
+foo[0],
+
+# index-expression-2
+foo[],
+
+# index-expression-3
+foo[0,
+
+# index-expression-4
+foo[,
+
+# index-expression-5
+foo[

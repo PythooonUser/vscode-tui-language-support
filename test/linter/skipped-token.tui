@@ -1,3 +1,5 @@
+# skipped-token-1
 foo;
 
+# skipped-token-2
 { foo, , }

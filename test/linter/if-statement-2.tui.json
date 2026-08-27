@@ -1,0 +1,50 @@
+[
+  {
+    "severity": 1,
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 7
+      },
+      "end": {
+        "line": 0,
+        "character": 7
+      }
+    },
+    "message": "Close this expression with the missing ')' character.",
+    "code": "100",
+    "source": "tui"
+  },
+  {
+    "severity": 1,
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 7
+      },
+      "end": {
+        "line": 0,
+        "character": 7
+      }
+    },
+    "message": "Expected statements enclosed by '{ }'.",
+    "code": "100",
+    "source": "tui"
+  },
+  {
+    "severity": 1,
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 7
+      },
+      "end": {
+        "line": 0,
+        "character": 7
+      }
+    },
+    "message": "Close this expression with the missing '}' character.",
+    "code": "100",
+    "source": "tui"
+  }
+]
