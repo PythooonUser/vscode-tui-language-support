@@ -43,6 +43,7 @@ import { Symbol } from "./symbol";
 import { Token } from "./token";
 import {
   BoolLiteralKinds,
+  MemberNameKinds,
   NullLiteralKinds,
   PostfixUpdateOperatorKinds,
   PrefixUpdateOperatorKinds,
@@ -880,7 +881,7 @@ export class Parser {
   private parseMemberName(parent: Node): Token {
     const token = this.token;
 
-    if (token?.kind === "Name") {
+    if (token && MemberNameKinds.includes(token.kind)) {
       this.advance();
       token.parent = parent;
       return token;

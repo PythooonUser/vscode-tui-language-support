@@ -136,3 +136,22 @@ export const VariableAssignmentKinds: TokenKind[] = [
   "EqualsOperator",
   "ColonOperator",
 ];
+
+export const MemberNameKinds: TokenKind[] = [
+  "Name",
+  "AndKeyword",
+  "BreakKeyword",
+  "ElseIfKeyword",
+  "ElseKeyword",
+  "FalseKeyword",
+  "ForKeyword",
+  "FunctionKeyword",
+  "IfKeyword",
+  "InKeyword",
+  "NilKeyword",
+  "NullKeyword",
+  "OrKeyword",
+  "ReturnKeyword",
+  "TrueKeyword",
+  "WhileKeyword",
+];
