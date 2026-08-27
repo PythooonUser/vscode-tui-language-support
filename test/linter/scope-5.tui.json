@@ -1,0 +1,50 @@
+[
+  {
+    "severity": 2,
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 8
+      },
+      "end": {
+        "line": 0,
+        "character": 11
+      }
+    },
+    "message": "Undefined member 'baz'.",
+    "code": "undefined-symbol",
+    "source": "tui"
+  },
+  {
+    "severity": 2,
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 4
+      },
+      "end": {
+        "line": 0,
+        "character": 7
+      }
+    },
+    "message": "Undefined member 'bar'.",
+    "code": "undefined-symbol",
+    "source": "tui"
+  },
+  {
+    "severity": 2,
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 0
+      },
+      "end": {
+        "line": 0,
+        "character": 3
+      }
+    },
+    "message": "Undefined symbol 'foo'.",
+    "code": "undefined-symbol",
+    "source": "tui"
+  }
+]
