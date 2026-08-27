@@ -589,6 +589,24 @@ export class Parser {
       node.leftOperand.kind === "VariableNode"
     ) {
       this.scope?.define(new Symbol((node.leftOperand as VariableNode).name));
+    } else if (
+      VariableAssignmentKinds.includes(node.operator.kind) &&
+      node.leftOperand.kind === "UnaryExpressionNode" &&
+      (node.leftOperand as UnaryExpressionNode).operator.kind ===
+        "DotOperator" &&
+      (node.leftOperand as UnaryExpressionNode).operand.kind === "VariableNode"
+    ) {
+      const name = (node.leftOperand as UnaryExpressionNode)
+        .operand as VariableNode;
+
+      if (!this.scope?.parent?.lookup(name.name.content)) {
+        let parent = this.scope;
+        while (parent?.parent) {
+          parent = parent.parent;
+        }
+
+        parent!.define(new Symbol(name.name));
+      }
     }
 
     return node;

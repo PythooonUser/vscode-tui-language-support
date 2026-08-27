@@ -17,3 +17,11 @@ foo = {
 
 # scope-5
 foo.bar.baz,
+
+# scope-6
+{ .x = 10 },
+print(x)
+
+# scope-7
+{ x = 10 },
+print(x)
