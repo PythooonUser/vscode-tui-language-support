@@ -77,10 +77,10 @@ export class Parser {
     this.advance();
 
     const node = new SourceDocumentNode();
-    node.statements = this.parseElementList(node, "SourceElements");
-    node.endOfFile = this.consume(node, "EndOfFile");
     node.document = document;
     node.scope = this.scope!;
+    node.statements = this.parseElementList(node, "SourceElements");
+    node.endOfFile = this.consume(node, "EndOfFile");
 
     this.advance();
 

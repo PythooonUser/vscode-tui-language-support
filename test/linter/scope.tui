@@ -25,3 +25,20 @@ print(x)
 # scope-7
 { x = 10 },
 print(x)
+
+# scope-8
+{ .x = 10, x }, x
+
+# scope-9
+test = { .global = 10, print("", global) }
+
+# scope-10
+x = 10, { x = 20, .x = 5 }
+
+# scope-11
+table = {
+    subTable = {
+        .global = 10
+        print(global)
+    }
+}
