@@ -30,6 +30,13 @@ export class Scope {
     this.symbols.push(symbol);
   }
 
+  public removeChild(scope: Scope) {
+    const index = this.children.indexOf(scope);
+    if (index !== -1) {
+      this.children.splice(index, 1);
+    }
+  }
+
   public push() {
     const scope = new Scope(this);
     return scope;

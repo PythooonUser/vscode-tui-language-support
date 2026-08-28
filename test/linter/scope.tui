@@ -48,3 +48,11 @@ a = 0
 if (a == 0) {
     a = 1
 }
+
+# scope-13
+foo = {
+    bar = {
+        .global = 10
+        print(global)
+    }
+}

@@ -593,7 +593,9 @@ export class Parser {
           node.operator.kind === "EqualsOperator" &&
           node.rightOperand.kind === "TableLiteralNode"
         ) {
-          symbol.members = (node.rightOperand as TableLiteralNode).members;
+          const members = (node.rightOperand as TableLiteralNode).members!;
+          symbol.members = members;
+          this.scope?.removeChild(members);
         }
 
         this.scope?.define(symbol);

@@ -1,17 +1,7 @@
 {
   "children": [
     {
-      "children": [
-        {
-          "children": [],
-          "symbols": [
-            {
-              "members": null,
-              "name": "bar"
-            }
-          ]
-        }
-      ],
+      "children": [],
       "symbols": [
         {
           "members": {

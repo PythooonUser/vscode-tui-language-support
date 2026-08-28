@@ -10,9 +10,17 @@
         {
           "members": {
             "children": [],
-            "symbols": []
+            "symbols": [
+              {
+                "members": {
+                  "children": [],
+                  "symbols": []
+                },
+                "name": "bar"
+              }
+            ]
           },
-          "name": "test"
+          "name": "foo"
         }
       ]
     }

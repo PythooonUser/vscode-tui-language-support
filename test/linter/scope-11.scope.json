@@ -1,25 +1,7 @@
 {
   "children": [
     {
-      "children": [
-        {
-          "children": [
-            {
-              "children": [],
-              "symbols": []
-            }
-          ],
-          "symbols": [
-            {
-              "members": {
-                "children": [],
-                "symbols": []
-              },
-              "name": "subTable"
-            }
-          ]
-        }
-      ],
+      "children": [],
       "symbols": [
         {
           "members": null,
@@ -27,12 +9,7 @@
         },
         {
           "members": {
-            "children": [
-              {
-                "children": [],
-                "symbols": []
-              }
-            ],
+            "children": [],
             "symbols": [
               {
                 "members": {
