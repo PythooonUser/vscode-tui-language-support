@@ -5,11 +5,13 @@ export type ScopeWalker = (scope: Scope) => void;
 
 export class Scope {
   public parent: Scope | null;
+  public children: Scope[] = [];
 
   public readonly symbols: Symbol[] = [];
 
   public constructor(parent: Scope | null = null) {
     this.parent = parent;
+    this.parent?.children.push(this);
   }
 
   public define(symbol: Symbol) {
