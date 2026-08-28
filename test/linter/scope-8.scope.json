@@ -1,5 +1,20 @@
 {
-  "children": [],
+  "children": [
+    {
+      "children": [
+        {
+          "children": [],
+          "symbols": []
+        }
+      ],
+      "symbols": [
+        {
+          "members": null,
+          "name": "x"
+        }
+      ]
+    }
+  ],
   "symbols": [
     {
       "members": null,

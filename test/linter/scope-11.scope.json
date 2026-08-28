@@ -1,5 +1,53 @@
 {
-  "children": [],
+  "children": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [],
+              "symbols": []
+            }
+          ],
+          "symbols": [
+            {
+              "members": {
+                "children": [],
+                "symbols": []
+              },
+              "name": "subTable"
+            }
+          ]
+        }
+      ],
+      "symbols": [
+        {
+          "members": null,
+          "name": "global"
+        },
+        {
+          "members": {
+            "children": [
+              {
+                "children": [],
+                "symbols": []
+              }
+            ],
+            "symbols": [
+              {
+                "members": {
+                  "children": [],
+                  "symbols": []
+                },
+                "name": "subTable"
+              }
+            ]
+          },
+          "name": "table"
+        }
+      ]
+    }
+  ],
   "symbols": [
     {
       "members": null,

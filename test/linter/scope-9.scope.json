@@ -1,5 +1,27 @@
 {
-  "children": [],
+  "children": [
+    {
+      "children": [
+        {
+          "children": [],
+          "symbols": []
+        }
+      ],
+      "symbols": [
+        {
+          "members": null,
+          "name": "global"
+        },
+        {
+          "members": {
+            "children": [],
+            "symbols": []
+          },
+          "name": "test"
+        }
+      ]
+    }
+  ],
   "symbols": [
     {
       "members": null,

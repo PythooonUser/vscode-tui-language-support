@@ -4,14 +4,26 @@ import { Token } from "./token";
 export type ScopeWalker = (scope: Scope) => void;
 
 export class Scope {
-  public parent: Scope | null;
+  private _parent: Scope | null = null;
   public children: Scope[] = [];
 
   public readonly symbols: Symbol[] = [];
 
+  public get parent(): Scope | null {
+    return this._parent;
+  }
+
+  public set parent(value: Scope | null) {
+    if (this._parent === value) return;
+
+    this._parent = value;
+    if (value) {
+      value.children.push(this);
+    }
+  }
+
   public constructor(parent: Scope | null = null) {
     this.parent = parent;
-    this.parent?.children.push(this);
   }
 
   public define(symbol: Symbol) {

@@ -1,5 +1,33 @@
 {
-  "children": [],
+  "children": [
+    {
+      "children": [
+        {
+          "children": [],
+          "symbols": [
+            {
+              "members": null,
+              "name": "bar"
+            }
+          ]
+        }
+      ],
+      "symbols": [
+        {
+          "members": {
+            "children": [],
+            "symbols": [
+              {
+                "members": null,
+                "name": "bar"
+              }
+            ]
+          },
+          "name": "foo"
+        }
+      ]
+    }
+  ],
   "symbols": [
     {
       "members": null,

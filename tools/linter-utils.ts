@@ -1,5 +1,5 @@
 import { existsSync, readFileSync, writeFileSync } from "fs";
-import { Parser } from "../src/parser";
+import { Parser, Token } from "../src/parser";
 import { Linter } from "../src/server/linter";
 import { TextDocument } from "vscode-languageserver-textdocument";
 
@@ -39,8 +39,13 @@ const writeResult = (document: string, testName: string) => {
     `${JSON.stringify(
       node.scope,
       function (key, value) {
-        if (["parent"].includes(key)) {
+        console.log(key, value);
+        if (["_parent"].includes(key)) {
           return;
+        }
+
+        if (key === "name" && this[key] instanceof Token) {
+          return this[key].content;
         }
 
         return value;
