@@ -1,0 +1,399 @@
+{
+  "children": [
+    {
+      "children": [],
+      "symbols": [
+        {
+          "members": null,
+          "name": "a"
+        }
+      ]
+    }
+  ],
+  "symbols": [
+    {
+      "members": null,
+      "name": "vec2"
+    },
+    {
+      "members": null,
+      "name": "vec3"
+    },
+    {
+      "members": null,
+      "name": "vec4"
+    },
+    {
+      "members": null,
+      "name": "mat3"
+    },
+    {
+      "members": null,
+      "name": "print"
+    },
+    {
+      "members": null,
+      "name": "error"
+    },
+    {
+      "members": null,
+      "name": "exit"
+    },
+    {
+      "members": null,
+      "name": "readValue"
+    },
+    {
+      "members": null,
+      "name": "clear"
+    },
+    {
+      "members": null,
+      "name": "system"
+    },
+    {
+      "members": null,
+      "name": "platform"
+    },
+    {
+      "members": null,
+      "name": "require"
+    },
+    {
+      "members": null,
+      "name": "type"
+    },
+    {
+      "members": {
+        "children": [],
+        "symbols": [
+          {
+            "members": null,
+            "name": "getFileName"
+          },
+          {
+            "members": null,
+            "name": "getLineNumber"
+          },
+          {
+            "members": null,
+            "name": "break"
+          },
+          {
+            "members": null,
+            "name": "backtrace"
+          }
+        ]
+      },
+      "name": "debug"
+    },
+    {
+      "members": {
+        "children": [],
+        "symbols": [
+          {
+            "members": null,
+            "name": "count"
+          },
+          {
+            "members": null,
+            "name": "insert"
+          },
+          {
+            "members": null,
+            "name": "remove"
+          },
+          {
+            "members": null,
+            "name": "shuffle"
+          },
+          {
+            "members": null,
+            "name": "sort"
+          },
+          {
+            "members": null,
+            "name": "clone"
+          }
+        ]
+      },
+      "name": "table"
+    },
+    {
+      "members": {
+        "children": [],
+        "symbols": [
+          {
+            "members": null,
+            "name": "length"
+          },
+          {
+            "members": null,
+            "name": "format"
+          },
+          {
+            "members": null,
+            "name": "find"
+          },
+          {
+            "members": null,
+            "name": "subString"
+          },
+          {
+            "members": null,
+            "name": "sha1"
+          },
+          {
+            "members": null,
+            "name": "split"
+          },
+          {
+            "members": null,
+            "name": "replace"
+          },
+          {
+            "members": null,
+            "name": "lower"
+          },
+          {
+            "members": null,
+            "name": "upper"
+          },
+          {
+            "members": null,
+            "name": "eachChar"
+          },
+          {
+            "members": null,
+            "name": "eachLine"
+          }
+        ]
+      },
+      "name": "string"
+    },
+    {
+      "members": {
+        "children": [],
+        "symbols": [
+          {
+            "members": null,
+            "name": "directoryContents"
+          },
+          {
+            "members": null,
+            "name": "load"
+          },
+          {
+            "members": null,
+            "name": "loadBinary"
+          },
+          {
+            "members": null,
+            "name": "save"
+          },
+          {
+            "members": null,
+            "name": "saveBinary"
+          },
+          {
+            "members": null,
+            "name": "loadData"
+          },
+          {
+            "members": null,
+            "name": "saveData"
+          },
+          {
+            "members": null,
+            "name": "sha1"
+          },
+          {
+            "members": null,
+            "name": "isDirectory"
+          },
+          {
+            "members": null,
+            "name": "fileName"
+          },
+          {
+            "members": null,
+            "name": "extension"
+          },
+          {
+            "members": null,
+            "name": "changeExtension"
+          },
+          {
+            "members": null,
+            "name": "removeExtension"
+          },
+          {
+            "members": null,
+            "name": "removeLastPathComponent"
+          },
+          {
+            "members": null,
+            "name": "getAbsolutePath"
+          },
+          {
+            "members": null,
+            "name": "isSubPath"
+          },
+          {
+            "members": null,
+            "name": "move"
+          },
+          {
+            "members": null,
+            "name": "copy"
+          },
+          {
+            "members": null,
+            "name": "remove"
+          },
+          {
+            "members": null,
+            "name": "mkdir"
+          },
+          {
+            "members": null,
+            "name": "fileExists"
+          },
+          {
+            "members": null,
+            "name": "isSymLink"
+          },
+          {
+            "members": null,
+            "name": "createDirectoriesIfNeededForDirPath"
+          },
+          {
+            "members": null,
+            "name": "createDirectoriesIfNeededForFilePath"
+          }
+        ]
+      },
+      "name": "file"
+    },
+    {
+      "members": {
+        "children": [],
+        "symbols": [
+          {
+            "members": null,
+            "name": "random"
+          },
+          {
+            "members": null,
+            "name": "randomInt"
+          },
+          {
+            "members": null,
+            "name": "sqrt"
+          },
+          {
+            "members": null,
+            "name": "exp"
+          },
+          {
+            "members": null,
+            "name": "log"
+          },
+          {
+            "members": null,
+            "name": "log10"
+          },
+          {
+            "members": null,
+            "name": "floor"
+          },
+          {
+            "members": null,
+            "name": "ceil"
+          },
+          {
+            "members": null,
+            "name": "fmod"
+          },
+          {
+            "members": null,
+            "name": "pow"
+          },
+          {
+            "members": null,
+            "name": "abs"
+          },
+          {
+            "members": null,
+            "name": "max"
+          },
+          {
+            "members": null,
+            "name": "min"
+          },
+          {
+            "members": null,
+            "name": "clamp"
+          },
+          {
+            "members": null,
+            "name": "mix"
+          },
+          {
+            "members": null,
+            "name": "sin"
+          },
+          {
+            "members": null,
+            "name": "cos"
+          },
+          {
+            "members": null,
+            "name": "tan"
+          },
+          {
+            "members": null,
+            "name": "asin"
+          },
+          {
+            "members": null,
+            "name": "acos"
+          },
+          {
+            "members": null,
+            "name": "atan"
+          },
+          {
+            "members": null,
+            "name": "atan2"
+          },
+          {
+            "members": null,
+            "name": "length"
+          },
+          {
+            "members": null,
+            "name": "length2"
+          },
+          {
+            "members": null,
+            "name": "normalize"
+          },
+          {
+            "members": null,
+            "name": "dot"
+          },
+          {
+            "members": null,
+            "name": "cross"
+          },
+          {
+            "members": null,
+            "name": "rotate"
+          }
+        ]
+      },
+      "name": "math"
+    }
+  ]
+}

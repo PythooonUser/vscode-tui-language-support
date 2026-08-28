@@ -577,18 +577,27 @@ export class Parser {
     node.rightOperand = rightOperand;
 
     if (
-      node.operator.kind === "EqualsOperator" &&
-      leftOperand.kind === "VariableNode" &&
-      rightOperand.kind === "TableLiteralNode"
-    ) {
-      const symbol = new Symbol((node.leftOperand as VariableNode).name);
-      symbol.members = (rightOperand as TableLiteralNode).members;
-      this.scope?.define(symbol);
-    } else if (
       VariableAssignmentKinds.includes(node.operator.kind) &&
       node.leftOperand.kind === "VariableNode"
     ) {
-      this.scope?.define(new Symbol((node.leftOperand as VariableNode).name));
+      const name = (node.leftOperand as VariableNode).name;
+
+      if (
+        name.getParentOfKind("ExpressionStatementNode")?.parent?.kind ===
+          "TableLiteralNode" ||
+        !this.scope?.lookup(name.content)
+      ) {
+        const symbol = new Symbol(name);
+
+        if (
+          node.operator.kind === "EqualsOperator" &&
+          node.rightOperand.kind === "TableLiteralNode"
+        ) {
+          symbol.members = (node.rightOperand as TableLiteralNode).members;
+        }
+
+        this.scope?.define(symbol);
+      }
     } else if (
       VariableAssignmentKinds.includes(node.operator.kind) &&
       node.leftOperand.kind === "UnaryExpressionNode" &&

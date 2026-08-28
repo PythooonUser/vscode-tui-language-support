@@ -39,7 +39,6 @@ const writeResult = (document: string, testName: string) => {
     `${JSON.stringify(
       node.scope,
       function (key, value) {
-        console.log(key, value);
         if (["_parent"].includes(key)) {
           return;
         }

@@ -42,3 +42,9 @@ table = {
         print(global)
     }
 }
+
+# scope-12
+a = 0
+if (a == 0) {
+    a = 1
+}
