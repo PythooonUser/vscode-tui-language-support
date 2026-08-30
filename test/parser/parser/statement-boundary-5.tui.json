@@ -1,0 +1,68 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "MemberAccessExpressionNode",
+        "error": null,
+        "expression": {
+          "kind": "VariableNode",
+          "error": null,
+          "name": {
+            "start": 0,
+            "length": 8,
+            "kind": "Name",
+            "error": null
+          }
+        },
+        "dot": {
+          "start": 8,
+          "length": 1,
+          "kind": "DotOperator",
+          "error": null
+        },
+        "member": {
+          "start": 9,
+          "length": 9,
+          "kind": "Name",
+          "error": null
+        }
+      },
+      "delimiter": null
+    },
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "UnaryExpressionNode",
+        "error": null,
+        "operator": {
+          "start": 19,
+          "length": 1,
+          "kind": "DotOperator",
+          "error": null
+        },
+        "operand": {
+          "kind": "VariableNode",
+          "error": null,
+          "name": {
+            "start": 20,
+            "length": 3,
+            "kind": "Name",
+            "error": null
+          }
+        }
+      },
+      "delimiter": null
+    }
+  ],
+  "endOfFile": {
+    "start": 23,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

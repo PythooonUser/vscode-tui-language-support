@@ -666,6 +666,10 @@ export class Parser {
   private parsePostfixExpression(expression: Node): Node {
     const token = this.token;
 
+    if (token && this.hasLeadingLineBreak(token)) {
+      return expression;
+    }
+
     switch (token?.kind) {
       case "PlusPlusOperator":
       case "MinusMinusOperator":
@@ -684,6 +688,14 @@ export class Parser {
       default:
         return expression;
     }
+  }
+
+  private hasLeadingLineBreak(token: Token): boolean {
+    return token.trivia.some((triviaToken) =>
+      this.lexer.document
+        .slice(triviaToken.start, triviaToken.start + triviaToken.length)
+        .includes("\n"),
+    );
   }
 
   private parsePostfixUpdateExpression(

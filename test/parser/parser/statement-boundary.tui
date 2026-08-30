@@ -1,0 +1,26 @@
+# statement-boundary-1
+subValue = 30
+.subValue = value
+
+# statement-boundary-2
+.global = 40
+print(global)
+
+# statement-boundary-3
+foo
+(bar)
+
+# statement-boundary-4
+foo
+[0]
+
+# statement-boundary-5
+subTable.testValue
+.bar
+
+# statement-boundary-6
+count
+++count
+
+# statement-boundary-7
+foo.bar(0)[1].baz

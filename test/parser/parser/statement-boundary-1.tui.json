@@ -1,0 +1,92 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "BinaryExpressionNode",
+        "error": null,
+        "leftOperand": {
+          "kind": "VariableNode",
+          "error": null,
+          "name": {
+            "start": 0,
+            "length": 8,
+            "kind": "Name",
+            "error": null
+          }
+        },
+        "operator": {
+          "start": 9,
+          "length": 1,
+          "kind": "EqualsOperator",
+          "error": null
+        },
+        "rightOperand": {
+          "kind": "NumberLiteralNode",
+          "error": null,
+          "literal": {
+            "start": 11,
+            "length": 2,
+            "kind": "NumberLiteral",
+            "error": null
+          }
+        }
+      },
+      "delimiter": null
+    },
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "BinaryExpressionNode",
+        "error": null,
+        "leftOperand": {
+          "kind": "UnaryExpressionNode",
+          "error": null,
+          "operator": {
+            "start": 14,
+            "length": 1,
+            "kind": "DotOperator",
+            "error": null
+          },
+          "operand": {
+            "kind": "VariableNode",
+            "error": null,
+            "name": {
+              "start": 15,
+              "length": 8,
+              "kind": "Name",
+              "error": null
+            }
+          }
+        },
+        "operator": {
+          "start": 24,
+          "length": 1,
+          "kind": "EqualsOperator",
+          "error": null
+        },
+        "rightOperand": {
+          "kind": "VariableNode",
+          "error": null,
+          "name": {
+            "start": 26,
+            "length": 5,
+            "kind": "Name",
+            "error": null
+          }
+        }
+      },
+      "delimiter": null
+    }
+  ],
+  "endOfFile": {
+    "start": 31,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

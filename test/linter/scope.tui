@@ -56,3 +56,13 @@ foo = {
         print(global)
     }
 }
+
+# scope-14
+value = 1
+table = {
+    number = 10
+    .value = 2
+    .global = 40
+    print(global)
+}
+print(global)
