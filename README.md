@@ -38,9 +38,9 @@ For further details please refer to the [CHANGELOG](https://github.com/PythooonU
 
 Clone the repository. Make sure to run the latest `node` version and use `$ npm install` to grab all necessary dependencies. Then hit `F5` in VSCode to open up a new VSCode instance with the extension loaded.
 
-Make sure to always add tests, which can be run by `$ npm test`.
+Make sure to always add tests, which can be run by `$ npm test`. In order to ease writing tests we provide a bunch of `utils:*` commands for the various stages of the extension, e.g. lexer, parser, linter, etc.
 
-Deployment packages the extension for publishing on the VSCode marketplace, use `$ vsce package` or `$vsce publish` _(ask maintainer for credentials)_.
+Deployment packages the extension for publishing on the VSCode marketplace, use `$ vsce package` or `$ vsce publish` _(ask maintainer for credentials)_.
 
 ## License
 
