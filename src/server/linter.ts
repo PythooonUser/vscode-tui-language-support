@@ -5,7 +5,9 @@ import {
   TextDocumentChangeEvent,
 } from "vscode-languageserver/node";
 import {
-  MemberAccessExpressionNode,
+  ArgumentExpressionNode,
+  BinaryExpressionNode,
+  ForStatementNode,
   Node,
   SourceDocumentNode,
   VariableNode,
@@ -81,7 +83,8 @@ export class Linter {
       diagnostics.push(diagnostic);
     });
 
-    this.checkForUndefinedSymbols(event, ast, diagnostics);
+    // TODO: Needs more cooking
+    // this.checkForUndefinedSymbols(event, ast, diagnostics);
 
     return diagnostics;
   }
@@ -91,6 +94,8 @@ export class Linter {
     ast: SourceDocumentNode,
     diagnostics: Diagnostic[],
   ) {
+    this.defineForStatementSymbols(ast);
+
     const languageScope = new Scope();
     languageScope.define(new Symbol("vec2"));
     languageScope.define(new Symbol("vec3"));
@@ -267,5 +272,60 @@ export class Linter {
         }
       }
     });
+  }
+
+  private defineForStatementSymbols(ast: SourceDocumentNode) {
+    ast.walk((element) => {
+      if (!(element instanceof Node)) return;
+      if (element.kind !== "ForStatementNode") return;
+
+      const forNode = element as ForStatementNode;
+      const conditions = forNode.conditions;
+
+      let inExpressionIndex = -1;
+      for (let i = conditions.length - 1; i >= 0; i--) {
+        const condition = conditions[i];
+
+        if (
+          condition instanceof ArgumentExpressionNode &&
+          condition.argument instanceof BinaryExpressionNode &&
+          condition.argument.operator.kind === "InKeyword"
+        ) {
+          inExpressionIndex = i;
+          break;
+        }
+      }
+
+      if (inExpressionIndex === -1) return;
+
+      for (let i = 0; i < inExpressionIndex; i++) {
+        const condition = conditions[i];
+
+        if (
+          condition instanceof ArgumentExpressionNode &&
+          condition.argument instanceof VariableNode
+        ) {
+          this.defineForVariable(forNode, condition.argument);
+        }
+      }
+
+      const inExpression = (
+        conditions[inExpressionIndex] as ArgumentExpressionNode
+      ).argument as BinaryExpressionNode;
+
+      if (inExpression.leftOperand instanceof VariableNode) {
+        this.defineForVariable(forNode, inExpression.leftOperand);
+      }
+    });
+  }
+
+  private defineForVariable(
+    forNode: ForStatementNode,
+    variable: VariableNode,
+  ): void {
+    const name = variable.name;
+    if (forNode.scope.lookup(name.content)) return;
+
+    forNode.scope.define(new Symbol(name));
   }
 }

@@ -418,6 +418,8 @@ export class Parser {
     node.parent = parent;
     this.scope = this.scope!.push();
 
+    node.scope = this.scope;
+
     node.forKeyword = this.consume(node, "ForKeyword");
 
     node.leftParen = this.consume(node, "LeftParenDelimiter");

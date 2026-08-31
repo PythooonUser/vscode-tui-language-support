@@ -1,3 +1,4 @@
+import { Scope } from "../scope";
 import { Token } from "../token";
 import { NodeOrTokenArray } from "../types";
 import { Node } from "./node";
@@ -8,6 +9,7 @@ export class ForStatementNode extends Node {
   public conditions: NodeOrTokenArray = [];
   public rightParen!: Token;
   public statements!: Node;
+  public scope!: Scope;
 
   constructor() {
     super();

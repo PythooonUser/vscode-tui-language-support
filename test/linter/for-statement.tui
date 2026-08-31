@@ -1,0 +1,20 @@
+# for-statement-1
+for () {} # TODO: Should throw "expected expression"
+
+# for-statement-2
+for (foo in bar) {} # TODO: Only throw "bar" as undefined
+
+# for-statement-3
+for (index, foo in bar) {} # TODO: Only throw "bar" as undefined
+
+# for-statement-4
+for (i = 0, i > 10, i++) {} # TODO: Don't mark "i" as undefined
+
+# for-statement-5
+for (i = 0, i > 10) {} # TODO: Throw "expected increment expression"
+
+# for-statement-6
+for (i = 0) {} # TODO: Throw "expected condition expression"
+
+# for-statement-7
+for (index, foo, _ in bar) {} # TODO: Throw "too many expressions"
