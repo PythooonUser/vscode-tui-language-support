@@ -39,3 +39,12 @@ a != b,
 
 # binary-expression-14
 a in b,
+
+# binary-expression-15
+a % b,
+
+# binary-expression-16
+a + b % c,
+
+# binary-expression-17
+(a + b) % c,

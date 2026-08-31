@@ -51,6 +51,8 @@ export type TokenKind =
   | "SlashOperator"
   | "StarEqualsOperator"
   | "StarOperator"
+  | "PercentEqualsOperator"
+  | "PercentOperator"
   | "StringLiteral"
   | "TrueKeyword"
   | "UnknownToken"
@@ -90,6 +92,8 @@ export const OperatorTokenMap: TokenKindMap = {
   "==": "EqualsEqualsOperator",
   ">": "GreaterThanOperator",
   ">=": "GreaterThanEqualsOperator",
+  "%": "PercentOperator",
+  "%=": "PercentEqualsOperator",
   "||": "BarBarOperator",
 };
 

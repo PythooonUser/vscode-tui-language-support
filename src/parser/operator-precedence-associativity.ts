@@ -42,6 +42,10 @@ export const OperatorPrecedenceAndAssociativityMap: PrecedenceAndAssociativityMa
       precedence: 1,
       associativity: "Right",
     },
+    ["PercentEqualsOperator"]: {
+      precedence: 1,
+      associativity: "Right",
+    },
 
     // Conditional Expression
     ["QuestionOperator"]: {
@@ -115,6 +119,10 @@ export const OperatorPrecedenceAndAssociativityMap: PrecedenceAndAssociativityMa
       associativity: "Left",
     },
     ["SlashOperator"]: {
+      precedence: 8,
+      associativity: "Left",
+    },
+    ["PercentOperator"]: {
       precedence: 8,
       associativity: "Left",
     },

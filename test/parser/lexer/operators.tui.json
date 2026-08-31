@@ -189,7 +189,7 @@
   {
     "start": 36,
     "length": 2,
-    "kind": "PlusEqualsOperator",
+    "kind": "PercentEqualsOperator",
     "trivia": [
       {
         "start": 35,
@@ -204,7 +204,7 @@
   {
     "start": 39,
     "length": 2,
-    "kind": "MinusEqualsOperator",
+    "kind": "PlusEqualsOperator",
     "trivia": [
       {
         "start": 38,
@@ -218,8 +218,8 @@
   },
   {
     "start": 42,
-    "length": 1,
-    "kind": "PlusOperator",
+    "length": 2,
+    "kind": "MinusEqualsOperator",
     "trivia": [
       {
         "start": 41,
@@ -232,12 +232,27 @@
     "error": null
   },
   {
-    "start": 44,
+    "start": 45,
+    "length": 1,
+    "kind": "PlusOperator",
+    "trivia": [
+      {
+        "start": 44,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 47,
     "length": 1,
     "kind": "MinusOperator",
     "trivia": [
       {
-        "start": 43,
+        "start": 46,
         "length": 1,
         "kind": "Whitespace",
         "trivia": [],
@@ -247,12 +262,12 @@
     "error": null
   },
   {
-    "start": 46,
+    "start": 49,
     "length": 1,
     "kind": "SlashOperator",
     "trivia": [
       {
-        "start": 45,
+        "start": 48,
         "length": 1,
         "kind": "Whitespace",
         "trivia": [],
@@ -262,12 +277,12 @@
     "error": null
   },
   {
-    "start": 48,
+    "start": 51,
     "length": 1,
     "kind": "StarOperator",
     "trivia": [
       {
-        "start": 47,
+        "start": 50,
         "length": 1,
         "kind": "Whitespace",
         "trivia": [],
@@ -277,12 +292,27 @@
     "error": null
   },
   {
-    "start": 50,
+    "start": 53,
+    "length": 1,
+    "kind": "PercentOperator",
+    "trivia": [
+      {
+        "start": 52,
+        "length": 1,
+        "kind": "Whitespace",
+        "trivia": [],
+        "error": null
+      }
+    ],
+    "error": null
+  },
+  {
+    "start": 55,
     "length": 1,
     "kind": "EqualsOperator",
     "trivia": [
       {
-        "start": 49,
+        "start": 54,
         "length": 1,
         "kind": "Whitespace",
         "trivia": [],
@@ -292,12 +322,12 @@
     "error": null
   },
   {
-    "start": 52,
+    "start": 57,
     "length": 1,
     "kind": "ColonOperator",
     "trivia": [
       {
-        "start": 51,
+        "start": 56,
         "length": 1,
         "kind": "Whitespace",
         "trivia": [],
@@ -307,12 +337,12 @@
     "error": null
   },
   {
-    "start": 54,
+    "start": 59,
     "length": 1,
     "kind": "QuestionOperator",
     "trivia": [
       {
-        "start": 53,
+        "start": 58,
         "length": 1,
         "kind": "Whitespace",
         "trivia": [],
@@ -322,12 +352,12 @@
     "error": null
   },
   {
-    "start": 56,
+    "start": 61,
     "length": 1,
     "kind": "DotOperator",
     "trivia": [
       {
-        "start": 55,
+        "start": 60,
         "length": 1,
         "kind": "Whitespace",
         "trivia": [],
@@ -337,12 +367,12 @@
     "error": null
   },
   {
-    "start": 58,
+    "start": 63,
     "length": 0,
     "kind": "EndOfFile",
     "trivia": [
       {
-        "start": 57,
+        "start": 62,
         "length": 1,
         "kind": "Whitespace",
         "trivia": [],

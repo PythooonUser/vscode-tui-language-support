@@ -92,7 +92,7 @@ export class Lexer {
       return this.parseStringLiteral(character);
     }
 
-    if ("<>+-&|!=/*:?.".includes(character)) {
+    if ("<>+-&|!=/*:%?.".includes(character)) {
       return this.parseOperator();
     }
 
