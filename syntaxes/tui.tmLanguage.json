@@ -85,7 +85,7 @@
           "patterns": [
             {
               "name": "constant.character.escape.tui",
-              "match": "\\\\\"|\\\\t"
+              "match": "\\\\\"|\\\\t|\\\\n"
             }
           ],
           "end": "\"",
