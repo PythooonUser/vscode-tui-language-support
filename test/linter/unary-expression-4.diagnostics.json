@@ -1,0 +1,18 @@
+[
+  {
+    "severity": 1,
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 2
+      },
+      "end": {
+        "line": 0,
+        "character": 2
+      }
+    },
+    "message": "Provide a valid expression here.",
+    "code": "100",
+    "source": "tui"
+  }
+]

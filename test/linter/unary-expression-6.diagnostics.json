@@ -1,0 +1,18 @@
+[
+  {
+    "severity": 1,
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 4
+      },
+      "end": {
+        "line": 0,
+        "character": 4
+      }
+    },
+    "message": "Close this expression with the missing ')' character.",
+    "code": "100",
+    "source": "tui"
+  }
+]
