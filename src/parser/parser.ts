@@ -297,6 +297,7 @@ export class Parser {
       case "NumberLiteral":
       case "StringLiteral":
       case "PlusOperator":
+      case "MinusOperator":
       case "PlusPlusOperator":
       case "MinusMinusOperator":
       case "LeftParenDelimiter":

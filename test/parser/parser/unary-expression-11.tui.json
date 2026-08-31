@@ -3,34 +3,46 @@
   "error": null,
   "statements": [
     {
-      "start": 0,
-      "length": 1,
-      "kind": "MinusOperator",
-      "error": "SkippedToken"
-    },
-    {
-      "start": 2,
-      "length": 1,
-      "kind": "MinusOperator",
-      "error": "SkippedToken"
-    },
-    {
-      "start": 4,
-      "length": 1,
-      "kind": "MinusOperator",
-      "error": "SkippedToken"
-    },
-    {
       "kind": "ExpressionStatementNode",
       "error": null,
       "expression": {
-        "kind": "VariableNode",
+        "kind": "UnaryExpressionNode",
         "error": null,
-        "name": {
-          "start": 5,
+        "operator": {
+          "start": 0,
           "length": 1,
-          "kind": "Name",
+          "kind": "MinusOperator",
           "error": null
+        },
+        "operand": {
+          "kind": "UnaryExpressionNode",
+          "error": null,
+          "operator": {
+            "start": 2,
+            "length": 1,
+            "kind": "MinusOperator",
+            "error": null
+          },
+          "operand": {
+            "kind": "UnaryExpressionNode",
+            "error": null,
+            "operator": {
+              "start": 4,
+              "length": 1,
+              "kind": "MinusOperator",
+              "error": null
+            },
+            "operand": {
+              "kind": "VariableNode",
+              "error": null,
+              "name": {
+                "start": 5,
+                "length": 1,
+                "kind": "Name",
+                "error": null
+              }
+            }
+          }
         }
       },
       "delimiter": {

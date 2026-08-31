@@ -33,3 +33,6 @@ a++,
 
 # unary-expression-12
 !a,
+
+# unary-expression-13
+-a,
