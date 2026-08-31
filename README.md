@@ -1,6 +1,6 @@
 # vscode-tui-language-support
 
-This is an extension for the code editor [**VS Code**](https://code.visualstudio.com/) that adds language support for the programming language [**tui**](https://github.com/mjdave/tui).
+This is an extension for the code editor [**VS Code**](https://code.visualstudio.com/) that adds language support for the programming language [**tui**](https://github.com/mjdave/tui). Available in the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=pythooonuser.vscode-tui-language-support).
 
 You can find out more about the current development of the project by visiting the [extension repository on GitHub](https://github.com/pythooonuser/vscode-tui-language-support/).
 
