@@ -1,0 +1,8 @@
+# table-literal-1
+{},
+
+# table-literal-2
+{ foo: 10, print(foo) },
+
+# table-literal-3
+{ "foo": 10, print(foo) },

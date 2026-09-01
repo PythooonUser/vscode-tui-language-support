@@ -621,6 +621,21 @@ export class Parser {
 
         parent!.define(new Symbol(name.name));
       }
+    } else if (
+      VariableAssignmentKinds.includes(node.operator.kind) &&
+      node.leftOperand.kind === "StringLiteralNode"
+    ) {
+      const name = (node.leftOperand as StringLiteralNode).literal;
+      const content = name.content.slice(1, -1);
+
+      if (
+        name.getParentOfKind("ExpressionStatementNode")?.parent?.kind ===
+          "TableLiteralNode" ||
+        !this.scope?.lookup(content)
+      ) {
+        const symbol = new Symbol(content);
+        this.scope?.define(symbol);
+      }
     }
 
     return node;
