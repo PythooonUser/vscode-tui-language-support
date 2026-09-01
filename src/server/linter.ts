@@ -15,10 +15,15 @@ import {
 import { Scope } from "../parser/scope";
 import { Symbol } from "../parser/symbol";
 
+export type LinterOptions = {
+  globals: string[];
+};
+
 export class Linter {
   public lint(
     event: TextDocumentChangeEvent<TextDocument>,
     ast: SourceDocumentNode,
+    options: LinterOptions,
   ): Diagnostic[] {
     const diagnostics: Diagnostic[] = [];
 
@@ -83,8 +88,7 @@ export class Linter {
       diagnostics.push(diagnostic);
     });
 
-    // TODO: Needs more cooking
-    // this.checkForUndefinedSymbols(event, ast, diagnostics);
+    this.checkForUndefinedSymbols(event, ast, options, diagnostics);
 
     return diagnostics;
   }
@@ -92,11 +96,15 @@ export class Linter {
   private checkForUndefinedSymbols(
     event: TextDocumentChangeEvent<TextDocument>,
     ast: SourceDocumentNode,
+    options: LinterOptions,
     diagnostics: Diagnostic[],
   ) {
-    this.defineForStatementSymbols(ast);
-
     const languageScope = new Scope();
+
+    options.globals.forEach((symbol) => {
+      languageScope.define(new Symbol(symbol));
+    });
+
     languageScope.define(new Symbol("vec2"));
     languageScope.define(new Symbol("vec3"));
     languageScope.define(new Symbol("vec4"));
@@ -215,6 +223,8 @@ export class Linter {
     const documentScope = ast.scope;
     documentScope.parent = languageScope;
     ast.scope = languageScope;
+
+    this.defineForStatementSymbols(ast);
 
     ast.walk((nodeOrToken) => {
       if (nodeOrToken instanceof Node) {

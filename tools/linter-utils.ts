@@ -27,6 +27,8 @@ const writeResult = (document: string, testName: string) => {
   const results = linter.lint(
     { document: TextDocument.create("uri", "tui", 1, document) },
     node,
+    // TODO: We could add a test option to overwrite this
+    { globals: [] },
   );
 
   writeFileSync(

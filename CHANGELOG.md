@@ -11,6 +11,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - The character escape sequence `\n` is now highlighted
 - New settings option for defining globals (symbols) the linter can use
 
+### Updated
+
+- Enabled linting of undefined variables (still experimental)
+
 ## [0.5.0] - 2026-08-31
 
 ### Added

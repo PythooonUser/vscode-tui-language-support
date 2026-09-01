@@ -7,10 +7,10 @@ import {
 } from "vscode-languageserver/node";
 import { DocumentCache } from "./document-cache";
 import { HoverResolver } from "./hover-resolver";
-import { Linter } from "./linter";
+import { Linter, LinterOptions } from "./linter";
 import { Formatter, FormatterOptions } from "./formatter";
 
-type ExtensionConfiguration = FormatterOptions;
+type ExtensionConfiguration = FormatterOptions & LinterOptions;
 let extensionConfiguration: ExtensionConfiguration | undefined = undefined;
 
 const cache = new DocumentCache();
@@ -59,7 +59,6 @@ connection.onDocumentFormatting((params) => {
   if (!ast) return null;
 
   const formatter = new Formatter();
-  // TODO: Read that from `.tuirc`. For now, we provide sensible defaults.
   const options: FormatterOptions = {
     "null-literal": extensionConfiguration?.["null-literal"] ?? "any",
     "table-literal": extensionConfiguration?.["table-literal"] ?? "any",
@@ -73,7 +72,10 @@ documents.onDidChangeContent((event) => {
   const ast = cache.get(event.document.uri)?.ast;
   if (!ast) return [];
 
-  const diagnostics = new Linter().lint(event, ast);
+  const options: LinterOptions = {
+    globals: extensionConfiguration?.globals ?? [],
+  };
+  const diagnostics = new Linter().lint(event, ast, options);
   connection.sendDiagnostics({ uri: event.document.uri, diagnostics });
 });
 
