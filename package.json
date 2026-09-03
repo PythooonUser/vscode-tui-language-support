@@ -88,7 +88,7 @@
   },
   "dependencies": {
     "vscode-languageclient": "^9.0.1",
-    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver": "^10.1.1",
     "vscode-languageserver-textdocument": "^1.0.12"
   }
 }
