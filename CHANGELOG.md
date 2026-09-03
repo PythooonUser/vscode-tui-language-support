@@ -9,6 +9,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ### Added
 
 - Quoted table keys are now properly linted and define symbols in the scope
+- New syntax `# global foo1 foo2` or `// global foo1 foo2` can be used to define globals for a specific file
+
+### Removed
+
+- The "globals" VSCode setting is replaced with the in-file comment annotation
 
 ## [0.6.0] - 2026-09-01
 
