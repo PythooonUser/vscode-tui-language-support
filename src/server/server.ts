@@ -1,6 +1,8 @@
 import { TextDocument } from "vscode-languageserver-textdocument";
 import {
+  CodeActionKind,
   createConnection,
+  Diagnostic,
   ProposedFeatures,
   TextDocuments,
   TextDocumentSyncKind,
@@ -9,6 +11,7 @@ import { DocumentCache } from "./document-cache";
 import { HoverResolver } from "./hover-resolver";
 import { Linter, LinterOptions } from "./linter";
 import { Formatter, FormatterOptions } from "./formatter";
+import { CodeActionProvider } from "./code-action-provider";
 
 type ExtensionConfiguration = FormatterOptions & LinterOptions;
 let extensionConfiguration: ExtensionConfiguration | undefined = undefined;
@@ -23,6 +26,9 @@ connection.onInitialize((params) => ({
     textDocumentSync: TextDocumentSyncKind.Incremental,
     hoverProvider: true,
     documentFormattingProvider: true,
+    codeActionProvider: {
+      codeActionKinds: [CodeActionKind.QuickFix],
+    },
   },
 }));
 
@@ -75,6 +81,18 @@ documents.onDidChangeContent((event) => {
   const options: LinterOptions = {};
   const diagnostics = new Linter().lint(event, ast, options);
   connection.sendDiagnostics({ uri: event.document.uri, diagnostics });
+});
+
+connection.onCodeAction((params) => {
+  const document = documents.get(params.textDocument.uri);
+  if (!document) return null;
+
+  const ast = cache.get(document.uri)?.ast;
+  if (!ast) return null;
+
+  const diagnostics: Diagnostic[] = params.context.diagnostics;
+  const codeActionProvider = new CodeActionProvider();
+  return codeActionProvider.provide(diagnostics, document, ast);
 });
 
 documents.listen(connection);
