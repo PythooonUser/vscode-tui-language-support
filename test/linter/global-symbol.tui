@@ -1,0 +1,15 @@
+# global-symbol-1
+# global windowWidth
+print(windowWidth),
+
+# global-symbol-2
+// global windowWidth
+print(windowWidth),
+
+# global-symbol-3
+print(missing),
+
+# global-symbol-4
+# global windowWidth windowHeight
+print(windowWidth),
+print(windowHeight),

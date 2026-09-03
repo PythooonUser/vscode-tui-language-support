@@ -1,0 +1,18 @@
+[
+  {
+    "severity": 1,
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 6
+      },
+      "end": {
+        "line": 0,
+        "character": 13
+      }
+    },
+    "message": "Undefined symbol 'missing'.",
+    "code": "undefined-symbol",
+    "source": "tui"
+  }
+]

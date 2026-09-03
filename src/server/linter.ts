@@ -10,14 +10,13 @@ import {
   ForStatementNode,
   Node,
   SourceDocumentNode,
+  Token,
   VariableNode,
 } from "../parser";
 import { Scope } from "../parser/scope";
 import { Symbol } from "../parser/symbol";
 
-export type LinterOptions = {
-  globals: string[];
-};
+export type LinterOptions = {};
 
 export class Linter {
   public lint(
@@ -101,7 +100,7 @@ export class Linter {
   ) {
     const languageScope = new Scope();
 
-    options.globals.forEach((symbol) => {
+    this.extractFileGlobals(ast).forEach((symbol) => {
       languageScope.define(new Symbol(symbol));
     });
 
@@ -337,5 +336,22 @@ export class Linter {
     if (forNode.scope.lookup(name.content)) return;
 
     forNode.scope.define(new Symbol(name));
+  }
+
+  private extractFileGlobals(ast: SourceDocumentNode): string[] {
+    const globals: string[] = [];
+    const pattern = /^(?:#|\/\/)\s*global\s+(.+)\s*$/;
+
+    ast.walk((element) => {
+      if (!(element instanceof Token)) return;
+      if (element.kind !== "Comment") return;
+
+      const match = pattern.exec(element.content);
+      if (match) {
+        globals.push(...match[1].split(/\s+/));
+      }
+    });
+
+    return globals;
   }
 }

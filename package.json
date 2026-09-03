@@ -64,14 +64,6 @@
           ],
           "default": "any",
           "description": "The delimiters to use for table literals"
-        },
-        "vscode-tui-language-support.globals": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "default": [],
-          "description": "The names of globally available symbols for the linter to auto-discover."
         }
       }
     }

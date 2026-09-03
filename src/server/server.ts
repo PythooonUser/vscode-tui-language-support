@@ -72,9 +72,7 @@ documents.onDidChangeContent((event) => {
   const ast = cache.get(event.document.uri)?.ast;
   if (!ast) return [];
 
-  const options: LinterOptions = {
-    globals: extensionConfiguration?.globals ?? [],
-  };
+  const options: LinterOptions = {};
   const diagnostics = new Linter().lint(event, ast, options);
   connection.sendDiagnostics({ uri: event.document.uri, diagnostics });
 });
