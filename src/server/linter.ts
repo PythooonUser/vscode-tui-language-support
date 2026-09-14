@@ -118,6 +118,7 @@ export class Linter {
     languageScope.define(new Symbol("platform"));
     languageScope.define(new Symbol("require"));
     languageScope.define(new Symbol("type"));
+    languageScope.define(new Symbol("load"));
 
     const debugSymbol = new Symbol("debug");
     const debugSymbolMembers = new Scope();

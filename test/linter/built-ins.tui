@@ -8,6 +8,7 @@ system(""),
 platform(),
 require(""),
 type(),
+load(""),
 
 # built-ins-2
 debug.getFileName(),
