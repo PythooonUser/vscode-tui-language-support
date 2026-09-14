@@ -5,6 +5,7 @@ import {
   Diagnostic,
   Range,
   TextEdit,
+  MarkupContent,
 } from "vscode-languageserver/node";
 import { SourceDocumentNode, Token } from "../parser";
 
@@ -81,8 +82,8 @@ export class CodeActionProvider {
     return global;
   }
 
-  private extractName(message: string): string | null {
-    const match = /Undefined symbol '(.+)'\./.exec(message);
+  private extractName(message: string | MarkupContent): string | null {
+    const match = /Undefined symbol '(.+)'\./.exec(message.toString());
     return match ? match[1] : null;
   }
 
