@@ -275,7 +275,7 @@ export class Lexer {
         break;
       }
 
-      if (this.peek() === type && this.peek(0) !== "\\") {
+      if (this.peek() === type && !this.isEscaped(this.index)) {
         break;
       }
 
@@ -288,6 +288,19 @@ export class Lexer {
 
     const length = this.index + 1 - start;
     return this.makeToken(start, length, "StringLiteral", error);
+  }
+
+  private isEscaped(index: number): boolean {
+    let backslashes = 0;
+
+    while (
+      index - backslashes >= 0 &&
+      this.document[index - backslashes] === "\\"
+    ) {
+      backslashes++;
+    }
+
+    return backslashes % 2 === 1;
   }
 
   private parseOperator() {
