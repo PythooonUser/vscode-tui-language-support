@@ -1,0 +1,43 @@
+# assignment-token-colon { "assignment-token": "colon" }
+foo = 1
+{
+  bar = 2
+  baz: 3
+}
+addTariff = function(tariff) {
+  .value = 4
+}
+"key": 5
+
+# assignment-token-equals { "assignment-token": "equals" }
+foo = 1
+{
+  bar = 2
+  baz: 3
+}
+addTariff = function(tariff) {
+  .value = 4
+}
+"key": 5
+
+# assignment-token-any { "assignment-token": "any" }
+foo = 1
+{
+  bar = 2
+  baz: 3
+}
+addTariff = function(tariff) {
+  .value = 4
+}
+"key": 5
+
+# assignment-token-table-colon-function-equals { "assignment-token": "table-colon-function-equals" }
+foo = 1
+{
+  bar = 2
+  baz: 3
+}
+addTariff = function(tariff) {
+  .value = 4
+}
+"key": 5

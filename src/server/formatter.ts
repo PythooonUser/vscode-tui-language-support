@@ -8,6 +8,11 @@ import {
 export type FormatterOptions = {
   "null-literal": "null" | "nil" | "any";
   "table-literal": "brace" | "bracket" | "any";
+  "assignment-token":
+    | "any"
+    | "colon"
+    | "equals"
+    | "table-colon-function-equals";
 };
 
 export class Formatter {

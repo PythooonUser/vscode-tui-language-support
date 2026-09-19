@@ -68,7 +68,7 @@ if (args.length < 3) {
 
     writeResult(
       document || "",
-      { "null-literal": "null", "table-literal": "brace" },
+      { "null-literal": "null", "table-literal": "brace", "assignment-token": "any" },
       `${outFileName ?? ""}.formatted.tui`,
     );
   } else {
