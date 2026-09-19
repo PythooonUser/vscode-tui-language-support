@@ -64,6 +64,17 @@
           ],
           "default": "any",
           "description": "The delimiters to use for table literals"
+        },
+        "vscode-tui-language-support.assignment-token": {
+          "type": "string",
+          "enum": [
+            "any",
+            "colon",
+            "equals",
+            "table-colon-function-equals"
+          ],
+          "default": "any",
+          "description": "The token to use for assignments"
         }
       }
     }

@@ -24,7 +24,7 @@ _Please note that development goes slowly since this is a free-time project only
 
 ## Settings
 
-Currently, we only provide basic formatting options, e.g. the characters to use for nullable types or table delimiters.
+Currently, we only provide basic formatting options, e.g. the characters to use for nullable types, table delimiters or the token to use for assignments.
 
 ## Feedback
 
