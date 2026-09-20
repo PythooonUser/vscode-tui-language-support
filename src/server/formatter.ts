@@ -1,13 +1,16 @@
 import { TextDocument, TextEdit } from "vscode-languageserver-textdocument";
 import {
+  BinaryExpressionNode,
   NullLiteralNode,
   SourceDocumentNode,
   TableLiteralNode,
 } from "../parser";
+import { VariableAssignmentKinds } from "../parser/token-kind";
 
 export type FormatterOptions = {
   "null-literal": "null" | "nil" | "any";
   "table-literal": "brace" | "bracket" | "any";
+  "assignment-token": "any" | "colon" | "equals";
 };
 
 export class Formatter {
@@ -99,6 +102,41 @@ export class Formatter {
               start: document.positionAt(node.rightDelimiter.start),
               end: document.positionAt(
                 node.rightDelimiter.start + node.rightDelimiter.length,
+              ),
+            },
+          });
+        }
+        return;
+      }
+
+      if (element.kind === "BinaryExpressionNode") {
+        const node = element as BinaryExpressionNode;
+
+        if (!VariableAssignmentKinds.includes(node.operator.kind)) {
+          return;
+        }
+
+        let text: string | undefined;
+
+        if (
+          node.operator.kind === "EqualsOperator" &&
+          options["assignment-token"] === "colon"
+        ) {
+          text = ":";
+        } else if (
+          node.operator.kind === "ColonOperator" &&
+          options["assignment-token"] === "equals"
+        ) {
+          text = "=";
+        }
+
+        if (text) {
+          edits.push({
+            newText: text,
+            range: {
+              start: document.positionAt(node.operator.start),
+              end: document.positionAt(
+                node.operator.start + node.operator.length,
               ),
             },
           });

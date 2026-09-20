@@ -24,7 +24,13 @@ _Please note that development goes slowly since this is a free-time project only
 
 ## Settings
 
-Currently, we only provide basic formatting options, e.g. the characters to use for nullable types or table delimiters.
+Currently, we only provide basic formatting options:
+
+| Setting | Values | Description |
+| --- | --- | --- |
+| `vscode-tui-language-support.null-literal` | `null`, `nil`, `any` | The literal to use for nullable values |
+| `vscode-tui-language-support.table-literal` | `brace`, `bracket`, `any` | The delimiters to use for table literals |
+| `vscode-tui-language-support.assignment-token` | `any`, `colon`, `equals` | The token to use for assignments |
 
 ## Feedback
 
