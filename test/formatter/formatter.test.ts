@@ -1,16 +1,19 @@
-import assert = require("assert");
 import { readdirSync, readFileSync } from "fs";
 import { TextDocument } from "vscode-languageserver-textdocument";
 import { Parser } from "../../src/parser";
 import { Formatter, FormatterOptions } from "../../src/server/formatter";
+import assert from "assert";
 
 describe("Formatter", () => {
   const parser: Parser = new Parser();
   const formatter: Formatter = new Formatter();
 
   const getTests = (document: string) => {
-    const tests: { name: string; options: FormatterOptions; document: string }[] =
-      [];
+    const tests: {
+      name: string;
+      options: FormatterOptions;
+      document: string;
+    }[] = [];
     const matches = document
       .split(/^(#\s[a-zA-Z0-9-.]+)\s(.+)$/m)
       .map((match) => match.trim())
