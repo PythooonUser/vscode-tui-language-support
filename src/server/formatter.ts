@@ -10,11 +10,7 @@ import { VariableAssignmentKinds } from "../parser/token-kind";
 export type FormatterOptions = {
   "null-literal": "null" | "nil" | "any";
   "table-literal": "brace" | "bracket" | "any";
-  "assignment-token":
-    | "any"
-    | "colon"
-    | "equals"
-    | "table-colon-function-equals";
+  "assignment-token": "any" | "colon" | "equals";
 };
 
 export class Formatter {
@@ -132,21 +128,6 @@ export class Formatter {
           options["assignment-token"] === "equals"
         ) {
           text = "=";
-        } else if (
-          options["assignment-token"] === "table-colon-function-equals"
-        ) {
-          const isTableAssignment =
-            node.operator.getParentOfKind("ExpressionStatementNode")?.parent
-              ?.kind === "TableLiteralNode";
-
-          if (isTableAssignment && node.operator.kind === "EqualsOperator") {
-            text = ":";
-          } else if (
-            !isTableAssignment &&
-            node.operator.kind === "ColonOperator"
-          ) {
-            text = "=";
-          }
         }
 
         if (text) {

@@ -30,14 +30,3 @@ addTariff = function(tariff) {
   .value = 4
 }
 "key": 5
-
-# assignment-token-table-colon-function-equals { "assignment-token": "table-colon-function-equals" }
-foo = 1
-{
-  bar = 2
-  baz: 3
-}
-addTariff = function(tariff) {
-  .value = 4
-}
-"key": 5

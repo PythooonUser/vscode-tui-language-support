@@ -1,9 +1,0 @@
-foo = 1
-{
-  bar : 2
-  baz: 3
-}
-addTariff = function(tariff) {
-  .value = 4
-}
-"key"= 5
