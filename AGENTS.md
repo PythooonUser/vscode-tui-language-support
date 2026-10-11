@@ -3,8 +3,9 @@
 ## GitHub
 
 - Read issues and PRs with the `gh` CLI, not `webfetch` — GitHub web pages are mostly navigation boilerplate.
-  - `gh issue view` fails on this repo (deprecated Projects classic). Use `gh api repos/PythooonUser/vscode-tui-language-support/issues/<n> --jq '{title,body,state,labels:[.labels[].name]}'`, and `gh api repos/PythooonUser/vscode-tui-language-support/issues/<n>/comments` for comments.
-  - PRs work normally: `gh pr view <n> --comments`.
+  - `gh issue view` and `gh pr view` both fail on this repo (deprecated Projects classic, `projectCards`). Use `gh api repos/PythooonUser/vscode-tui-language-support/issues/<n> --jq '{title,body,state,labels:[.labels[].name]}'` for issues and `gh api repos/PythooonUser/vscode-tui-language-support/pulls/<n> --jq '{title,body,state,mergeable}'` for PRs.
+  - Comments live under `.../issues/<n>/comments` for both. PR review comments and reviews: `.../pulls/<n>/comments` and `.../pulls/<n>/reviews`.
+  - These do work: `gh pr create`, `gh pr checks <n> --watch`, and `gh api --method PATCH .../pulls/<n> -F body=@file` to edit a PR body.
 
 ## Branches
 
