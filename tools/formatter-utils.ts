@@ -72,6 +72,7 @@ if (args.length < 3) {
         "null-literal": "null",
         "table-literal": "brace",
         "assignment-token": "any",
+        "table-key": "any",
       },
       `${outFileName ?? ""}.formatted.tui`,
     );

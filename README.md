@@ -31,6 +31,7 @@ Currently, we only provide basic formatting options:
 | `vscode-tui-language-support.null-literal` | `null`, `nil`, `any` | The literal to use for nullable values |
 | `vscode-tui-language-support.table-literal` | `brace`, `bracket`, `any` | The delimiters to use for table literals |
 | `vscode-tui-language-support.assignment-token` | `any`, `colon`, `equals` | The token to use for assignments |
+| `vscode-tui-language-support.table-key` | `any`, `bare`, `quoted` | The form to use for table literal key names |
 
 ## Feedback
 
