@@ -68,8 +68,7 @@ connection.onDocumentFormatting((params) => {
   const options: FormatterOptions = {
     "null-literal": extensionConfiguration?.["null-literal"] ?? "any",
     "table-literal": extensionConfiguration?.["table-literal"] ?? "any",
-    "assignment-token":
-      extensionConfiguration?.["assignment-token"] ?? "any",
+    "assignment-token": extensionConfiguration?.["assignment-token"] ?? "any",
   };
   return formatter.format(document, ast, options);
 });

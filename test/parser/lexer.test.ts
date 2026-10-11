@@ -47,8 +47,8 @@ describe("Lexer", () => {
       throw new Error(
         `File '${path}' does not exist. Did you forget to run '$ npm run utils:lexer ${path.replace(
           ".json",
-          ""
-        )}'?`
+          "",
+        )}'?`,
       );
     }
 

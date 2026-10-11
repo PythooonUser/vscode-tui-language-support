@@ -78,7 +78,7 @@ export class Lexer {
 
     if (
       "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_".includes(
-        character
+        character,
       )
     ) {
       return this.parseName();
@@ -122,7 +122,7 @@ export class Lexer {
     start: number,
     length: number,
     kind: TokenKind,
-    error: TokenError | null = null
+    error: TokenError | null = null,
   ) {
     const token = new Token(start, length, kind, this.trivia, error);
     this.trivia = [];
@@ -133,7 +133,7 @@ export class Lexer {
     start: number,
     length: number,
     kind: TokenKind,
-    error: TokenError | null = null
+    error: TokenError | null = null,
   ) {
     const token = new Token(start, length, kind, [], error);
     this.trivia.push(token);
@@ -218,7 +218,7 @@ export class Lexer {
       if (
         !token ||
         !"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_".includes(
-          token
+          token,
         )
       ) {
         break;
