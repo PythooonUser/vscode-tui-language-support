@@ -74,6 +74,16 @@
           ],
           "default": "any",
           "description": "The token to use for assignments"
+        },
+        "vscode-tui-language-support.table-key": {
+          "type": "string",
+          "enum": [
+            "any",
+            "bare",
+            "quoted"
+          ],
+          "default": "any",
+          "description": "The form to use for table literal key names"
         }
       }
     }

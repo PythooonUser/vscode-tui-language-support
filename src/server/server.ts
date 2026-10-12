@@ -69,6 +69,7 @@ connection.onDocumentFormatting((params) => {
     "null-literal": extensionConfiguration?.["null-literal"] ?? "any",
     "table-literal": extensionConfiguration?.["table-literal"] ?? "any",
     "assignment-token": extensionConfiguration?.["assignment-token"] ?? "any",
+    "table-key": extensionConfiguration?.["table-key"] ?? "any",
   };
   return formatter.format(document, ast, options);
 });

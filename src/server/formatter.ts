@@ -3,14 +3,20 @@ import {
   BinaryExpressionNode,
   NullLiteralNode,
   SourceDocumentNode,
+  StringLiteralNode,
   TableLiteralNode,
+  VariableNode,
 } from "../parser";
-import { VariableAssignmentKinds } from "../parser/token-kind";
+import {
+  KeywordTokenMap,
+  VariableAssignmentKinds,
+} from "../parser/token-kind";
 
 export type FormatterOptions = {
   "null-literal": "null" | "nil" | "any";
   "table-literal": "brace" | "bracket" | "any";
   "assignment-token": "any" | "colon" | "equals";
+  "table-key": "any" | "bare" | "quoted";
 };
 
 export class Formatter {
@@ -140,6 +146,49 @@ export class Formatter {
               ),
             },
           });
+        }
+
+        const isTableKey =
+          node.parent?.kind === "ExpressionStatementNode" &&
+          node.parent.parent?.kind === "TableLiteralNode";
+
+        if (isTableKey) {
+          if (
+            options["table-key"] === "bare" &&
+            node.leftOperand.kind === "StringLiteralNode"
+          ) {
+            const literal = (node.leftOperand as StringLiteralNode).literal;
+            const content = literal.content.slice(1, -1);
+
+            const isValidBareName =
+              /^[a-zA-Z_][a-zA-Z0-9_]*$/.test(content) &&
+              !(content in KeywordTokenMap);
+
+            if (isValidBareName) {
+              edits.push({
+                newText: content,
+                range: {
+                  start: document.positionAt(literal.start),
+                  end: document.positionAt(
+                    literal.start + literal.length,
+                  ),
+                },
+              });
+            }
+          } else if (
+            options["table-key"] === "quoted" &&
+            node.leftOperand.kind === "VariableNode"
+          ) {
+            const name = (node.leftOperand as VariableNode).name;
+
+            edits.push({
+              newText: `"${name.content}"`,
+              range: {
+                start: document.positionAt(name.start),
+                end: document.positionAt(name.start + name.length),
+              },
+            });
+          }
         }
         return;
       }
