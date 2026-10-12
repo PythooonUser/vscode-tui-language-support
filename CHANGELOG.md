@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ### Added
 
 - Formatting is now available for assignment tokens: the new `assignment-token` setting normalizes the assignment token (`=` or `:`)
+- Formatting is now available for table literal key names: the new `table-key` setting normalizes keys between bare (`foo`) and quoted (`"foo"`) form; keys that cannot be represented as a bare name are left unchanged
 
 ## [0.8.0] - 2026-09-18
 
