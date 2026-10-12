@@ -1,38 +1,6 @@
 [
   {
-    "severity": 2,
-    "range": {
-      "start": {
-        "line": 0,
-        "character": 8
-      },
-      "end": {
-        "line": 0,
-        "character": 11
-      }
-    },
-    "message": "Undefined member 'baz'.",
-    "code": "undefined-symbol",
-    "source": "tui"
-  },
-  {
-    "severity": 2,
-    "range": {
-      "start": {
-        "line": 0,
-        "character": 4
-      },
-      "end": {
-        "line": 0,
-        "character": 7
-      }
-    },
-    "message": "Undefined member 'bar'.",
-    "code": "undefined-symbol",
-    "source": "tui"
-  },
-  {
-    "severity": 2,
+    "severity": 1,
     "range": {
       "start": {
         "line": 0,

@@ -72,6 +72,10 @@
       "name": "type"
     },
     {
+      "members": null,
+      "name": "load"
+    },
+    {
       "members": {
         "children": [],
         "symbols": [

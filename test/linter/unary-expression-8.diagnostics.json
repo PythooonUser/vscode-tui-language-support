@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "severity": 1,
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 0
+      },
+      "end": {
+        "line": 0,
+        "character": 1
+      }
+    },
+    "message": "Undefined symbol 'a'.",
+    "code": "undefined-symbol",
+    "source": "tui"
+  }
+]
