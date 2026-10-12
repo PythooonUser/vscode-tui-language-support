@@ -7,10 +7,7 @@ import {
   TableLiteralNode,
   VariableNode,
 } from "../parser";
-import {
-  KeywordTokenMap,
-  VariableAssignmentKinds,
-} from "../parser/token-kind";
+import { KeywordTokenMap, VariableAssignmentKinds } from "../parser/token-kind";
 
 export type FormatterOptions = {
   "null-literal": "null" | "nil" | "any";
@@ -169,9 +166,7 @@ export class Formatter {
                 newText: content,
                 range: {
                   start: document.positionAt(literal.start),
-                  end: document.positionAt(
-                    literal.start + literal.length,
-                  ),
+                  end: document.positionAt(literal.start + literal.length),
                 },
               });
             }

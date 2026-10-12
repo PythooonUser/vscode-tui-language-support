@@ -49,57 +49,29 @@ let outFileName: string | undefined = undefined;
 
 if (args.length < 3) {
   console.log("USAGE: npm run utils:formatter <file>");
-  console.log("  --no-tests: Only convert source to formatted version\n");
-  console.log(
-    "(Remember to call it like npm run utils:formatter -- --no-tests <file>)\n",
-  );
 } else {
-  if (args[2] === "--no-tests") {
-    if (args[3].endsWith(".tui")) {
-      if (existsSync(args[3])) {
-        document = readFileSync(args[3], "utf-8");
-        outFileName = args[3];
-      } else {
-        console.log(`File '${args[3]}' does not exist!`);
-      }
+  if (args[2].endsWith(".tui")) {
+    if (existsSync(args[2])) {
+      document = readFileSync(args[2], "utf-8");
+      outFileName = args[2].replace(/[a-zA-Z0-9-]+\.tui/, "");
     } else {
-      document = args[3];
+      console.log(`File '${args[2]}' does not exist!`);
     }
-
-    writeResult(
-      document || "",
-      {
-        "null-literal": "null",
-        "table-literal": "brace",
-        "assignment-token": "any",
-        "table-key": "any",
-      },
-      `${outFileName ?? ""}.formatted.tui`,
-    );
   } else {
-    if (args[2].endsWith(".tui")) {
-      if (existsSync(args[2])) {
-        document = readFileSync(args[2], "utf-8");
-        outFileName = args[2].replace(/[a-zA-Z0-9-]+\.tui/, "");
-      } else {
-        console.log(`File '${args[2]}' does not exist!`);
+    document = args[2];
+  }
+
+  if (document !== undefined) {
+    const tests = getTests(document);
+
+    tests.forEach((test) => {
+      if (!test.name.endsWith(".skip")) {
+        writeResult(
+          test.document,
+          test.options,
+          `${outFileName ?? ""}${test.name}.formatted.tui`,
+        );
       }
-    } else {
-      document = args[2];
-    }
-
-    if (document !== undefined) {
-      const tests = getTests(document);
-
-      tests.forEach((test) => {
-        if (!test.name.endsWith(".skip")) {
-          writeResult(
-            test.document,
-            test.options,
-            `${outFileName ?? ""}${test.name}.formatted.tui`,
-          );
-        }
-      });
-    }
+    });
   }
 }

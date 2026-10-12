@@ -1,5 +1,2 @@
 export type TokenError =
-  | "UnexpectedEndOfFile"
-  | "UnknownToken"
-  | "MissingToken"
-  | "SkippedToken";
+  "UnexpectedEndOfFile" | "UnknownToken" | "MissingToken" | "SkippedToken";

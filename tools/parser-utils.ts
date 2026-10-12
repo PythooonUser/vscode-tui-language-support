@@ -31,7 +31,7 @@ const writeResult = (document: string, outFileName: string) => {
 
       return value;
     },
-    2
+    2,
   );
 
   if (outFileName) {
@@ -49,10 +49,10 @@ let outFileName: string | undefined = undefined;
 if (args.length < 3) {
   console.log("USAGE: npm run utils:parser <file>");
   console.log(
-    "  --no-tests: Only convert source to parser AST representation (JSON)\n"
+    "  --no-tests: Only convert source to parser AST representation (JSON)\n",
   );
   console.log(
-    "(Remember to call it like npm run utils:parser -- --no-tests <file>)\n"
+    "(Remember to call it like npm run utils:parser -- --no-tests <file>)\n",
   );
 } else {
   if (args[2] === "--no-tests") {
@@ -87,7 +87,7 @@ if (args.length < 3) {
         if (!test.name.endsWith(".skip")) {
           writeResult(
             test.document,
-            `${outFileName ?? ""}${test.name}.tui.json`
+            `${outFileName ?? ""}${test.name}.tui.json`,
           );
         }
       });

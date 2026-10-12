@@ -95,7 +95,9 @@
     "utils:lexer": "npx tsx ./tools/lexer-utils.ts",
     "utils:parser": "npx tsx ./tools/parser-utils.ts",
     "utils:formatter": "npx tsx ./tools/formatter-utils.ts",
-    "utils:linter": "npx tsx ./tools/linter-utils.ts"
+    "utils:linter": "npx tsx ./tools/linter-utils.ts",
+    "format": "prettier --check \"src/**/*.ts\" \"tools/**/*.ts\" \"test/**/*.ts\"",
+    "format:fix": "prettier --write \"src/**/*.ts\" \"tools/**/*.ts\" \"test/**/*.ts\""
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
@@ -103,6 +105,7 @@
     "@types/vscode": "^1.138.0",
     "@vscode/vsce": "^4.0.0",
     "mocha": "^11.8.0",
+    "prettier": "^3.9.10",
     "tsx": "^4.23.13",
     "typescript": "^7.0.2"
   },

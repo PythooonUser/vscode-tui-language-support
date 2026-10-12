@@ -10,7 +10,7 @@ describe("Parser", () => {
 
   const assertNodesEqual = (
     actual: SourceDocumentNode,
-    expected: SourceDocumentNode
+    expected: SourceDocumentNode,
   ) => {
     assert.deepEqual(
       JSON.parse(
@@ -20,9 +20,9 @@ describe("Parser", () => {
           }
 
           return value;
-        })
+        }),
       ),
-      expected
+      expected,
     );
   };
 
@@ -50,8 +50,8 @@ describe("Parser", () => {
       throw new Error(
         `File '${path}' does not exist. Did you forget to run '$ npm run utils:parser ${path.replace(
           ".json",
-          ""
-        )}'?`
+          "",
+        )}'?`,
       );
     }
 
@@ -99,7 +99,7 @@ describe("Parser", () => {
             it(test.name, () => {
               const actual = parseSourceDocument(test.document);
               const expected = getJSON(
-                `test/parser/parser/${test.name}.tui.json`
+                `test/parser/parser/${test.name}.tui.json`,
               );
 
               assertNodesEqual(actual, expected);
