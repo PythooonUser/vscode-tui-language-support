@@ -40,6 +40,7 @@ import { ParseContext } from "./parse-context";
 import { ParseContextError } from "./parse-context-error";
 import { Scope } from "./scope";
 import { Symbol } from "./symbol";
+import { SymbolType } from "./symbol-type";
 import { Token } from "./token";
 import {
   BoolLiteralKinds,
@@ -590,7 +591,10 @@ export class Parser {
           "TableLiteralNode" ||
         !this.scope?.lookup(name.content)
       ) {
-        const symbol = new Symbol(name);
+        const symbol = new Symbol(
+          name,
+          this.inferSymbolType(node.rightOperand),
+        );
 
         if (
           node.operator.kind === "EqualsOperator" &&
@@ -619,7 +623,9 @@ export class Parser {
           parent = parent.parent;
         }
 
-        parent!.define(new Symbol(name.name));
+        parent!.define(
+          new Symbol(name.name, this.inferSymbolType(node.rightOperand)),
+        );
       }
     } else if (
       VariableAssignmentKinds.includes(node.operator.kind) &&
@@ -633,7 +639,10 @@ export class Parser {
           "TableLiteralNode" ||
         !this.scope?.lookup(content)
       ) {
-        const symbol = new Symbol(content);
+        const symbol = new Symbol(
+          content,
+          this.inferSymbolType(node.rightOperand),
+        );
         this.scope?.define(symbol);
       }
     }
@@ -1003,5 +1012,42 @@ export class Parser {
     node.breakKeyword = this.consume(node, "BreakKeyword");
 
     return node;
+  }
+
+  private inferSymbolType(node: Node): SymbolType {
+    switch (node.kind) {
+      case "BoolLiteralNode":
+        return "boolean";
+      case "NumberLiteralNode":
+        return "number";
+      case "StringLiteralNode":
+        return "string";
+      case "TableLiteralNode":
+        return "table";
+      case "FunctionDeclarationNode":
+        return "function";
+      case "CallExpressionNode": {
+        const expression = (node as CallExpressionNode).expression;
+
+        if (expression.kind === "VariableNode") {
+          switch ((expression as VariableNode).name.content) {
+            case "vec2":
+              return "vec2";
+            case "vec3":
+              return "vec3";
+            case "vec4":
+              return "vec4";
+            case "mat3":
+              return "mat3";
+            default:
+              return "unknown";
+          }
+        }
+
+        return "unknown";
+      }
+      default:
+        return "unknown";
+    }
   }
 }
