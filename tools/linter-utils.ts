@@ -1,34 +1,39 @@
 import { existsSync, readFileSync, writeFileSync } from "fs";
 import { Parser, Token } from "../src/parser";
-import { Linter } from "../src/server/linter";
+import { Linter, LinterOptions } from "../src/server/linter";
 import { TextDocument } from "vscode-languageserver-textdocument";
 
 const getTests = (document: string) => {
-  const tests: { name: string; document: string }[] = [];
+  const tests: { name: string; options: LinterOptions; document: string }[] =
+    [];
   const matches = document
-    .split(/(^#\s[a-zA-Z0-9-.]+$)/m)
+    .split(/^(#\s[a-zA-Z0-9-.]+)\s(.+)$/m)
     .map((match) => match.trim())
     .filter((match) => !!match);
 
-  for (let i = 0; i < matches.length; i += 2) {
+  for (let i = 0; i < matches.length; i += 3) {
     tests.push({
       name: matches[i].replace(/#/, "").trim(),
-      document: matches[i + 1].trim(),
+      options: JSON.parse(matches[i + 1]),
+      document: matches[i + 2].trim(),
     });
   }
 
   return tests;
 };
 
-const writeResult = (document: string, testName: string) => {
+const writeResult = (
+  document: string,
+  options: LinterOptions,
+  testName: string,
+) => {
   const parser = new Parser();
   const node = parser.parseSourceDocument(document);
   const linter = new Linter();
   const results = linter.lint(
     { document: TextDocument.create("uri", "tui", 1, document) },
     node,
-    // TODO: We could add a test option to overwrite this
-    { globals: [] },
+    options,
   );
 
   writeFileSync(
@@ -75,6 +80,7 @@ if (args.length < 2) {
       if (!test.name.endsWith(".skip")) {
         writeResult(
           test.document,
+          test.options,
           `${args[2].replace(/[a-zA-Z0-9-]+\.tui/, "")}/${test.name}`,
         );
       }

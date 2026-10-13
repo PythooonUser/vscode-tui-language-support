@@ -2,19 +2,20 @@ import assert = require("assert");
 import { Parser, SourceDocumentNode, Token } from "../../src/parser";
 import { Scope } from "../../src/parser/scope";
 import { existsSync, readdirSync, readFileSync } from "fs";
-import { Linter } from "../../src/server/linter";
+import { Linter, LinterOptions } from "../../src/server/linter";
 import { TextDocument } from "vscode-languageserver-textdocument";
 import { Diagnostic } from "vscode-languageserver-protocol";
 
 describe("Linter", () => {
-  const lint = (document: string) => {
-    const parser: Parser = new Parser();
-    const linter: Linter = new Linter();
-    const node: SourceDocumentNode = parser.parseSourceDocument(document);
-    const diagnostics: Diagnostic[] = linter.lint(
+  const parser = new Parser();
+  const linter = new Linter();
+
+  const lint = (document: string, options: LinterOptions) => {
+    const node = parser.parseSourceDocument(document);
+    const diagnostics = linter.lint(
       { document: TextDocument.create("uri", "tui", 1, document) },
       node,
-      {},
+      options,
     );
 
     return { diagnostics, scope: node.scope };
@@ -38,16 +39,18 @@ describe("Linter", () => {
   const getDocument = (path: string) => readFileSync(path, "utf-8");
 
   const getTests = (document: string) => {
-    const tests: { name: string; document: string }[] = [];
+    const tests: { name: string; options: LinterOptions; document: string }[] =
+      [];
     const matches = document
-      .split(/(^#\s[a-zA-Z0-9-.]+$)/m)
+      .split(/^(#\s[a-zA-Z0-9-.]+)\s(.+)$/m)
       .map((match) => match.trim())
       .filter((match) => !!match);
 
-    for (let i = 0; i < matches.length; i += 2) {
+    for (let i = 0; i < matches.length; i += 3) {
       tests.push({
         name: matches[i].replace(/#/, "").trim(),
-        document: matches[i + 1].trim(),
+        options: JSON.parse(matches[i + 1]),
+        document: matches[i + 2].trim(),
       });
     }
 
@@ -88,7 +91,7 @@ describe("Linter", () => {
         }
 
         it(test.name, () => {
-          const actual = lint(test.document);
+          const actual = lint(test.document, test.options);
 
           assert.deepEqual(
             serialize(actual.diagnostics),
