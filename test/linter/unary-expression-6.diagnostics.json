@@ -14,5 +14,21 @@
     "message": "Close this expression with the missing ')' character.",
     "code": "100",
     "source": "tui"
+  },
+  {
+    "severity": 1,
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 3
+      },
+      "end": {
+        "line": 0,
+        "character": 4
+      }
+    },
+    "message": "Undefined symbol 'a'.",
+    "code": "undefined-symbol",
+    "source": "tui"
   }
 ]

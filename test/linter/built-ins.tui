@@ -1,4 +1,4 @@
-# built-ins-1
+# built-ins-1 {}
 print(""),
 error(""),
 exit(0),
@@ -10,7 +10,7 @@ require(""),
 type(),
 load(""),
 
-# built-ins-2
+# built-ins-2 {}
 debug.getFileName(),
 debug.getLineNumber(),
 debug.break(),
