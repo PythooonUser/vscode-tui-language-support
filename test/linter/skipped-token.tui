@@ -1,5 +1,5 @@
-# skipped-token-1
+# skipped-token-1 {}
 foo;
 
-# skipped-token-2
+# skipped-token-2 {}
 { foo, , }
