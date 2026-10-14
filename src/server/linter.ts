@@ -7,14 +7,18 @@ import {
 import {
   ArgumentExpressionNode,
   BinaryExpressionNode,
+  CallExpressionNode,
   ForStatementNode,
   Node,
   SourceDocumentNode,
+  StringLiteralNode,
   Token,
   VariableNode,
 } from "../parser";
 import { Scope } from "../parser/scope";
 import { Symbol } from "../parser/symbol";
+import { dirname, resolve } from "node:path";
+import { existsSync } from "node:fs";
 
 export type LinterOptions = {};
 
@@ -88,6 +92,7 @@ export class Linter {
     });
 
     this.checkForUndefinedSymbols(event, ast, options, diagnostics);
+    this.checkForMissingRequiredFiles(event, ast, options, diagnostics);
 
     return diagnostics;
   }
@@ -354,5 +359,48 @@ export class Linter {
     });
 
     return globals;
+  }
+
+  private checkForMissingRequiredFiles(
+    event: TextDocumentChangeEvent<TextDocument>,
+    ast: SourceDocumentNode,
+    options: LinterOptions,
+    diagnostics: Diagnostic[],
+  ) {
+    ast.walk((node) => {
+      if (!(node instanceof CallExpressionNode)) return;
+
+      const expression = node.expression;
+      if (!(expression instanceof VariableNode)) return;
+
+      if (expression.name.content !== "require") return;
+
+      const args = node.arguments.elements;
+      if (args.length !== 1) return;
+
+      const arg = args[0];
+      if (!(arg instanceof ArgumentExpressionNode)) return;
+
+      const value = arg.argument;
+      if (!(value instanceof StringLiteralNode)) return;
+
+      const filePath = value.literal.content.slice(1, -1);
+      const currentFilePath = event.document.uri.replace("file://", "");
+      const currentDir = dirname(currentFilePath);
+      const absolutePath = resolve(currentDir, filePath);
+
+      if (!existsSync(absolutePath)) {
+        diagnostics.push({
+          severity: DiagnosticSeverity.Error,
+          range: {
+            start: event.document.positionAt(value.start),
+            end: event.document.positionAt(value.start + value.length),
+          },
+          message: `File at '${absolutePath}' was not found.`,
+          code: "require-not-found",
+          source: "tui",
+        });
+      }
+    });
   }
 }
