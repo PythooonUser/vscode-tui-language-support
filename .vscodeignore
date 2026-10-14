@@ -9,3 +9,4 @@ src/
 test/
 tools/
 tsconfig.json
+AGENTS.md
