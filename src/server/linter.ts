@@ -92,7 +92,9 @@ export class Linter {
     });
 
     this.checkForUndefinedSymbols(event, ast, options, diagnostics);
-    this.checkForMissingRequiredFiles(event, ast, options, diagnostics);
+
+    // FIXME: Disabled for now as Dave has a custom base path set, so local paths don't resolve properly.
+    // this.checkForMissingRequiredFiles(event, ast, options, diagnostics);
 
     return diagnostics;
   }
