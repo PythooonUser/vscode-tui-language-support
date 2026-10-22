@@ -23,6 +23,7 @@ const getTests = (document: string) => {
 };
 
 const writeResult = (
+  path: string,
   document: string,
   options: LinterOptions,
   testName: string,
@@ -31,7 +32,7 @@ const writeResult = (
   const node = parser.parseSourceDocument(document);
   const linter = new Linter();
   const results = linter.lint(
-    { document: TextDocument.create("uri", "tui", 1, document) },
+    { document: TextDocument.create(path, "tui", 1, document) },
     node,
     options,
   );
@@ -79,6 +80,7 @@ if (args.length < 2) {
     tests.forEach((test) => {
       if (!test.name.endsWith(".skip")) {
         writeResult(
+          args[2],
           test.document,
           test.options,
           `${args[2].replace(/[a-zA-Z0-9-]+\.tui/, "")}/${test.name}`,

@@ -1,2 +1,2 @@
-# strings-1 {}
+# strings-1 { "require-search-paths": [] }
 foo = "\n\t\\"

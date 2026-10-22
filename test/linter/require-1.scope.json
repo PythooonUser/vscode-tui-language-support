@@ -1,0 +1,490 @@
+{
+  "children": [
+    {
+      "children": [],
+      "symbols": []
+    }
+  ],
+  "symbols": [
+    {
+      "type": "unknown",
+      "members": null,
+      "name": "vec2"
+    },
+    {
+      "type": "unknown",
+      "members": null,
+      "name": "vec3"
+    },
+    {
+      "type": "unknown",
+      "members": null,
+      "name": "vec4"
+    },
+    {
+      "type": "unknown",
+      "members": null,
+      "name": "mat3"
+    },
+    {
+      "type": "unknown",
+      "members": null,
+      "name": "print"
+    },
+    {
+      "type": "unknown",
+      "members": null,
+      "name": "error"
+    },
+    {
+      "type": "unknown",
+      "members": null,
+      "name": "exit"
+    },
+    {
+      "type": "unknown",
+      "members": null,
+      "name": "readValue"
+    },
+    {
+      "type": "unknown",
+      "members": null,
+      "name": "clear"
+    },
+    {
+      "type": "unknown",
+      "members": null,
+      "name": "system"
+    },
+    {
+      "type": "unknown",
+      "members": null,
+      "name": "platform"
+    },
+    {
+      "type": "unknown",
+      "members": null,
+      "name": "require"
+    },
+    {
+      "type": "unknown",
+      "members": null,
+      "name": "type"
+    },
+    {
+      "type": "unknown",
+      "members": null,
+      "name": "load"
+    },
+    {
+      "type": "unknown",
+      "members": {
+        "children": [],
+        "symbols": [
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "getFileName"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "getLineNumber"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "break"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "backtrace"
+          }
+        ]
+      },
+      "name": "debug"
+    },
+    {
+      "type": "unknown",
+      "members": {
+        "children": [],
+        "symbols": [
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "count"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "insert"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "remove"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "shuffle"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "sort"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "clone"
+          }
+        ]
+      },
+      "name": "table"
+    },
+    {
+      "type": "unknown",
+      "members": {
+        "children": [],
+        "symbols": [
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "length"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "format"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "find"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "subString"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "sha1"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "split"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "replace"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "lower"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "upper"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "eachChar"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "eachLine"
+          }
+        ]
+      },
+      "name": "string"
+    },
+    {
+      "type": "unknown",
+      "members": {
+        "children": [],
+        "symbols": [
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "directoryContents"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "load"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "loadBinary"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "save"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "saveBinary"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "loadData"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "saveData"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "sha1"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "isDirectory"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "fileName"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "extension"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "changeExtension"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "removeExtension"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "removeLastPathComponent"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "getAbsolutePath"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "isSubPath"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "move"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "copy"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "remove"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "mkdir"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "fileExists"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "isSymLink"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "createDirectoriesIfNeededForDirPath"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "createDirectoriesIfNeededForFilePath"
+          }
+        ]
+      },
+      "name": "file"
+    },
+    {
+      "type": "unknown",
+      "members": {
+        "children": [],
+        "symbols": [
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "random"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "randomInt"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "sqrt"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "exp"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "log"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "log10"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "floor"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "ceil"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "fmod"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "pow"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "abs"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "max"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "min"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "clamp"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "mix"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "sin"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "cos"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "tan"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "asin"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "acos"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "atan"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "atan2"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "length"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "length2"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "normalize"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "dot"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "cross"
+          },
+          {
+            "type": "unknown",
+            "members": null,
+            "name": "rotate"
+          }
+        ]
+      },
+      "name": "math"
+    }
+  ]
+}

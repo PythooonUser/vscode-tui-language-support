@@ -1,5 +1,5 @@
-# if-statement-1 {}
+# if-statement-1 { "require-search-paths": [] }
 if () {}
 
-# if-statement-2 {}
+# if-statement-2 { "require-search-paths": [] }
 if ( {}

@@ -1,0 +1,29 @@
+# require-1 { "require-search-paths": [] }
+require("invalid.tui")
+
+# require-2 { "require-search-paths": ["require"] }
+require("valid.tui")
+
+# require-3 { "require-search-paths": ["./require"] }
+require("valid.tui")
+
+# require-4 { "require-search-paths": ["invalid", "../linter/require"] }
+require("valid.tui")
+
+# require-5 { "require-search-paths": [] }
+require("./valid.tui")
+
+# require-6 { "require-search-paths": [] }
+require("./require/valid.tui")
+
+# require-7 { "require-search-paths": [] }
+require("/valid.tui")
+
+# require-8 { "require-search-paths": [] }
+require("/require/valid.tui")
+
+# require-9 { "require-search-paths": ["require"] }
+require("/valid.tui")
+
+# require-10 { "require-search-paths": ["/require"] }
+require("valid.tui")

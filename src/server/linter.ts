@@ -17,10 +17,12 @@ import {
 } from "../parser";
 import { Scope } from "../parser/scope";
 import { Symbol } from "../parser/symbol";
-import { dirname, resolve } from "node:path";
+import { dirname } from "node:path";
 import { existsSync } from "node:fs";
 
-export type LinterOptions = {};
+export type LinterOptions = {
+  "require-search-paths": string[];
+};
 
 export class Linter {
   public lint(
@@ -93,8 +95,7 @@ export class Linter {
 
     this.checkForUndefinedSymbols(event, ast, options, diagnostics);
 
-    // FIXME: Disabled for now as Dave has a custom base path set, so local paths don't resolve properly.
-    // this.checkForMissingRequiredFiles(event, ast, options, diagnostics);
+    this.checkForMissingRequiredFiles(event, ast, options, diagnostics);
 
     return diagnostics;
   }
@@ -369,6 +370,13 @@ export class Linter {
     options: LinterOptions,
     diagnostics: Diagnostic[],
   ) {
+    const documentPath = event.document.uri.replace(/^file:\/\//, "");
+    const currentDir = dirname(documentPath);
+    const searchPaths = options["require-search-paths"].map((searchPath) =>
+      this.joinPaths(currentDir, searchPath),
+    );
+    const roots = [currentDir, ...searchPaths];
+
     ast.walk((node) => {
       if (!(node instanceof CallExpressionNode)) return;
 
@@ -387,22 +395,44 @@ export class Linter {
       if (!(value instanceof StringLiteralNode)) return;
 
       const filePath = value.literal.content.slice(1, -1);
-      const currentFilePath = event.document.uri.replace("file://", "");
-      const currentDir = dirname(currentFilePath);
-      const absolutePath = resolve(currentDir, filePath);
 
-      if (!existsSync(absolutePath)) {
-        diagnostics.push({
-          severity: DiagnosticSeverity.Error,
-          range: {
-            start: event.document.positionAt(value.start),
-            end: event.document.positionAt(value.start + value.length),
-          },
-          message: `File at '${absolutePath}' was not found.`,
-          code: "require-not-found",
-          source: "tui",
-        });
-      }
+      const candidates = filePath.startsWith("/")
+        ? [filePath]
+        : roots.map((root) => this.joinPaths(root, filePath));
+
+      if (candidates.some((candidate) => existsSync(candidate))) return;
+
+      diagnostics.push({
+        severity: DiagnosticSeverity.Error,
+        range: {
+          start: event.document.positionAt(value.start),
+          end: event.document.positionAt(value.start + value.length),
+        },
+        message: `File not found in ${candidates.join(", ")}.`,
+        code: "require-not-found",
+        source: "tui",
+      });
     });
+  }
+
+  private joinPaths(base: string, path: string): string {
+    if (path.startsWith("/")) return path;
+
+    const isAbsolute = base.startsWith("/");
+    const segments: string[] = [];
+
+    `${base}/${path}`.split("/").forEach((segment) => {
+      if (segment === "" || segment === ".") return;
+
+      const last = segments[segments.length - 1];
+      if (segment === ".." && segments.length > 0 && last !== "..") {
+        segments.pop();
+        return;
+      }
+
+      segments.push(segment);
+    });
+
+    return `${isAbsolute ? "/" : ""}${segments.join("/")}`;
   }
 }
