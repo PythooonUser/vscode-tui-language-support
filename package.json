@@ -2,7 +2,7 @@
   "name": "vscode-tui-language-support",
   "displayName": "vscode-tui-language-support",
   "description": "tui Language Support for VSCode.",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "license": "MIT",
   "publisher": "pythooonuser",
   "author": {
@@ -96,9 +96,9 @@
       }
     }
   },
-  "main": "dist/src/client/client",
+  "main": "dist/client/client",
   "scripts": {
-    "compile": "tsc -b",
+    "compile": "esbuild src/client/client.ts src/server/server.ts --platform=node --external:vscode --minify --bundle --outdir=dist",
     "test": "mocha --node-option=import=tsx **/*.test.ts",
     "utils:lexer": "npx tsx ./tools/lexer-utils.ts",
     "utils:parser": "npx tsx ./tools/parser-utils.ts",
@@ -112,6 +112,7 @@
     "@types/node": "^26.6.3",
     "@types/vscode": "^1.99.0",
     "@vscode/vsce": "^4.0.0",
+    "esbuild": "^0.28.2",
     "mocha": "^12.0.2",
     "prettier": "^3.9.10",
     "tsx": "^4.23.13",
