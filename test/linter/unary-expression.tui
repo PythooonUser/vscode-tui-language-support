@@ -1,38 +1,38 @@
-# unary-expression-1 {}
+# unary-expression-1 { "require-search-paths": [] }
 ++a,
 
-# unary-expression-2 {}
+# unary-expression-2 { "require-search-paths": [] }
 ++ a,
 
-# unary-expression-3 {}
+# unary-expression-3 { "require-search-paths": [] }
 ++a
 
-# unary-expression-4 {}
+# unary-expression-4 { "require-search-paths": [] }
 ++
 
-# unary-expression-5 {}
+# unary-expression-5 { "require-search-paths": [] }
 (++a),
 
-# unary-expression-6 {}
+# unary-expression-6 { "require-search-paths": [] }
 (++a,
 
-# unary-expression-7 {}
+# unary-expression-7 { "require-search-paths": [] }
 ++(a),
 
-# unary-expression-8 {}
+# unary-expression-8 { "require-search-paths": [] }
 a++,
 
-# unary-expression-9 {}
+# unary-expression-9 { "require-search-paths": [] }
 --a,
 
-# unary-expression-10 {}
+# unary-expression-10 { "require-search-paths": [] }
 - -a,
 
-# unary-expression-11 {}
+# unary-expression-11 { "require-search-paths": [] }
 - - -a,
 
-# unary-expression-12 {}
+# unary-expression-12 { "require-search-paths": [] }
 !a,
 
-# unary-expression-13 {}
+# unary-expression-13 { "require-search-paths": [] }
 -a,

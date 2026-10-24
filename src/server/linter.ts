@@ -17,10 +17,12 @@ import {
 } from "../parser";
 import { Scope } from "../parser/scope";
 import { Symbol } from "../parser/symbol";
-import { dirname, resolve } from "node:path";
+import { dirname, join } from "node:path";
 import { existsSync } from "node:fs";
 
-export type LinterOptions = {};
+export type LinterOptions = {
+  "require-search-paths": string[];
+};
 
 export class Linter {
   public lint(
@@ -93,8 +95,7 @@ export class Linter {
 
     this.checkForUndefinedSymbols(event, ast, options, diagnostics);
 
-    // FIXME: Disabled for now as Dave has a custom base path set, so local paths don't resolve properly.
-    // this.checkForMissingRequiredFiles(event, ast, options, diagnostics);
+    this.checkForMissingRequiredFiles(event, ast, options, diagnostics);
 
     return diagnostics;
   }
@@ -369,6 +370,9 @@ export class Linter {
     options: LinterOptions,
     diagnostics: Diagnostic[],
   ) {
+    const documentPath = event.document.uri.replace(/^file:\/\//, "");
+    const currentDir = dirname(documentPath);
+
     ast.walk((node) => {
       if (!(node instanceof CallExpressionNode)) return;
 
@@ -387,22 +391,28 @@ export class Linter {
       if (!(value instanceof StringLiteralNode)) return;
 
       const filePath = value.literal.content.slice(1, -1);
-      const currentFilePath = event.document.uri.replace("file://", "");
-      const currentDir = dirname(currentFilePath);
-      const absolutePath = resolve(currentDir, filePath);
 
-      if (!existsSync(absolutePath)) {
-        diagnostics.push({
-          severity: DiagnosticSeverity.Error,
-          range: {
-            start: event.document.positionAt(value.start),
-            end: event.document.positionAt(value.start + value.length),
-          },
-          message: `File at '${absolutePath}' was not found.`,
-          code: "require-not-found",
-          source: "tui",
-        });
-      }
+      const candidates = filePath.startsWith("/")
+        ? [filePath]
+        : [
+            join(currentDir, filePath),
+            ...options["require-search-paths"].map((searchPath) =>
+              join(searchPath, filePath),
+            ),
+          ];
+
+      if (candidates.some((candidate) => existsSync(candidate))) return;
+
+      diagnostics.push({
+        severity: DiagnosticSeverity.Error,
+        range: {
+          start: event.document.positionAt(value.start),
+          end: event.document.positionAt(value.start + value.length),
+        },
+        message: `File not found in ${candidates.join(", ")}.`,
+        code: "require-not-found",
+        source: "tui",
+      });
     });
   }
 }

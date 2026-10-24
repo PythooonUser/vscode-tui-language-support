@@ -2,7 +2,7 @@
   "name": "vscode-tui-language-support",
   "displayName": "vscode-tui-language-support",
   "description": "tui Language Support for VSCode.",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "license": "MIT",
   "publisher": "pythooonuser",
   "author": {
@@ -84,6 +84,14 @@
           ],
           "default": "any",
           "description": "The form to use for table literal key names"
+        },
+        "vscode-tui-language-support.require-search-paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Additional directories to search for files referenced by require; directories given relative are resolved against the workspace root"
         }
       }
     }

@@ -1,5 +1,5 @@
-# skipped-token-1 {}
+# skipped-token-1 { "require-search-paths": [] }
 foo;
 
-# skipped-token-2 {}
+# skipped-token-2 { "require-search-paths": [] }
 { foo, , }

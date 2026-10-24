@@ -1,0 +1,18 @@
+[
+  {
+    "severity": 1,
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 8
+      },
+      "end": {
+        "line": 0,
+        "character": 21
+      }
+    },
+    "message": "File not found in test/linter/valid.tui.",
+    "code": "require-not-found",
+    "source": "tui"
+  }
+]

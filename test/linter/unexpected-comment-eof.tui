@@ -1,2 +1,2 @@
-# unexpected-comment-eof-1 {}
+# unexpected-comment-eof-1 { "require-search-paths": [] }
 /* Hello

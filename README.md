@@ -24,7 +24,7 @@ _Please note that development goes slowly since this is a free-time project only
 
 ## Settings
 
-Currently, we only provide basic formatting options:
+The following settings are available:
 
 | Setting | Values | Description |
 | --- | --- | --- |
@@ -32,6 +32,7 @@ Currently, we only provide basic formatting options:
 | `vscode-tui-language-support.table-literal` | `brace`, `bracket`, `any` | The delimiters to use for table literals |
 | `vscode-tui-language-support.assignment-token` | `any`, `colon`, `equals` | The token to use for assignments |
 | `vscode-tui-language-support.table-key` | `any`, `bare`, `quoted` | The form to use for table literal key names |
+| `vscode-tui-language-support.require-search-paths` | array of strings | Additional directories to search for files referenced by require. |
 
 ## Feedback
 

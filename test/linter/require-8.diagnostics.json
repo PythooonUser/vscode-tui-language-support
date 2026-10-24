@@ -1,0 +1,18 @@
+[
+  {
+    "severity": 1,
+    "range": {
+      "start": {
+        "line": 0,
+        "character": 8
+      },
+      "end": {
+        "line": 0,
+        "character": 28
+      }
+    },
+    "message": "File not found in /require/valid.tui.",
+    "code": "require-not-found",
+    "source": "tui"
+  }
+]

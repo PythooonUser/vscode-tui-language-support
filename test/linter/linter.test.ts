@@ -10,10 +10,10 @@ describe("Linter", () => {
   const parser = new Parser();
   const linter = new Linter();
 
-  const lint = (document: string, options: LinterOptions) => {
+  const lint = (path: string, document: string, options: LinterOptions) => {
     const node = parser.parseSourceDocument(document);
     const diagnostics = linter.lint(
-      { document: TextDocument.create("uri", "tui", 1, document) },
+      { document: TextDocument.create(path, "tui", 1, document) },
       node,
       options,
     );
@@ -91,7 +91,11 @@ describe("Linter", () => {
         }
 
         it(test.name, () => {
-          const actual = lint(test.document, test.options);
+          const actual = lint(
+            `test/linter/${name}.tui`,
+            test.document,
+            test.options,
+          );
 
           assert.deepEqual(
             serialize(actual.diagnostics),
