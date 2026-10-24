@@ -17,7 +17,7 @@ import {
 } from "../parser";
 import { Scope } from "../parser/scope";
 import { Symbol } from "../parser/symbol";
-import { dirname } from "node:path";
+import { dirname, join } from "node:path";
 import { existsSync } from "node:fs";
 
 export type LinterOptions = {
@@ -372,10 +372,6 @@ export class Linter {
   ) {
     const documentPath = event.document.uri.replace(/^file:\/\//, "");
     const currentDir = dirname(documentPath);
-    const searchPaths = options["require-search-paths"].map((searchPath) =>
-      this.joinPaths(currentDir, searchPath),
-    );
-    const roots = [currentDir, ...searchPaths];
 
     ast.walk((node) => {
       if (!(node instanceof CallExpressionNode)) return;
@@ -398,7 +394,12 @@ export class Linter {
 
       const candidates = filePath.startsWith("/")
         ? [filePath]
-        : roots.map((root) => this.joinPaths(root, filePath));
+        : [
+            join(currentDir, filePath),
+            ...options["require-search-paths"].map((searchPath) =>
+              join(searchPath, filePath),
+            ),
+          ];
 
       if (candidates.some((candidate) => existsSync(candidate))) return;
 
@@ -413,26 +414,5 @@ export class Linter {
         source: "tui",
       });
     });
-  }
-
-  private joinPaths(base: string, path: string): string {
-    if (path.startsWith("/")) return path;
-
-    const isAbsolute = base.startsWith("/");
-    const segments: string[] = [];
-
-    `${base}/${path}`.split("/").forEach((segment) => {
-      if (segment === "" || segment === ".") return;
-
-      const last = segments[segments.length - 1];
-      if (segment === ".." && segments.length > 0 && last !== "..") {
-        segments.pop();
-        return;
-      }
-
-      segments.push(segment);
-    });
-
-    return `${isAbsolute ? "/" : ""}${segments.join("/")}`;
   }
 }

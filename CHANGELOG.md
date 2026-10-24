@@ -9,7 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ### Added
 
 - `require` linting is back: the linter checks whether a `require` path resolves to a file, relative to the current document
-- New `require-search-paths` setting: additional directories that are searched for `require` files, too; `require` paths given relative are resolved against the current document and these directories, while `require` paths starting with `/` are only checked as absolute paths
+- New `require-search-paths` setting: additional directories that are searched for `require` files as opposed to relative to the workspace root
 
 ## [0.9.1] - 2026-10-20
 

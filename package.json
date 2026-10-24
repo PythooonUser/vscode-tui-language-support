@@ -91,7 +91,7 @@
             "type": "string"
           },
           "default": [],
-          "description": "Additional directories to search for files referenced by require."
+          "description": "Additional directories to search for files referenced by require; directories given relative are resolved against the workspace root"
         }
       }
     }
