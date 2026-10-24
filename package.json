@@ -2,7 +2,7 @@
   "name": "vscode-tui-language-support",
   "displayName": "vscode-tui-language-support",
   "description": "tui Language Support for VSCode.",
-  "version": "0.9.2",
+  "version": "0.10.0",
   "license": "MIT",
   "publisher": "pythooonuser",
   "author": {
