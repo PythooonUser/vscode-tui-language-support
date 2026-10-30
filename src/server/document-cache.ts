@@ -7,6 +7,7 @@ import {
   StringLiteralNode,
   VariableNode,
 } from "../parser";
+import { TypeInferer } from "./type-inferer";
 
 export class DocumentCache {
   private documents: Record<string, Document> = {};
@@ -65,5 +66,7 @@ export class Document {
   constructor(content: string) {
     const parser = new Parser();
     this.ast = parser.parseSourceDocument(content);
+
+    new TypeInferer().infer(this.ast);
   }
 }

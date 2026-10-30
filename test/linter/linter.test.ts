@@ -3,6 +3,7 @@ import { Parser, SourceDocumentNode, Token } from "../../src/parser";
 import { Scope } from "../../src/parser/scope";
 import { existsSync, readdirSync, readFileSync } from "fs";
 import { Linter, LinterOptions } from "../../src/server/linter";
+import { TypeInferer } from "../../src/server/type-inferer";
 import { TextDocument } from "vscode-languageserver-textdocument";
 import { Diagnostic } from "vscode-languageserver-protocol";
 
@@ -12,6 +13,8 @@ describe("Linter", () => {
 
   const lint = (path: string, document: string, options: LinterOptions) => {
     const node = parser.parseSourceDocument(document);
+    new TypeInferer().infer(node);
+
     const diagnostics = linter.lint(
       { document: TextDocument.create(path, "tui", 1, document) },
       node,
