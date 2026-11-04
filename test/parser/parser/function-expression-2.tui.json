@@ -1,0 +1,134 @@
+{
+  "kind": "SourceDocumentNode",
+  "error": null,
+  "statements": [
+    {
+      "kind": "ExpressionStatementNode",
+      "error": null,
+      "expression": {
+        "kind": "CallExpressionNode",
+        "error": null,
+        "expression": {
+          "kind": "MemberAccessExpressionNode",
+          "error": null,
+          "expression": {
+            "kind": "VariableNode",
+            "error": null,
+            "name": {
+              "start": 0,
+              "length": 3,
+              "kind": "Name",
+              "error": null
+            }
+          },
+          "dot": {
+            "start": 3,
+            "length": 1,
+            "kind": "DotOperator",
+            "error": null
+          },
+          "member": {
+            "start": 4,
+            "length": 3,
+            "kind": "Name",
+            "error": null
+          }
+        },
+        "arguments": {
+          "kind": "ArgumentExpressionListNode",
+          "error": null,
+          "leftParen": {
+            "start": 7,
+            "length": 1,
+            "kind": "LeftParenDelimiter",
+            "error": null
+          },
+          "elements": [
+            {
+              "kind": "ArgumentExpressionNode",
+              "error": null,
+              "argument": {
+                "kind": "StringLiteralNode",
+                "error": null,
+                "literal": {
+                  "start": 8,
+                  "length": 8,
+                  "kind": "StringLiteral",
+                  "error": null
+                }
+              }
+            },
+            {
+              "start": 16,
+              "length": 1,
+              "kind": "CommaDelimiter",
+              "error": null
+            },
+            {
+              "kind": "ArgumentExpressionNode",
+              "error": null,
+              "argument": {
+                "kind": "FunctionDeclarationNode",
+                "error": null,
+                "functionKeyword": {
+                  "start": 18,
+                  "length": 8,
+                  "kind": "FunctionKeyword",
+                  "error": null
+                },
+                "arguments": {
+                  "kind": "ParameterDeclarationListNode",
+                  "error": null,
+                  "leftParen": {
+                    "start": 26,
+                    "length": 1,
+                    "kind": "LeftParenDelimiter",
+                    "error": null
+                  },
+                  "elements": [],
+                  "rightParen": {
+                    "start": 27,
+                    "length": 1,
+                    "kind": "RightParenDelimiter",
+                    "error": null
+                  }
+                },
+                "statements": {
+                  "kind": "CompoundStatementNode",
+                  "error": null,
+                  "leftBrace": {
+                    "start": 29,
+                    "length": 1,
+                    "kind": "LeftBraceDelimiter",
+                    "error": null
+                  },
+                  "statements": [],
+                  "rightBrace": {
+                    "start": 30,
+                    "length": 1,
+                    "kind": "RightBraceDelimiter",
+                    "error": null
+                  }
+                },
+                "delimiter": null
+              }
+            }
+          ],
+          "rightParen": {
+            "start": 31,
+            "length": 1,
+            "kind": "RightParenDelimiter",
+            "error": null
+          }
+        }
+      },
+      "delimiter": null
+    }
+  ],
+  "endOfFile": {
+    "start": 32,
+    "length": 0,
+    "kind": "EndOfFile",
+    "error": null
+  }
+}

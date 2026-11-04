@@ -294,6 +294,7 @@ export class Parser {
 
   private isExpressionInitiator(token: Token): boolean {
     switch (token.kind) {
+      case "FunctionKeyword":
       case "Name":
       case "NumberLiteral":
       case "StringLiteral":

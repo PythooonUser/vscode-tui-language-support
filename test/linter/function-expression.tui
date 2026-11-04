@@ -1,0 +1,12 @@
+# function-expression-1 { "require-search-paths": [] }
+print(function() {})
+
+# function-expression-2 { "require-search-paths": [] }
+volumeUpButton = { setClickFunction = 42 },
+volumeUpButton.setClickFunction(function()
+{
+
+})
+
+# function-expression-3 { "require-search-paths": [] }
+{ foo: function() {} }

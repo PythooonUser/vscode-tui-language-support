@@ -1,0 +1,13 @@
+# function-expression-1
+foo(function() {})
+
+# function-expression-2
+foo.bar("string", function() {})
+
+# function-expression-3
+volumeUpButton.setClickFunction(function() {})
+
+# function-expression-4
+{
+    foo: function() {},
+}
