@@ -1,0 +1,58 @@
+{
+  "children": [
+    {
+      "children": [],
+      "symbols": []
+    }
+  ],
+  "symbols": [
+    {
+      "type": "boolean",
+      "members": null,
+      "name": "a"
+    },
+    {
+      "type": "number",
+      "members": null,
+      "name": "b"
+    },
+    {
+      "type": "string",
+      "members": null,
+      "name": "c"
+    },
+    {
+      "type": "table",
+      "members": {
+        "children": [],
+        "symbols": []
+      },
+      "name": "d"
+    },
+    {
+      "type": "function",
+      "members": null,
+      "name": "e"
+    },
+    {
+      "type": "unknown",
+      "members": null,
+      "name": "f"
+    },
+    {
+      "type": "unknown",
+      "members": null,
+      "name": "g"
+    },
+    {
+      "type": "unknown",
+      "members": null,
+      "name": "h"
+    },
+    {
+      "type": "unknown",
+      "members": null,
+      "name": "i"
+    }
+  ]
+}

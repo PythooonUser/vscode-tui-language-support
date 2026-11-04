@@ -1,0 +1,30 @@
+{
+  "children": [],
+  "symbols": [
+    {
+      "type": "vec2",
+      "members": null,
+      "name": "v2"
+    },
+    {
+      "type": "vec3",
+      "members": null,
+      "name": "v3"
+    },
+    {
+      "type": "vec4",
+      "members": null,
+      "name": "v4"
+    },
+    {
+      "type": "mat3",
+      "members": null,
+      "name": "m"
+    },
+    {
+      "type": "unknown",
+      "members": null,
+      "name": "p"
+    }
+  ]
+}

@@ -104,6 +104,7 @@
     "utils:parser": "npx tsx ./tools/parser-utils.ts",
     "utils:formatter": "npx tsx ./tools/formatter-utils.ts",
     "utils:linter": "npx tsx ./tools/linter-utils.ts",
+    "utils:type-inferrer": "npx tsx ./tools/type-inferrer-utils.ts",
     "format": "prettier --check \"src/**/*.ts\" \"tools/**/*.ts\" \"test/**/*.ts\"",
     "format:fix": "prettier --write \"src/**/*.ts\" \"tools/**/*.ts\" \"test/**/*.ts\""
   },

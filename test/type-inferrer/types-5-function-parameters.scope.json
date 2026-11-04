@@ -1,0 +1,31 @@
+{
+  "children": [
+    {
+      "children": [],
+      "symbols": [
+        {
+          "type": "unknown",
+          "members": null,
+          "name": "a"
+        },
+        {
+          "type": "unknown",
+          "members": null,
+          "name": "b"
+        },
+        {
+          "type": "unknown",
+          "members": null,
+          "name": "sum"
+        }
+      ]
+    }
+  ],
+  "symbols": [
+    {
+      "type": "function",
+      "members": null,
+      "name": "add"
+    }
+  ]
+}

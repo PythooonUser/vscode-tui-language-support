@@ -1,0 +1,34 @@
+{
+  "children": [],
+  "symbols": [
+    {
+      "type": "boolean",
+      "members": null,
+      "name": "global"
+    },
+    {
+      "type": "table",
+      "members": {
+        "children": [],
+        "symbols": [
+          {
+            "type": "number",
+            "members": null,
+            "name": "count"
+          },
+          {
+            "type": "string",
+            "members": null,
+            "name": "name"
+          },
+          {
+            "type": "vec3",
+            "members": null,
+            "name": "position"
+          }
+        ]
+      },
+      "name": "table"
+    }
+  ]
+}

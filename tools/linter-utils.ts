@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, writeFileSync } from "fs";
 import { Parser, Token } from "../src/parser";
 import { Linter, LinterOptions } from "../src/server/linter";
+import { TypeInferrer } from "../src/server/type-inferrer";
 import { TextDocument } from "vscode-languageserver-textdocument";
 
 const getTests = (document: string) => {
@@ -30,6 +31,7 @@ const writeResult = (
 ) => {
   const parser = new Parser();
   const node = parser.parseSourceDocument(document);
+  new TypeInferrer().infer(node);
   const linter = new Linter();
   const results = linter.lint(
     { document: TextDocument.create(path, "tui", 1, document) },
@@ -47,7 +49,7 @@ const writeResult = (
     `${JSON.stringify(
       node.scope,
       function (key, value) {
-        if (["_parent"].includes(key)) {
+        if (["_parent", "initializer"].includes(key)) {
           return;
         }
 
