@@ -12,6 +12,7 @@ import { HoverResolver } from "./hover-resolver";
 import { Linter, LinterOptions } from "./linter";
 import { Formatter, FormatterOptions } from "./formatter";
 import { CodeActionProvider } from "./code-action-provider";
+import { TypeInferrer } from "./type-inferrer";
 
 type ExtensionConfiguration = FormatterOptions & LinterOptions;
 let extensionConfiguration: ExtensionConfiguration | undefined = undefined;
@@ -20,6 +21,13 @@ const cache = new DocumentCache();
 const connection = createConnection(ProposedFeatures.all);
 
 const documents: TextDocuments<TextDocument> = new TextDocuments(TextDocument);
+
+const infer = (uri: string): void => {
+  const ast = cache.get(uri)?.ast;
+  if (!ast) return;
+
+  new TypeInferrer().infer(ast);
+};
 
 const lint = (uri: string): void => {
   const document = documents.get(uri);
@@ -92,6 +100,7 @@ connection.onDocumentFormatting((params) => {
 documents.onDidChangeContent((event) => {
   cache.update(event.document.uri, event.document.getText());
 
+  infer(event.document.uri);
   lint(event.document.uri);
 });
 

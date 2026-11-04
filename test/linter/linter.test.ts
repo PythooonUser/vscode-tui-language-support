@@ -3,15 +3,18 @@ import { Parser, SourceDocumentNode, Token } from "../../src/parser";
 import { Scope } from "../../src/parser/scope";
 import { existsSync, readdirSync, readFileSync } from "fs";
 import { Linter, LinterOptions } from "../../src/server/linter";
+import { TypeInferrer } from "../../src/server/type-inferrer";
 import { TextDocument } from "vscode-languageserver-textdocument";
 import { Diagnostic } from "vscode-languageserver-protocol";
 
 describe("Linter", () => {
   const parser = new Parser();
   const linter = new Linter();
+  const typeInferrer = new TypeInferrer();
 
   const lint = (path: string, document: string, options: LinterOptions) => {
     const node = parser.parseSourceDocument(document);
+    typeInferrer.infer(node);
     const diagnostics = linter.lint(
       { document: TextDocument.create(path, "tui", 1, document) },
       node,
@@ -24,7 +27,7 @@ describe("Linter", () => {
   const serialize = (value: unknown) =>
     JSON.parse(
       JSON.stringify(value, function (key, value) {
-        if (["_parent"].includes(key)) {
+        if (["_parent", "initializer"].includes(key)) {
           return;
         }
 

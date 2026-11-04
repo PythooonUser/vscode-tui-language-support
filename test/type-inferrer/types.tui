@@ -1,0 +1,37 @@
+# types-1-literals
+a = true,
+b = 3.5,
+c = "hello",
+d = {},
+e = function() {},
+f = 1 + 2,
+g = null,
+h = (3),
+i = -3,
+
+# types-2-builtins
+v2 = vec2(1, 2),
+v3 = vec3(1, 2, 3),
+v4 = vec4(1, 2, 3, 4),
+m = mat3(1, 2, 3),
+p = print(),
+
+# types-3-reassignment
+x = 1,
+x = "text",
+y = x,
+
+# types-4-table
+table = {
+    count = 1
+    "name" = "hello"
+    position = vec3(1, 2, 3)
+    .global = true
+},
+
+# types-5-function-parameters
+add = function(a, b)
+{
+    sum = a + b
+    return (sum)
+},
