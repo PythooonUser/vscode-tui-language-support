@@ -4,11 +4,11 @@ All notable changes to the "vscode-tui-language-support" extension will be docum
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.12.0] - unreleased
+## [0.11.1] - unreleased
 
 ### Fixed
 
-- Anonymous functions passed as arguments are now parsed as expressions, so calls like `foo.bar("string", function() {})` no longer report errors (fixes #40)
+- Anonymous functions can now be parsed as expression (fixes #40)
 
 ## [0.11.0] - 2026-10-24
 

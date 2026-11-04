@@ -5,7 +5,9 @@ foo(function() {})
 foo.bar("string", function() {})
 
 # function-expression-3
-volumeUpButton.setClickFunction(function()
-{
+volumeUpButton.setClickFunction(function() {})
 
-})
+# function-expression-4
+{
+    foo: function() {},
+}

@@ -7,3 +7,6 @@ volumeUpButton.setClickFunction(function()
 {
 
 })
+
+# function-expression-3 { "require-search-paths": [] }
+{ foo: function() {} }

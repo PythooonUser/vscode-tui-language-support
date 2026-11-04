@@ -84,7 +84,7 @@
                   },
                   "statements": [],
                   "rightBrace": {
-                    "start": 46,
+                    "start": 44,
                     "length": 1,
                     "kind": "RightBraceDelimiter",
                     "error": null
@@ -95,7 +95,7 @@
             }
           ],
           "rightParen": {
-            "start": 47,
+            "start": 45,
             "length": 1,
             "kind": "RightParenDelimiter",
             "error": null
@@ -106,7 +106,7 @@
     }
   ],
   "endOfFile": {
-    "start": 48,
+    "start": 46,
     "length": 0,
     "kind": "EndOfFile",
     "error": null
