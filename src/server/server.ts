@@ -21,6 +21,19 @@ const connection = createConnection(ProposedFeatures.all);
 
 const documents: TextDocuments<TextDocument> = new TextDocuments(TextDocument);
 
+const lint = (uri: string): void => {
+  const document = documents.get(uri);
+  const ast = cache.get(uri)?.ast;
+  if (!document || !ast) return;
+
+  const options: LinterOptions = {
+    "require-search-paths":
+      extensionConfiguration?.["require-search-paths"] ?? [],
+  };
+  const diagnostics = new Linter().lint({ document }, ast, options);
+  connection.sendDiagnostics({ uri, diagnostics });
+};
+
 connection.onInitialize((params) => ({
   capabilities: {
     textDocumentSync: TextDocumentSyncKind.Incremental,
@@ -42,6 +55,8 @@ connection.onDidChangeConfiguration(async (params) => {
   extensionConfiguration = await connection.workspace.getConfiguration(
     "vscode-tui-language-support",
   );
+
+  for (const uri of Object.keys(cache.documents)) lint(uri);
 });
 
 connection.onHover((params) => {
@@ -77,15 +92,7 @@ connection.onDocumentFormatting((params) => {
 documents.onDidChangeContent((event) => {
   cache.update(event.document.uri, event.document.getText());
 
-  const ast = cache.get(event.document.uri)?.ast;
-  if (!ast) return [];
-
-  const options: LinterOptions = {
-    "require-search-paths":
-      extensionConfiguration?.["require-search-paths"] ?? [],
-  };
-  const diagnostics = new Linter().lint(event, ast, options);
-  connection.sendDiagnostics({ uri: event.document.uri, diagnostics });
+  lint(event.document.uri);
 });
 
 connection.onCodeAction((params) => {

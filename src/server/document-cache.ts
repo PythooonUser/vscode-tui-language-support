@@ -9,7 +9,7 @@ import {
 } from "../parser";
 
 export class DocumentCache {
-  private documents: Record<string, Document> = {};
+  public documents: Record<string, Document> = {};
   private imports: Record<string, string[]> = {};
 
   public update(uri: string, content: string) {
