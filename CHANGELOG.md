@@ -4,6 +4,14 @@ All notable changes to the "vscode-tui-language-support" extension will be docum
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.12.0] - 2026-11-04
+
+### Added
+
+- Type inference now models the structure of tables: hovering over a table symbol shows its structure as a type expression, e.g. `(variable) x: { foo: number; bar: function }` (fixes #48)
+- Hover info now shows the kind of the symbol (`variable`, `parameter`, `method` or `name`) instead of its bare type
+- Hover info is syntax highlighted: the new `tui-type` TextMate grammar highlights the TypeScript-like type expressions
+
 ## [0.11.2] - 2026-11-04
 
 ### Fixed

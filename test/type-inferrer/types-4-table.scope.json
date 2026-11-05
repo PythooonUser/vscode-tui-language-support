@@ -2,26 +2,31 @@
   "children": [],
   "symbols": [
     {
+      "kind": "variable",
       "type": "boolean",
       "members": null,
       "name": "global"
     },
     {
+      "kind": "variable",
       "type": "table",
       "members": {
         "children": [],
         "symbols": [
           {
+            "kind": "variable",
             "type": "number",
             "members": null,
             "name": "count"
           },
           {
+            "kind": "variable",
             "type": "string",
             "members": null,
             "name": "name"
           },
           {
+            "kind": "variable",
             "type": "vec3",
             "members": null,
             "name": "position"

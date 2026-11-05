@@ -7,21 +7,25 @@
   ],
   "symbols": [
     {
+      "kind": "variable",
       "type": "boolean",
       "members": null,
       "name": "a"
     },
     {
+      "kind": "variable",
       "type": "number",
       "members": null,
       "name": "b"
     },
     {
+      "kind": "variable",
       "type": "string",
       "members": null,
       "name": "c"
     },
     {
+      "kind": "variable",
       "type": "table",
       "members": {
         "children": [],
@@ -30,26 +34,31 @@
       "name": "d"
     },
     {
+      "kind": "variable",
       "type": "function",
       "members": null,
       "name": "e"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "f"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "g"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "h"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "i"

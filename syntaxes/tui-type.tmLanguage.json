@@ -1,0 +1,62 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "tui-type",
+  "patterns": [
+    { "include": "#hover-symbol" },
+    { "include": "#key" },
+    { "include": "#keyword" },
+    { "include": "#delimiter" },
+    { "include": "#identifier" }
+  ],
+  "repository": {
+    "hover-symbol": {
+      "patterns": [
+        {
+          "match": "\\((variable|parameter|method|name)\\)",
+          "name": "keyword.symbol.tui-type"
+        }
+      ]
+    },
+    "key": {
+      "patterns": [
+        {
+          "match": "(?:\"(?:[^\"\\\\]|\\\\.)*\"|[_[:alpha:]][_[:alnum:]]*)(?=\\s*:)",
+          "name": "property.name.tui-type"
+        }
+      ]
+    },
+    "keyword": {
+      "patterns": [
+        {
+          "match": "\\b(number|string|boolean|table|function|unknown|vec2|vec3|vec4|mat3)\\b",
+          "captures": {
+            "1": {
+              "name": "keyword.type.tui-type"
+            }
+          }
+        }
+      ]
+    },
+    "delimiter": {
+      "patterns": [
+        {
+          "match": "\\{",
+          "name": "delimiter.curly-open.tui-type"
+        },
+        {
+          "match": "\\}",
+          "name": "delimiter.curly-close.tui-type"
+        },
+        {
+          "match": "[;:]",
+          "name": "punctuation.separator.tui-type"
+        }
+      ]
+    },
+    "identifier": {
+      "match": "[_[:alpha:]][_[:alnum:]]*",
+      "name": "variable.other.tui-type"
+    }
+  },
+  "scopeName": "source.tui-type"
+}

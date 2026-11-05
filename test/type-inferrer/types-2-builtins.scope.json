@@ -2,26 +2,31 @@
   "children": [],
   "symbols": [
     {
+      "kind": "variable",
       "type": "vec2",
       "members": null,
       "name": "v2"
     },
     {
+      "kind": "variable",
       "type": "vec3",
       "members": null,
       "name": "v3"
     },
     {
+      "kind": "variable",
       "type": "vec4",
       "members": null,
       "name": "v4"
     },
     {
+      "kind": "variable",
       "type": "mat3",
       "members": null,
       "name": "m"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "p"

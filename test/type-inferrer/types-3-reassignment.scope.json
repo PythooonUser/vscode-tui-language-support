@@ -2,11 +2,13 @@
   "children": [],
   "symbols": [
     {
+      "kind": "variable",
       "type": "number",
       "members": null,
       "name": "x"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "y"
