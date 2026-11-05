@@ -1,0 +1,48 @@
+{
+  "children": [],
+  "symbols": [
+    {
+      "kind": "variable",
+      "type": "table",
+      "members": {
+        "children": [
+          {
+            "children": [],
+            "symbols": []
+          }
+        ],
+        "symbols": [
+          {
+            "kind": "variable",
+            "type": "number",
+            "members": null,
+            "name": "foo"
+          },
+          {
+            "kind": "method",
+            "type": "function",
+            "members": null,
+            "name": "bar"
+          },
+          {
+            "kind": "variable",
+            "type": "table",
+            "members": {
+              "children": [],
+              "symbols": [
+                {
+                  "kind": "variable",
+                  "type": "string",
+                  "members": null,
+                  "name": "inner"
+                }
+              ]
+            },
+            "name": "nested"
+          }
+        ]
+      },
+      "name": "x"
+    }
+  ]
+}

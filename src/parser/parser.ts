@@ -586,13 +586,18 @@ export class Parser {
     ) {
       const name = (node.leftOperand as VariableNode).name;
 
-      if (
-        name.getParentOfKind("ExpressionStatementNode")?.parent?.kind ===
-          "TableLiteralNode" ||
-        !this.scope?.lookup(name.content)
-      ) {
+      const isTableMember = this.isTableMemberDefinition(name);
+
+      if (isTableMember || !this.scope?.lookup(name.content)) {
         const symbol = new Symbol(name);
         symbol.initializer = node.rightOperand;
+
+        if (
+          isTableMember &&
+          node.rightOperand.kind === "FunctionDeclarationNode"
+        ) {
+          symbol.kind = "method";
+        }
 
         if (
           node.operator.kind === "EqualsOperator" &&
@@ -632,18 +637,31 @@ export class Parser {
       const name = (node.leftOperand as StringLiteralNode).literal;
       const content = name.content.slice(1, -1);
 
-      if (
-        name.getParentOfKind("ExpressionStatementNode")?.parent?.kind ===
-          "TableLiteralNode" ||
-        !this.scope?.lookup(content)
-      ) {
+      const isTableMember = this.isTableMemberDefinition(name);
+
+      if (isTableMember || !this.scope?.lookup(content)) {
         const symbol = new Symbol(content);
         symbol.initializer = node.rightOperand;
+
+        if (
+          isTableMember &&
+          node.rightOperand.kind === "FunctionDeclarationNode"
+        ) {
+          symbol.kind = "method";
+        }
+
         this.scope?.define(symbol);
       }
     }
 
     return node;
+  }
+
+  private isTableMemberDefinition(name: Token): boolean {
+    return (
+      name.getParentOfKind("ExpressionStatementNode")?.parent?.kind ===
+      "TableLiteralNode"
+    );
   }
 
   private parseUnaryExpression(parent: Node | null): UnaryExpressionNode {
@@ -923,7 +941,11 @@ export class Parser {
     node.parent = parent;
 
     node.name = this.consume(node, "Name");
-    this.scope?.define(new Symbol(node.name));
+    node.scope = this.scope!;
+
+    const symbol = new Symbol(node.name);
+    symbol.kind = "parameter";
+    this.scope?.define(symbol);
 
     return node;
   }

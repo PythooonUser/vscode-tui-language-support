@@ -6,6 +6,7 @@
           "children": [],
           "symbols": [
             {
+              "kind": "variable",
               "type": "number",
               "members": null,
               "name": "i"
@@ -18,96 +19,115 @@
   ],
   "symbols": [
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "vec2"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "vec3"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "vec4"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "mat3"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "print"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "error"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "exit"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "readValue"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "clear"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "system"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "platform"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "require"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "type"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": null,
       "name": "load"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": {
         "children": [],
         "symbols": [
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "getFileName"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "getLineNumber"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "break"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "backtrace"
@@ -117,36 +137,43 @@
       "name": "debug"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": {
         "children": [],
         "symbols": [
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "count"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "insert"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "remove"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "shuffle"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "sort"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "clone"
@@ -156,61 +183,73 @@
       "name": "table"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": {
         "children": [],
         "symbols": [
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "length"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "format"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "find"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "subString"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "sha1"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "split"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "replace"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "lower"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "upper"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "eachChar"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "eachLine"
@@ -220,126 +259,151 @@
       "name": "string"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": {
         "children": [],
         "symbols": [
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "directoryContents"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "load"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "loadBinary"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "save"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "saveBinary"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "loadData"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "saveData"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "sha1"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "isDirectory"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "fileName"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "extension"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "changeExtension"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "removeExtension"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "removeLastPathComponent"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "getAbsolutePath"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "isSubPath"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "move"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "copy"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "remove"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "mkdir"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "fileExists"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "isSymLink"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "createDirectoriesIfNeededForDirPath"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "createDirectoriesIfNeededForFilePath"
@@ -349,146 +413,175 @@
       "name": "file"
     },
     {
+      "kind": "variable",
       "type": "unknown",
       "members": {
         "children": [],
         "symbols": [
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "random"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "randomInt"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "sqrt"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "exp"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "log"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "log10"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "floor"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "ceil"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "fmod"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "pow"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "abs"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "max"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "min"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "clamp"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "mix"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "sin"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "cos"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "tan"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "asin"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "acos"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "atan"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "atan2"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "length"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "length2"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "normalize"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "dot"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "cross"
           },
           {
+            "kind": "variable",
             "type": "unknown",
             "members": null,
             "name": "rotate"

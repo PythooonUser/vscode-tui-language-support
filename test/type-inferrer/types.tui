@@ -35,3 +35,12 @@ add = function(a, b)
     sum = a + b
     return (sum)
 },
+
+# types-6-table-structure
+x = {
+    foo = 0,
+    bar = function() {},
+    nested = {
+        inner = "hello",
+    },
+},

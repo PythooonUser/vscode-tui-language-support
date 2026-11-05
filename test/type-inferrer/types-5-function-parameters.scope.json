@@ -4,16 +4,19 @@
       "children": [],
       "symbols": [
         {
+          "kind": "parameter",
           "type": "unknown",
           "members": null,
           "name": "a"
         },
         {
+          "kind": "parameter",
           "type": "unknown",
           "members": null,
           "name": "b"
         },
         {
+          "kind": "variable",
           "type": "unknown",
           "members": null,
           "name": "sum"
@@ -23,6 +26,7 @@
   ],
   "symbols": [
     {
+      "kind": "variable",
       "type": "function",
       "members": null,
       "name": "add"
