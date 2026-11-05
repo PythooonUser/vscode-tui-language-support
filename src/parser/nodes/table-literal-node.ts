@@ -1,4 +1,5 @@
 import { Scope } from "../scope";
+import { Symbol } from "../symbol";
 import { Token } from "../token";
 import { Node } from "./node";
 
@@ -7,6 +8,11 @@ export class TableLiteralNode extends Node {
   public elements: (Node | Token)[] = [];
   public rightDelimiter!: Token;
   public members: Scope | null = null;
+  /**
+   * The symbols of the literal's elements that are not member definitions,
+   * i.e. the values of the array part of the table, named by their index.
+   */
+  public arrayElements!: Symbol[] | null;
 
   constructor() {
     super();

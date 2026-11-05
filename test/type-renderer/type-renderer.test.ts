@@ -44,4 +44,25 @@ describe("TypeRenderer", () => {
 
   it("unknown-member", () =>
     assert.equal(render("x = { y = null, },", "x"), "{\n  y: unknown\n}"));
+
+  it("array-elements", () =>
+    assert.equal(render("x = { 1, 2, 3 },", "x"), "{\n  number\n}"));
+
+  it("heterogeneous-array-elements", () =>
+    assert.equal(
+      render('x = { 1, "a", true, },', "x"),
+      "{\n  number;\n  string;\n  boolean\n}",
+    ));
+
+  it("members-and-array-elements", () =>
+    assert.equal(
+      render("x = { foo = 0, 1, },", "x"),
+      "{\n  foo: number;\n  number\n}",
+    ));
+
+  it("nested-array-elements", () =>
+    assert.equal(
+      render("x = { { 1, 2 }, { 3, 4 }, },", "x"),
+      "{\n  {\n    number\n  }\n}",
+    ));
 });

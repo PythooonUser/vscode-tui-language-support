@@ -31,7 +31,8 @@
         "children": [],
         "symbols": []
       },
-      "name": "d"
+      "name": "d",
+      "arrayElements": []
     },
     {
       "kind": "variable",

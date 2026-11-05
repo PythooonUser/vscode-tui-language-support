@@ -22,11 +22,20 @@
                   "children": [],
                   "symbols": []
                 },
-                "name": "subTable"
+                "name": "subTable",
+                "arrayElements": [
+                  {
+                    "kind": "variable",
+                    "type": "unknown",
+                    "members": null,
+                    "name": "0"
+                  }
+                ]
               }
             ]
           },
-          "name": "table"
+          "name": "table",
+          "arrayElements": []
         }
       ]
     }

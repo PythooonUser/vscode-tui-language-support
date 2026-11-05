@@ -29,7 +29,15 @@
               }
             ]
           },
-          "name": "table"
+          "name": "table",
+          "arrayElements": [
+            {
+              "kind": "variable",
+              "type": "unknown",
+              "members": null,
+              "name": "0"
+            }
+          ]
         }
       ]
     }

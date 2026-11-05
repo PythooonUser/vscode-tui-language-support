@@ -22,7 +22,8 @@
               }
             ]
           },
-          "name": "volumeUpButton"
+          "name": "volumeUpButton",
+          "arrayElements": []
         }
       ]
     }

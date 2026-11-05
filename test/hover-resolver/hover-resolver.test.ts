@@ -30,6 +30,12 @@ describe("HoverResolver", () => {
   it("empty-table", () =>
     assert.equal(hover("x = {},", "x"), "```tui-type\n(variable) x: {}\n```"));
 
+  it("array-table", () =>
+    assert.equal(
+      hover("x = { 1, 2, 3 },", "x"),
+      "```tui-type\n(variable) x: {\n  number\n}\n```",
+    ));
+
   it("table-member", () =>
     assert.equal(
       hover("x = { bar = function() {}, },", "bar"),

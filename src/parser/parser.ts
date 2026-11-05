@@ -603,8 +603,10 @@ export class Parser {
           node.operator.kind === "EqualsOperator" &&
           node.rightOperand.kind === "TableLiteralNode"
         ) {
-          const members = (node.rightOperand as TableLiteralNode).members!;
+          const tableLiteral = node.rightOperand as TableLiteralNode;
+          const members = tableLiteral.members!;
           symbol.members = members;
+          symbol.arrayElements = tableLiteral.arrayElements;
           this.scope?.removeChild(members);
         }
 
@@ -661,6 +663,61 @@ export class Parser {
     return (
       name.getParentOfKind("ExpressionStatementNode")?.parent?.kind ===
       "TableLiteralNode"
+    );
+  }
+
+  /**
+   * Creates the symbols of the elements of a table literal that make up its
+   * array part, i.e. all its elements that are bare expressions instead of
+   * member definitions, named by their index.
+   */
+  private collectArrayElementSymbols(node: TableLiteralNode): Symbol[] {
+    const symbols: Symbol[] = [];
+
+    for (const element of node.elements) {
+      if (
+        !(element instanceof Node) ||
+        element.kind !== "ExpressionStatementNode"
+      ) {
+        continue;
+      }
+
+      const expression = (element as ExpressionStatementNode).expression;
+
+      if (!(expression instanceof Node)) {
+        continue;
+      }
+
+      if (
+        this.isVariableAssignment(expression) ||
+        expression.kind === "NullLiteralNode"
+      ) {
+        // Not a value of the array part: assignments define the table's
+        // members and null values are not stored in the table at all.
+        continue;
+      }
+
+      const symbol = new Symbol(`${symbols.length}`);
+      symbol.initializer = expression;
+
+      if (expression.kind === "TableLiteralNode") {
+        const nestedNode = expression as TableLiteralNode;
+        symbol.members = nestedNode.members;
+        symbol.arrayElements = nestedNode.arrayElements;
+      }
+
+      symbols.push(symbol);
+    }
+
+    return symbols;
+  }
+
+  private isVariableAssignment(node: Node): boolean {
+    return (
+      node.kind === "BinaryExpressionNode" &&
+      VariableAssignmentKinds.includes(
+        (node as BinaryExpressionNode).operator.kind,
+      )
     );
   }
 
@@ -827,6 +884,7 @@ export class Parser {
     ]);
 
     node.members = this.scope;
+    node.arrayElements = this.collectArrayElementSymbols(node);
     this.scope = this.scope.pop();
     return node;
   }

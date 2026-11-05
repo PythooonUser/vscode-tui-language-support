@@ -22,11 +22,20 @@
                   "children": [],
                   "symbols": []
                 },
-                "name": "bar"
+                "name": "bar",
+                "arrayElements": [
+                  {
+                    "kind": "variable",
+                    "type": "unknown",
+                    "members": null,
+                    "name": "0"
+                  }
+                ]
               }
             ]
           },
-          "name": "foo"
+          "name": "foo",
+          "arrayElements": []
         }
       ]
     }

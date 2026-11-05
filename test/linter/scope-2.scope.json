@@ -10,7 +10,8 @@
             "children": [],
             "symbols": []
           },
-          "name": "foo"
+          "name": "foo",
+          "arrayElements": []
         }
       ]
     }
