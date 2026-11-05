@@ -1,0 +1,146 @@
+{
+  "children": [],
+  "symbols": [
+    {
+      "kind": "variable",
+      "type": "table",
+      "members": {
+        "children": [],
+        "symbols": []
+      },
+      "name": "numbers",
+      "arrayElements": [
+        {
+          "kind": "variable",
+          "type": "number",
+          "members": null,
+          "name": "0"
+        },
+        {
+          "kind": "variable",
+          "type": "number",
+          "members": null,
+          "name": "1"
+        },
+        {
+          "kind": "variable",
+          "type": "number",
+          "members": null,
+          "name": "2"
+        }
+      ]
+    },
+    {
+      "kind": "variable",
+      "type": "table",
+      "members": {
+        "children": [],
+        "symbols": []
+      },
+      "name": "colors",
+      "arrayElements": [
+        {
+          "kind": "variable",
+          "type": "vec4",
+          "members": null,
+          "name": "0"
+        },
+        {
+          "kind": "variable",
+          "type": "vec4",
+          "members": null,
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "kind": "variable",
+      "type": "table",
+      "members": {
+        "children": [
+          {
+            "children": [],
+            "symbols": []
+          },
+          {
+            "children": [],
+            "symbols": []
+          }
+        ],
+        "symbols": []
+      },
+      "name": "pairs",
+      "arrayElements": [
+        {
+          "kind": "variable",
+          "type": "table",
+          "members": {
+            "children": [],
+            "symbols": []
+          },
+          "name": "0",
+          "arrayElements": [
+            {
+              "kind": "variable",
+              "type": "number",
+              "members": null,
+              "name": "0"
+            },
+            {
+              "kind": "variable",
+              "type": "number",
+              "members": null,
+              "name": "1"
+            }
+          ]
+        },
+        {
+          "kind": "variable",
+          "type": "table",
+          "members": {
+            "children": [],
+            "symbols": []
+          },
+          "name": "1",
+          "arrayElements": [
+            {
+              "kind": "variable",
+              "type": "number",
+              "members": null,
+              "name": "0"
+            },
+            {
+              "kind": "variable",
+              "type": "number",
+              "members": null,
+              "name": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "variable",
+      "type": "table",
+      "members": {
+        "children": [],
+        "symbols": []
+      },
+      "name": "sparse",
+      "arrayElements": [
+        {
+          "kind": "variable",
+          "type": "string",
+          "members": null,
+          "name": "0"
+        },
+        {
+          "kind": "variable",
+          "type": "string",
+          "members": null,
+          "name": "1"
+        }
+      ]
+    }
+  ]
+}

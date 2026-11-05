@@ -1,11 +1,12 @@
+import { Scope } from "../parser/scope";
 import { Symbol } from "../parser/symbol";
 import { Token } from "../parser/token";
 
 /**
  * Renders the type of a symbol as a type expression: tables with known
  * members (i.e. from their initial literal definition) are rendered
- * structurally as `{ key: type; ... }` expressions formatted over multiple
- * lines.
+ * structurally as `{ key: type; ... }` and tables with known array elements
+ * as `{ type; ... }` expressions formatted over multiple lines.
  */
 export class TypeRenderer {
   /**
@@ -16,20 +17,20 @@ export class TypeRenderer {
    *   rendered at, used to indent nested tables.
    */
   public render(symbol: Symbol, level: number = 0): string {
-    if (!symbol.members) {
+    if (!symbol.members && !symbol.arrayElements) {
       return symbol.type;
     }
 
-    if (symbol.members.symbols.length === 0) {
+    const entries = [
+      ...this.renderMemberEntries(symbol.members!, level),
+      ...this.renderArrayElementEntries(symbol.arrayElements!, level),
+    ];
+
+    if (entries.length === 0) {
       return "{}";
     }
 
-    const members = symbol.members.symbols.map(
-      (member) =>
-        `${this.indent(level + 1)}${this.renderKey(member)}: ${this.render(member, level + 1)}`,
-    );
-
-    return `{\n${members.join(";\n")}\n${this.indent(level)}}`;
+    return `{\n${entries.join(";\n")}\n${this.indent(level)}}`;
   }
 
   private indent(level: number): string {
@@ -41,5 +42,31 @@ export class TypeRenderer {
       symbol.name instanceof Token ? symbol.name.content : symbol.name;
 
     return /^[A-Za-z_][A-Za-z0-9_]*$/.test(name) ? name : `"${name}"`;
+  }
+
+  private renderMemberEntries(members: Scope, level: number): string[] {
+    return members.symbols.map(
+      (member) =>
+        `${this.indent(level + 1)}${this.renderKey(member)}: ${this.render(member, level + 1)}`,
+    );
+  }
+
+  private renderArrayElementEntries(
+    arrayElements: Symbol[],
+    level: number,
+  ): string[] {
+    const entries = arrayElements.map(
+      (arrayElement) =>
+        `${this.indent(level + 1)}${this.render(arrayElement, level + 1)}`,
+    );
+
+    if (entries.length <= 1) {
+      return entries;
+    }
+
+    const [firstEntry] = entries;
+    return entries.every((entry) => entry === firstEntry)
+      ? [firstEntry]
+      : entries;
   }
 }

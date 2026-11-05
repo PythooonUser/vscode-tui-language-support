@@ -5,6 +5,7 @@ import {
   VariableNode,
 } from "../parser";
 import { Scope } from "../parser/scope";
+import { Symbol } from "../parser/symbol";
 import { SymbolType } from "../parser/symbol-type";
 
 /**
@@ -24,17 +25,27 @@ export class TypeInferrer {
 
   private inferScope(scope: Scope): void {
     for (const symbol of scope.symbols) {
-      if (symbol.initializer) {
-        symbol.type = this.inferSymbolType(symbol.initializer);
-      }
-
-      if (symbol.members) {
-        this.inferScope(symbol.members);
-      }
+      this.inferSymbol(symbol);
     }
 
     for (const child of scope.children) {
       this.inferScope(child);
+    }
+  }
+
+  private inferSymbol(symbol: Symbol): void {
+    if (symbol.initializer) {
+      symbol.type = this.inferSymbolType(symbol.initializer);
+    }
+
+    if (symbol.members) {
+      this.inferScope(symbol.members);
+    }
+
+    if (symbol.arrayElements) {
+      for (const arrayElement of symbol.arrayElements) {
+        this.inferSymbol(arrayElement);
+      }
     }
   }
 

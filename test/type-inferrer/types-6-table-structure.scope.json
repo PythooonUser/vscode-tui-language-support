@@ -38,11 +38,13 @@
                 }
               ]
             },
-            "name": "nested"
+            "name": "nested",
+            "arrayElements": []
           }
         ]
       },
-      "name": "x"
+      "name": "x",
+      "arrayElements": []
     }
   ]
 }

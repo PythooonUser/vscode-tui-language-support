@@ -16,7 +16,15 @@
             "children": [],
             "symbols": []
           },
-          "name": "test"
+          "name": "test",
+          "arrayElements": [
+            {
+              "kind": "variable",
+              "type": "unknown",
+              "members": null,
+              "name": "0"
+            }
+          ]
         }
       ]
     }

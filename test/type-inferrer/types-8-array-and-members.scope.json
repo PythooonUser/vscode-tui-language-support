@@ -1,0 +1,35 @@
+{
+  "children": [],
+  "symbols": [
+    {
+      "kind": "variable",
+      "type": "table",
+      "members": {
+        "children": [],
+        "symbols": [
+          {
+            "kind": "variable",
+            "type": "string",
+            "members": null,
+            "name": "foo"
+          }
+        ]
+      },
+      "name": "mixed",
+      "arrayElements": [
+        {
+          "kind": "variable",
+          "type": "number",
+          "members": null,
+          "name": "0"
+        },
+        {
+          "kind": "variable",
+          "type": "boolean",
+          "members": null,
+          "name": "1"
+        }
+      ]
+    }
+  ]
+}
