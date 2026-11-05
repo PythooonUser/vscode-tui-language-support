@@ -4,15 +4,18 @@ import { Token } from "../parser/token";
 /**
  * Renders the type of a symbol as a type expression: tables with known
  * members (i.e. from their initial literal definition) are rendered
- * structurally as `{ key: type }` expressions.
+ * structurally as `{ key: type; ... }` expressions formatted over multiple
+ * lines.
  */
 export class TypeRenderer {
   /**
    * Renders the type expression of a symbol.
    *
    * @param symbol The symbol to render the type expression of.
+   * @param level The number of nested table levels the expression is
+   *   rendered at, used to indent nested tables.
    */
-  public render(symbol: Symbol): string {
+  public render(symbol: Symbol, level: number = 0): string {
     if (!symbol.members) {
       return symbol.type;
     }
@@ -22,10 +25,15 @@ export class TypeRenderer {
     }
 
     const members = symbol.members.symbols.map(
-      (member) => `${this.renderKey(member)}: ${this.render(member)}`,
+      (member) =>
+        `${this.indent(level + 1)}${this.renderKey(member)}: ${this.render(member, level + 1)}`,
     );
 
-    return `{ ${members.join("; ")} }`;
+    return `{\n${members.join(";\n")}\n${this.indent(level)}}`;
+  }
+
+  private indent(level: number): string {
+    return "  ".repeat(level);
   }
 
   private renderKey(symbol: Symbol): string {

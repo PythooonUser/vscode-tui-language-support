@@ -24,7 +24,7 @@ describe("HoverResolver", () => {
   it("table-structure", () =>
     assert.equal(
       hover("x = { foo = 0, bar = function() {}, },", "x"),
-      "```tui-type\n(variable) x: { foo: number; bar: function }\n```",
+      "```tui-type\n(variable) x: {\n  foo: number;\n  bar: function\n}\n```",
     ));
 
   it("empty-table", () =>

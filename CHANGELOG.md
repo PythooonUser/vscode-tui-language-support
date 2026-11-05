@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
-- Type inference now models the structure of tables: hovering over a table symbol shows its structure as a type expression, e.g. `(variable) x: { foo: number; bar: function }` (fixes #48)
+- Type inference now models the structure of tables: hovering over a table symbol shows its structure as a multi-line formatted type expression, e.g. `(variable) x: { foo: number; bar: function }` spread over indented lines (fixes #48)
 - Hover info now shows the kind of the symbol (`variable`, `parameter`, `method` or `name`) instead of its bare type
 - Hover info is syntax highlighted: the new `tui-type` TextMate grammar highlights the TypeScript-like type expressions
 

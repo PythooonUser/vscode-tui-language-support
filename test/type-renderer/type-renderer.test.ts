@@ -27,21 +27,21 @@ describe("TypeRenderer", () => {
   it("flat-table", () =>
     assert.equal(
       render("x = { foo = 0, bar = function() {}, },", "x"),
-      "{ foo: number; bar: function }",
+      "{\n  foo: number;\n  bar: function\n}",
     ));
 
   it("nested-table", () =>
     assert.equal(
       render('x = { foo = 0, nested = { inner = "hello", }, },', "x"),
-      "{ foo: number; nested: { inner: string } }",
+      "{\n  foo: number;\n  nested: {\n    inner: string\n  }\n}",
     ));
 
   it("quoted-key", () =>
     assert.equal(
       render('x = { "first name" = 1, "2x" = 2, },', "x"),
-      '{ "first name": number; "2x": number }',
+      '{\n  "first name": number;\n  "2x": number\n}',
     ));
 
   it("unknown-member", () =>
-    assert.equal(render("x = { y = null, },", "x"), "{ y: unknown }"));
+    assert.equal(render("x = { y = null, },", "x"), "{\n  y: unknown\n}"));
 });
